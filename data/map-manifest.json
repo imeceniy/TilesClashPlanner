@@ -1,0 +1,10 @@
+{
+  "canonical": "gene-clash-map.json",
+  "sha256": "50fe0bc45040d867330c46a7d678f306eda076285a11d97d2d1eee5528abf139",
+  "territories": 165,
+  "connections": 203,
+  "bases": 8,
+  "baseConnections": 24,
+  "lockedAt": "2026-08-15",
+  "note": "Manually verified Season 5 geometry with current game rewards. Import scripts write only to data/generated/."
+}

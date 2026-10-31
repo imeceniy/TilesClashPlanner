@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Медь — предпросмотр карты</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, sans-serif;
+        background: #090d0b;
+        color: #edf3ef;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 310px;
+        background: #090d0b;
+      }
+      main {
+        min-width: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        overflow: hidden;
+      }
+      svg {
+        width: min(100%, calc(100vh - 48px));
+        height: min(100%, calc(100vh - 48px));
+        filter: drop-shadow(0 24px 60px #000a);
+        touch-action: none;
+      }
+      .region {
+        stroke: #242824;
+        stroke-width: 1.35;
+        vector-effect: non-scaling-stroke;
+        cursor: pointer;
+        transition:
+          filter 0.12s,
+          opacity 0.12s;
+      }
+      .region:hover,
+      .region.selected {
+        filter: brightness(1.18) drop-shadow(0 0 4px #fff8);
+        stroke: #fff;
+        stroke-width: 2.2;
+      }
+      .resource {
+        stroke-width: 1.8;
+      }
+      .center {
+        stroke-width: 2.4;
+        cursor: default;
+      }
+      .connection {
+        stroke: #50e08e;
+        stroke-width: 1.25;
+        opacity: 0.55;
+        vector-effect: non-scaling-stroke;
+        pointer-events: none;
+      }
+      .label {
+        pointer-events: none;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        font-size: 8px;
+        font-weight: 800;
+        fill: #161916;
+        paint-order: stroke;
+        stroke: #ffffffb0;
+        stroke-width: 2px;
+      }
+      .arcadia-label {
+        pointer-events: none;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        fill: #39423c;
+      }
+      aside {
+        border-left: 1px solid #263129;
+        padding: 24px;
+        background: #111713;
+        overflow: auto;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 21px;
+      }
+      .muted {
+        color: #7f9085;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .card {
+        margin: 20px 0;
+        padding: 16px;
+        border: 1px solid #2b3830;
+        border-radius: 12px;
+        background: #171f1a;
+      }
+      .card strong {
+        display: block;
+        margin-bottom: 7px;
+        color: #fff;
+      }
+      .card span {
+        display: block;
+        color: #aab8af;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 0;
+        color: #c7d2ca;
+        font-size: 13px;
+      }
+      .legend {
+        display: grid;
+        grid-template-columns: 14px 1fr;
+        gap: 7px 9px;
+        align-items: center;
+        font-size: 12px;
+        color: #b9c5bd;
+      }
+      .legend i {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        border: 1px solid #ffffff55;
+      }
+      @media (max-width: 760px) {
+        body {
+          grid-template-columns: 1fr;
+          grid-template-rows: minmax(62vh, 1fr) auto;
+        }
+        main {
+          padding: 8px;
+        }
+        aside {
+          border-left: 0;
+          border-top: 1px solid #263129;
+          padding: 16px;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main><svg id="map" viewBox="0 0 891 891" aria-label="Интерактивная карта нового события"></svg></main>
+    <aside>
+      <h1>Медь</h1>
+      <div id="stats" class="muted">Загрузка геометрии…</div>
+      <div id="details" class="card"><strong>Выберите участок</strong><span>Нажмите на объект или бастион на карте.</span></div>
+      <label><input id="showNames" type="checkbox" /> Показывать номера объектов</label>
+      <label><input id="showSource" type="checkbox" /> Наложить исходную схему</label>
+      <label><input id="showConnections" type="checkbox" /> Показать граф связей</label>
+      <div id="legend" class="legend"></div>
+    </aside>
+    <script type="module">
+      const svg = document.querySelector("#map");
+      const ns = "http://www.w3.org/2000/svg";
+      const data = await fetch("./new-event-map.json").then((response) => response.json());
+      const source = document.createElementNS(ns, "image");
+      source.setAttribute("href", "./Схематично.jpg");
+      source.setAttribute("width", data.width);
+      source.setAttribute("height", data.height);
+      source.setAttribute("opacity", "0");
+      source.style.pointerEvents = "none";
+      svg.append(source);
+      const connections = document.createElementNS(ns, "g");
+      connections.setAttribute("display", "none");
+      svg.append(connections);
+      const layer = document.createElementNS(ns, "g");
+      svg.append(layer);
+      const fixedLabels = document.createElementNS(ns, "g");
+      svg.append(fixedLabels);
+      const labels = document.createElementNS(ns, "g");
+      svg.append(labels);
+      const details = document.querySelector("#details");
+      const counts = data.regions.reduce((result, item) => ((result[item.kind] = (result[item.kind] || 0) + 1), result), {});
+      const activeCount = data.regions.filter((item) => item.interactive !== false).length;
+      document.querySelector("#stats").textContent =
+        `${data.regions.length} участков · ${activeCount} активных · ${counts.resource || 0} объектов · ${counts.bastion || 0} бастионов`;
+      const metric = (value) => (value == null ? "—" : new Intl.NumberFormat("ru-RU").format(value));
+      const byId = new Map(data.regions.map((region) => [region.id, region]));
+      for (const edge of data.connections) {
+        const from = byId.get(edge.from);
+        const to = byId.get(edge.to);
+        if (!from || !to) continue;
+        const line = document.createElementNS(ns, "line");
+        line.setAttribute("x1", from.center[0]);
+        line.setAttribute("y1", from.center[1]);
+        line.setAttribute("x2", to.center[0]);
+        line.setAttribute("y2", to.center[1]);
+        line.setAttribute("class", "connection");
+        connections.append(line);
+      }
+      for (const region of data.regions) {
+        const polygon = document.createElementNS(ns, "polygon");
+        polygon.setAttribute("points", region.points.map((point) => point.join(",")).join(" "));
+        polygon.setAttribute("fill", region.color);
+        polygon.setAttribute("class", `region ${region.kind}`);
+        polygon.dataset.id = region.id;
+        if (region.interactive === false) polygon.style.pointerEvents = "none";
+        polygon.addEventListener("click", () => {
+          layer.querySelector(".selected")?.classList.remove("selected");
+          polygon.classList.add("selected");
+          details.innerHTML = `<strong>${region.name}</strong><span>Первый захват: ${metric(region.firstCapturePoints)} очков</span><span>Добыча меди: ${metric(region.copperPerHour)} в час</span><span>ID: ${region.id}</span>`;
+        });
+        layer.append(polygon);
+        if (region.kind === "center") {
+          const text = document.createElementNS(ns, "text");
+          text.setAttribute("x", region.center[0]);
+          text.setAttribute("y", region.center[1]);
+          text.setAttribute("class", "arcadia-label");
+          text.textContent = "АРКАДИЯ";
+          fixedLabels.append(text);
+        }
+        if (region.kind === "resource") {
+          const text = document.createElementNS(ns, "text");
+          text.setAttribute("x", region.center[0]);
+          text.setAttribute("y", region.center[1]);
+          text.setAttribute("class", "label");
+          text.textContent = region.id.split("-").at(-1).replace(/^0+/, "");
+          labels.append(text);
+        }
+      }
+      labels.setAttribute("display", "none");
+      document
+        .querySelector("#showNames")
+        .addEventListener("change", (event) => labels.setAttribute("display", event.target.checked ? "" : "none"));
+      document
+        .querySelector("#showSource")
+        .addEventListener("change", (event) => source.setAttribute("opacity", event.target.checked ? ".42" : "0"));
+      document
+        .querySelector("#showConnections")
+        .addEventListener("change", (event) => connections.setAttribute("display", event.target.checked ? "" : "none"));
+      const legendItems = [
+        ["#fffef2", "Торговый пост"],
+        ["#d94235", "Военная база · 50 меди/ч"],
+        ["#8052a0", "Центр исследований · 25 меди/ч"],
+        ["#f3a21f", "Мегаполис · 15 меди/ч"],
+        ["#50b15d", "Городок · 10 меди/ч"],
+        ["#22a18c", "Завод · 3 меди/ч"],
+        ["#9da9b5", "Деревня · 1 медь/ч"],
+        ...Object.entries(data.metrics.bastionFirstCapturePoints).map(([level, points]) => [
+          data.regions.find((item) => item.kind === "bastion" && item.level === Number(level))?.color,
+          `Бастион ур. ${level} · ${points} очков`,
+        ]),
+      ];
+      document.querySelector("#legend").innerHTML = legendItems
+        .map(([color, name]) => `<i style="background:${color}"></i><span>${name}</span>`)
+        .join("");
+    </script>
+  </body>
+</html>

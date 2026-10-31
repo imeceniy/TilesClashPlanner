@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0-candidate",
+  "image": {
+    "src": "example-map.png",
+    "width": 160,
+    "height": 90,
+    "sha256": "7d95f4cdf20c3eba886aaed7cd5fa5ed0f1fc6a30c977dfc15d3eaeaa29726dc"
+  },
+  "territories": [
+    {
+      "id": "north",
+      "key": "north",
+      "type": "land",
+      "active": true,
+      "decorative": false,
+      "rewards": [],
+      "center": {
+        "x": 45.0,
+        "y": 45.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.0,
+              10.0
+            ],
+            [
+              10.0,
+              80.0
+            ],
+            [
+              80.0,
+              80.0
+            ],
+            [
+              80.0,
+              10.0
+            ],
+            [
+              10.0,
+              10.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "south",
+      "key": "south",
+      "type": "land",
+      "active": true,
+      "decorative": false,
+      "rewards": [],
+      "center": {
+        "x": 115.0,
+        "y": 45.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.0,
+              10.0
+            ],
+            [
+              80.0,
+              80.0
+            ],
+            [
+              150.0,
+              80.0
+            ],
+            [
+              150.0,
+              10.0
+            ],
+            [
+              80.0,
+              10.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "frame",
+      "key": "frame",
+      "type": "decoration",
+      "active": false,
+      "decorative": true,
+      "rewards": [],
+      "center": {
+        "x": 80.0,
+        "y": 4.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              8.0
+            ],
+            [
+              160.0,
+              8.0
+            ],
+            [
+              160.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "adjacencies": [
+    {
+      "a": "north",
+      "b": "south",
+      "borderLength": 70.0
+    }
+  ],
+  "connections": [
+    {
+      "id": "north--south",
+      "from": "north",
+      "to": "south",
+      "kind": "passage",
+      "directed": false
+    }
+  ],
+  "reviewRequired": false,
+  "metadata": {
+    "coordinateSystem": "image-pixels-top-left",
+    "projectSchemaAdapted": false,
+    "requireConnected": true,
+    "allowIsolatedActive": []
+  }
+}

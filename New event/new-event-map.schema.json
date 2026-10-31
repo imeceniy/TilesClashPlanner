@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biohimltd.ru/schemas/new-event-map.schema.json",
+  "title": "Tiles Clash polygon map",
+  "type": "object",
+  "required": ["schemaVersion", "id", "name", "width", "height", "metrics", "regions", "connections"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "width": { "type": "integer", "minimum": 1 },
+    "height": { "type": "integer", "minimum": 1 },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "name", "center", "points", "color", "interactive", "firstCapturePoints", "copperPerHour"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["resource", "bastion", "center"] },
+          "interactive": { "type": "boolean" },
+          "center": { "$ref": "#/$defs/point" },
+          "points": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/point" } },
+          "firstCapturePoints": { "type": ["integer", "null"], "minimum": 0 },
+          "copperPerHour": { "type": ["integer", "null"], "minimum": 0 }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "from", "to"],
+        "properties": {
+          "id": { "type": "string" },
+          "from": { "type": "string" },
+          "to": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "array",
+      "prefixItems": [{ "type": "number" }, { "type": "number" }],
+      "items": false
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "passages": [{"from":"north","to":"south","kind":"passage"}],
+  "requireConnected": true,
+  "allowIsolatedActive": [],
+  "minimumSharedBorder": 1
+}

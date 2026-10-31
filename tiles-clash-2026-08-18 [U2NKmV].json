@@ -1,0 +1,190 @@
+{
+  "version": 3,
+  "currentPlanId": "msz2rtjp-15xhhb",
+  "plans": [
+    {
+      "id": "mswycqwd-wnvmqy",
+      "name": "Day 1",
+      "date": "2026-08-17",
+      "territories": {
+        "lair-XS17": {
+          "territoryId": "lair-XS17",
+          "status": "captured"
+        },
+        "lair-XS23": {
+          "territoryId": "lair-XS23",
+          "status": "captured"
+        },
+        "lair-XS27": {
+          "territoryId": "lair-XS27",
+          "status": "captured"
+        },
+        "workbench-S15": {
+          "territoryId": "workbench-S15",
+          "status": "priority"
+        },
+        "lair-XS28": {
+          "territoryId": "lair-XS28",
+          "status": "secondary"
+        },
+        "workbench-S03": {
+          "territoryId": "workbench-S03",
+          "status": "ignore"
+        },
+        "lair-XS18": {
+          "territoryId": "lair-XS18",
+          "status": "secondary"
+        },
+        "lair-XS24": {
+          "territoryId": "lair-XS24",
+          "status": "secondary"
+        }
+      },
+      "arrows": [],
+      "labels": [],
+      "markers": [],
+      "baseAssignments": {
+        "base-nw": "msx9lxds-bhz7uy",
+        "base-e": "msx9m3lc-oach5f",
+        "base-sw": "ust",
+        "base-se": "msx9lskx-d5n2ag",
+        "base-w": "enemy-abc",
+        "base-ssw": "enemy-xyz",
+        "base-sse": "msx88w31-g3btmq",
+        "base-ne": "msx9m9tz-jweznj"
+      },
+      "updatedAt": 1787082462653
+    },
+    {
+      "id": "msz2rtjp-15xhhb",
+      "name": "Day 2",
+      "date": "2026-08-18",
+      "territories": {
+        "lair-XS17": {
+          "territoryId": "lair-XS17",
+          "status": "captured"
+        },
+        "lair-XS23": {
+          "territoryId": "lair-XS23",
+          "status": "captured"
+        },
+        "lair-XS27": {
+          "territoryId": "lair-XS27",
+          "status": "captured"
+        },
+        "workbench-S15": {
+          "territoryId": "workbench-S15",
+          "status": "priority"
+        },
+        "lair-XS28": {
+          "territoryId": "lair-XS28",
+          "status": "secondary"
+        },
+        "workbench-S03": {
+          "territoryId": "workbench-S03",
+          "status": "ignore"
+        },
+        "lair-XS18": {
+          "territoryId": "lair-XS18",
+          "status": "secondary"
+        },
+        "lair-XS24": {
+          "territoryId": "lair-XS24",
+          "status": "secondary"
+        }
+      },
+      "arrows": [],
+      "labels": [],
+      "markers": [],
+      "baseAssignments": {
+        "base-nw": "msx9lxds-bhz7uy",
+        "base-e": "msx9m3lc-oach5f",
+        "base-sw": "ust",
+        "base-se": "msx9lskx-d5n2ag",
+        "base-w": "enemy-abc",
+        "base-ssw": "enemy-xyz",
+        "base-sse": "msx88w31-g3btmq",
+        "base-ne": "msx9m9tz-jweznj"
+      },
+      "updatedAt": 1787082488917
+    }
+  ],
+  "alliances": [
+    {
+      "id": "ust",
+      "name": "Ваш союз",
+      "shortName": "UST",
+      "color": "#bbe133",
+      "isPlayerAlliance": true
+    },
+    {
+      "id": "enemy-abc",
+      "name": "FFP",
+      "shortName": "FFP",
+      "color": "#f038e1",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "enemy-xyz",
+      "name": "XXX",
+      "shortName": "XXX",
+      "color": "#e92525",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "msx88w31-g3btmq",
+      "name": "GOD",
+      "shortName": "GOD",
+      "color": "#f42578",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "msx9lskx-d5n2ag",
+      "name": "KFC",
+      "shortName": "KFC",
+      "color": "#9f7f84",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "msx9lxds-bhz7uy",
+      "name": "FOS",
+      "shortName": "FOS",
+      "color": "#1423f0",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "msx9m3lc-oach5f",
+      "name": "LUX",
+      "shortName": "LUX",
+      "color": "#53f366",
+      "isPlayerAlliance": false
+    },
+    {
+      "id": "msx9m9tz-jweznj",
+      "name": "KGB",
+      "shortName": "KGB",
+      "color": "#30693a",
+      "isPlayerAlliance": false
+    }
+  ],
+  "settings": {
+    "showNames": true,
+    "showValues": false,
+    "showEnemies": true,
+    "showNeutral": true,
+    "showArrows": true,
+    "showConnections": true,
+    "showLabels": true,
+    "showMarkers": true,
+    "showLegend": true,
+    "showStrategic": false,
+    "viewBox": {
+      "x": -120.41682106293035,
+      "y": -32.04391230425779,
+      "width": 1273.2833994979062,
+      "height": 1482.78530069325
+    }
+  },
+  "exportedAt": "2026-08-18T19:49:53.029Z",
+  "mapId": "gene-clash-oil-clash-season-5"
+}

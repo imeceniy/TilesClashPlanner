@@ -1,0 +1,11 @@
+{
+  "colors": {
+    "#edc878": {"key":"north", "type":"land", "active":true, "decorative":false, "rewards":[]},
+    "#79badd": {"key":"south", "type":"land", "active":true, "decorative":false, "rewards":[]},
+    "#454545": {"key":"frame", "type":"decoration", "active":false, "decorative":true, "rewards":[]}
+  },
+  "background": ["#ffffff"],
+  "minimumAreaPixels": 4,
+  "idMatchThreshold": 0.85,
+  "idAmbiguityMargin": 0.05
+}

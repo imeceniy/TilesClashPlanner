@@ -1,0 +1,18 @@
+{
+  "id": "new-event-2026-09",
+  "title": "Медь",
+  "status": "ready-for-integration",
+  "renderer": "polygon",
+  "schemaVersion": 1,
+  "dataFile": "./new-event-map.json",
+  "schemaFile": "./new-event-map.schema.json",
+  "coordinateSource": "./Схематично.jpg",
+  "preview": "./new-event-map-preview.png",
+  "features": {
+    "territories": true,
+    "adjacencyGraph": true,
+    "firstCapturePoints": true,
+    "copperPerHour": true,
+    "inactiveRegions": true
+  }
+}

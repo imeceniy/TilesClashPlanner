@@ -1,0 +1,18 @@
+[
+  {
+    "id": "gene-clash-oil-clash-season-5",
+    "name": "Gene Clash · Oil Clash",
+    "format": "classic",
+    "eventRules": "classic",
+    "dataUrl": "./data/gene-clash-map.json",
+    "configUrl": "./data/game-config.json"
+  },
+  {
+    "id": "new-event-2026-09",
+    "name": "Медь",
+    "format": "polygon",
+    "eventRules": "copper",
+    "dataUrl": "./data/new-event-map.json"
+  },
+  { "id": "winter-2026", "name": "Зимнее событие", "format": "native", "eventRules": "generic", "dataUrl": "./data/winter-map.json" }
+]

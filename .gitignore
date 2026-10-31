@@ -1,0 +1,8 @@
+node_modules/
+dist/
+server-data/
+*.log
+
+dist-server/
+__pycache__/
+*.py[cod]

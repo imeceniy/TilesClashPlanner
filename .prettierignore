@@ -1,0 +1,5 @@
+dist
+node_modules
+vendor
+data/gene-clash-map.json
+Map example

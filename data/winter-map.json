@@ -1,0 +1,7180 @@
+{
+  "id": "winter-2026",
+  "name": "Зимнее событие",
+  "renderer": "konva",
+  "variant": "polygon",
+  "eventRules": "generic",
+  "backgroundColor": "#f8f8fb",
+  "connectionColor": "#53616a",
+  "width": 1280,
+  "height": 1280,
+  "territories": [
+    {
+      "id": "winter-b1-001",
+      "name": "Б1.1",
+      "type": "bastion",
+      "size": "L1",
+      "x": 628.0,
+      "y": 63.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-001",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-002",
+      "name": "Б1.2",
+      "type": "bastion",
+      "size": "L1",
+      "x": 531.5,
+      "y": 159.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.5,
+          -41.5
+        ],
+        [
+          -41.5,
+          0.5
+        ],
+        [
+          -0.5,
+          41.5
+        ],
+        [
+          41.5,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-002",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-003",
+      "name": "Б1.3",
+      "type": "bastion",
+      "size": "L1",
+      "x": 725.25,
+      "y": 183.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.75,
+          -66.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          44.75,
+          -23.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-003",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-004",
+      "name": "Б1.4",
+      "type": "bastion",
+      "size": "L1",
+      "x": 436.49,
+      "y": 254.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.51,
+          -41.5
+        ],
+        [
+          -41.49,
+          0.5
+        ],
+        [
+          -1.49,
+          41.5
+        ],
+        [
+          41.51,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-004",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-005",
+      "name": "Б1.5",
+      "type": "bastion",
+      "size": "L1",
+      "x": 819.99,
+      "y": 255.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -44.5
+        ],
+        [
+          -43.99,
+          0.5
+        ],
+        [
+          -0.99,
+          43.5
+        ],
+        [
+          44.01,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-005",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-006",
+      "name": "Б1.6",
+      "type": "bastion",
+      "size": "L1",
+      "x": 913.75,
+      "y": 326.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.5
+        ],
+        [
+          -44.75,
+          22.5
+        ],
+        [
+          -0.75,
+          66.5
+        ],
+        [
+          44.25,
+          22.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-006",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-007",
+      "name": "Б1.7",
+      "type": "bastion",
+      "size": "L1",
+      "x": 340.96,
+      "y": 350.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          4.04,
+          -45.0
+        ],
+        [
+          -44.96,
+          4.0
+        ],
+        [
+          -4.96,
+          45.0
+        ],
+        [
+          45.04,
+          -4.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-007",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-008",
+      "name": "Б1.8",
+      "type": "bastion",
+      "size": "L1",
+      "x": 1011.0,
+      "y": 446.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-008",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-009",
+      "name": "Б1.9",
+      "type": "bastion",
+      "size": "L1",
+      "x": 244.0,
+      "y": 447.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-009",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-010",
+      "name": "Б1.10",
+      "type": "bastion",
+      "size": "L1",
+      "x": 148.0,
+      "y": 543.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -42.0
+        ],
+        [
+          -42.0,
+          1.0
+        ],
+        [
+          -2.0,
+          42.0
+        ],
+        [
+          42.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-010",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-011",
+      "name": "Б1.11",
+      "type": "bastion",
+      "size": "L1",
+      "x": 1106.5,
+      "y": 564.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -66.0
+        ],
+        [
+          -43.5,
+          -22.0
+        ],
+        [
+          -0.5,
+          22.0
+        ],
+        [
+          44.5,
+          -22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-011",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-012",
+      "name": "Б1.12",
+      "type": "bastion",
+      "size": "L1",
+      "x": 1209.5,
+      "y": 644.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -3.5,
+          -48.5
+        ],
+        [
+          -48.5,
+          -3.5
+        ],
+        [
+          4.5,
+          49.5
+        ],
+        [
+          50.5,
+          3.5
+        ],
+        [
+          48.5,
+          3.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-012",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-013",
+      "name": "Б1.13",
+      "type": "bastion",
+      "size": "L1",
+      "x": 53.0,
+      "y": 658.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-013",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-014",
+      "name": "Б1.14",
+      "type": "bastion",
+      "size": "L1",
+      "x": 151.0,
+      "y": 735.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -42.5
+        ],
+        [
+          -42.0,
+          -0.5
+        ],
+        [
+          1.0,
+          42.5
+        ],
+        [
+          42.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-014",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-015",
+      "name": "Б1.15",
+      "type": "bastion",
+      "size": "L1",
+      "x": 1113.5,
+      "y": 741.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.5,
+          -47.5
+        ],
+        [
+          -47.5,
+          -5.5
+        ],
+        [
+          5.5,
+          47.5
+        ],
+        [
+          47.5,
+          5.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-015",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-016",
+      "name": "Б1.16",
+      "type": "bastion",
+      "size": "L1",
+      "x": 245.5,
+      "y": 830.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.5,
+          -42.0
+        ],
+        [
+          -42.5,
+          -1.0
+        ],
+        [
+          1.5,
+          42.0
+        ],
+        [
+          42.5,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-016",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-017",
+      "name": "Б1.17",
+      "type": "bastion",
+      "size": "L1",
+      "x": 1018.55,
+      "y": 837.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.55,
+          -48.0
+        ],
+        [
+          -47.55,
+          -5.0
+        ],
+        [
+          5.45,
+          47.0
+        ],
+        [
+          47.45,
+          5.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-017",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-018",
+      "name": "Б1.18",
+      "type": "bastion",
+      "size": "L1",
+      "x": 339.0,
+      "y": 923.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.0,
+          -42.5
+        ],
+        [
+          -43.0,
+          -1.5
+        ],
+        [
+          2.0,
+          42.5
+        ],
+        [
+          43.0,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-018",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-019",
+      "name": "Б1.19",
+      "type": "bastion",
+      "size": "L1",
+      "x": 923.01,
+      "y": 932.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.01,
+          -51.5
+        ],
+        [
+          -51.01,
+          -1.5
+        ],
+        [
+          1.99,
+          50.5
+        ],
+        [
+          50.99,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-019",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-020",
+      "name": "Б1.20",
+      "type": "bastion",
+      "size": "L1",
+      "x": 826.0,
+      "y": 1029.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -4.0,
+          -49.0
+        ],
+        [
+          -49.0,
+          -4.0
+        ],
+        [
+          4.0,
+          49.0
+        ],
+        [
+          49.0,
+          4.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-020",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-021",
+      "name": "Б1.21",
+      "type": "bastion",
+      "size": "L1",
+      "x": 436.0,
+      "y": 1041.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-021",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-022",
+      "name": "Б1.22",
+      "type": "bastion",
+      "size": "L1",
+      "x": 532.51,
+      "y": 1117.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.51,
+          -43.0
+        ],
+        [
+          -42.51,
+          -1.0
+        ],
+        [
+          1.49,
+          42.0
+        ],
+        [
+          42.49,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-022",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-023",
+      "name": "Б1.23",
+      "type": "bastion",
+      "size": "L1",
+      "x": 730.0,
+      "y": 1125.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.0,
+          -48.0
+        ],
+        [
+          -48.0,
+          -4.0
+        ],
+        [
+          5.0,
+          48.0
+        ],
+        [
+          48.0,
+          4.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-023",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b1-024",
+      "name": "Б1.24",
+      "type": "bastion",
+      "size": "L1",
+      "x": 634.95,
+      "y": 1219.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.95,
+          -46.5
+        ],
+        [
+          -46.95,
+          -5.5
+        ],
+        [
+          6.05,
+          47.5
+        ],
+        [
+          47.05,
+          5.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b1-024",
+      "winterType": "bastion",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-b2-001",
+      "name": "Б2.1",
+      "type": "bastion",
+      "size": "L2",
+      "x": 627.01,
+      "y": 160.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -46.0
+        ],
+        [
+          -46.01,
+          -1.0
+        ],
+        [
+          1.99,
+          46.0
+        ],
+        [
+          45.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-001",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-002",
+      "name": "Б2.2",
+      "type": "bastion",
+      "size": "L2",
+      "x": 532.01,
+      "y": 255.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -46.0
+        ],
+        [
+          -46.01,
+          -1.0
+        ],
+        [
+          1.99,
+          46.0
+        ],
+        [
+          45.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-002",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-003",
+      "name": "Б2.3",
+      "type": "bastion",
+      "size": "L2",
+      "x": 724.0,
+      "y": 257.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -44.0
+        ],
+        [
+          -44.0,
+          1.0
+        ],
+        [
+          -1.0,
+          44.0
+        ],
+        [
+          44.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-003",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-004",
+      "name": "Б2.4",
+      "type": "bastion",
+      "size": "L2",
+      "x": 438.5,
+      "y": 349.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -3.5,
+          -44.0
+        ],
+        [
+          -44.5,
+          -3.0
+        ],
+        [
+          3.5,
+          44.0
+        ],
+        [
+          44.5,
+          3.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-004",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-005",
+      "name": "Б2.5",
+      "type": "bastion",
+      "size": "L2",
+      "x": 818.02,
+      "y": 350.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.98,
+          -42.5
+        ],
+        [
+          -43.02,
+          1.5
+        ],
+        [
+          -2.02,
+          43.5
+        ],
+        [
+          42.98,
+          -1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-005",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-006",
+      "name": "Б2.6",
+      "type": "bastion",
+      "size": "L2",
+      "x": 914.49,
+      "y": 447.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-006",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-007",
+      "name": "Б2.7",
+      "type": "bastion",
+      "size": "L2",
+      "x": 339.5,
+      "y": 448.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -3.5,
+          -44.0
+        ],
+        [
+          -44.5,
+          -3.0
+        ],
+        [
+          3.5,
+          44.0
+        ],
+        [
+          44.5,
+          3.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-007",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-008",
+      "name": "Б2.8",
+      "type": "bastion",
+      "size": "L2",
+      "x": 244.0,
+      "y": 543.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.0,
+          -45.5
+        ],
+        [
+          -45.0,
+          -1.5
+        ],
+        [
+          2.0,
+          45.5
+        ],
+        [
+          45.0,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-008",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-009",
+      "name": "Б2.9",
+      "type": "bastion",
+      "size": "L2",
+      "x": 1009.5,
+      "y": 564.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.5,
+          -67.5
+        ],
+        [
+          -45.5,
+          -22.5
+        ],
+        [
+          0.5,
+          22.5
+        ],
+        [
+          44.5,
+          -22.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-009",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-010",
+      "name": "Б2.10",
+      "type": "bastion",
+      "size": "L2",
+      "x": 148.48,
+      "y": 639.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.48,
+          -45.5
+        ],
+        [
+          -45.48,
+          -1.5
+        ],
+        [
+          1.52,
+          45.5
+        ],
+        [
+          45.52,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-010",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-011",
+      "name": "Б2.11",
+      "type": "bastion",
+      "size": "L2",
+      "x": 1107.49,
+      "y": 640.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-011",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-012",
+      "name": "Б2.12",
+      "type": "bastion",
+      "size": "L2",
+      "x": 1012.49,
+      "y": 735.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-012",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-013",
+      "name": "Б2.13",
+      "type": "bastion",
+      "size": "L2",
+      "x": 244.5,
+      "y": 757.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -64.5
+        ],
+        [
+          -42.5,
+          -21.5
+        ],
+        [
+          -0.5,
+          21.5
+        ],
+        [
+          43.5,
+          -21.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-013",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-014",
+      "name": "Б2.14",
+      "type": "bastion",
+      "size": "L2",
+      "x": 918.5,
+      "y": 829.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-014",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-015",
+      "name": "Б2.15",
+      "type": "bastion",
+      "size": "L2",
+      "x": 338.49,
+      "y": 830.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.51,
+          -43.0
+        ],
+        [
+          -42.49,
+          1.0
+        ],
+        [
+          -1.49,
+          42.0
+        ],
+        [
+          42.51,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-015",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-016",
+      "name": "Б2.16",
+      "type": "bastion",
+      "size": "L2",
+      "x": 435.01,
+      "y": 926.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -45.0
+        ],
+        [
+          -45.01,
+          -1.0
+        ],
+        [
+          1.99,
+          45.0
+        ],
+        [
+          44.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-016",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-017",
+      "name": "Б2.17",
+      "type": "bastion",
+      "size": "L2",
+      "x": 819.5,
+      "y": 928.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-017",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-018",
+      "name": "Б2.18",
+      "type": "bastion",
+      "size": "L2",
+      "x": 530.49,
+      "y": 1021.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -44.5
+        ],
+        [
+          -44.49,
+          -0.5
+        ],
+        [
+          0.51,
+          44.5
+        ],
+        [
+          44.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-018",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-019",
+      "name": "Б2.19",
+      "type": "bastion",
+      "size": "L2",
+      "x": 724.0,
+      "y": 1023.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.0,
+          -44.5
+        ],
+        [
+          -45.0,
+          -1.5
+        ],
+        [
+          2.0,
+          44.5
+        ],
+        [
+          45.0,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-019",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b2-020",
+      "name": "Б2.20",
+      "type": "bastion",
+      "size": "L2",
+      "x": 628.01,
+      "y": 1119.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -45.0
+        ],
+        [
+          -45.01,
+          -1.0
+        ],
+        [
+          1.99,
+          45.0
+        ],
+        [
+          44.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b2-020",
+      "winterType": "bastion",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-b3-001",
+      "name": "Б3.1",
+      "type": "bastion",
+      "size": "L3",
+      "x": 629.49,
+      "y": 257.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -42.5
+        ],
+        [
+          -42.49,
+          -0.5
+        ],
+        [
+          0.51,
+          42.5
+        ],
+        [
+          42.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-001",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-002",
+      "name": "Б3.2",
+      "type": "bastion",
+      "size": "L3",
+      "x": 723.51,
+      "y": 351.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.51,
+          -42.5
+        ],
+        [
+          -42.51,
+          -0.5
+        ],
+        [
+          1.49,
+          42.5
+        ],
+        [
+          42.49,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-002",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-003",
+      "name": "Б3.3",
+      "type": "bastion",
+      "size": "L3",
+      "x": 534.0,
+      "y": 352.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -42.5
+        ],
+        [
+          -43.0,
+          -0.5
+        ],
+        [
+          1.0,
+          42.5
+        ],
+        [
+          43.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-003",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-004",
+      "name": "Б3.4",
+      "type": "bastion",
+      "size": "L3",
+      "x": 817.01,
+      "y": 445.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -43.0
+        ],
+        [
+          -43.01,
+          -1.0
+        ],
+        [
+          1.99,
+          43.0
+        ],
+        [
+          42.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-004",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-005",
+      "name": "Б3.5",
+      "type": "bastion",
+      "size": "L3",
+      "x": 438.5,
+      "y": 448.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          3.5,
+          -46.0
+        ],
+        [
+          -46.5,
+          3.0
+        ],
+        [
+          -3.5,
+          46.0
+        ],
+        [
+          46.5,
+          -3.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-005",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-006",
+      "name": "Б3.6",
+      "type": "bastion",
+      "size": "L3",
+      "x": 914.5,
+      "y": 542.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.5,
+          -41.5
+        ],
+        [
+          -41.5,
+          0.5
+        ],
+        [
+          -0.5,
+          41.5
+        ],
+        [
+          41.5,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-006",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-007",
+      "name": "Б3.7",
+      "type": "bastion",
+      "size": "L3",
+      "x": 341.25,
+      "y": 567.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.75,
+          -66.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          44.75,
+          -23.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-007",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-008",
+      "name": "Б3.8",
+      "type": "bastion",
+      "size": "L3",
+      "x": 245.75,
+      "y": 619.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.0
+        ],
+        [
+          -43.75,
+          22.0
+        ],
+        [
+          -0.75,
+          65.0
+        ],
+        [
+          43.25,
+          22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-008",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-009",
+      "name": "Б3.9",
+      "type": "bastion",
+      "size": "L3",
+      "x": 1010.5,
+      "y": 638.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.5,
+          -42.5
+        ],
+        [
+          -42.5,
+          -0.5
+        ],
+        [
+          1.5,
+          42.5
+        ],
+        [
+          42.5,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-009",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-010",
+      "name": "Б3.10",
+      "type": "bastion",
+      "size": "L3",
+      "x": 915.75,
+      "y": 755.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.75,
+          -64.5
+        ],
+        [
+          -43.75,
+          -22.5
+        ],
+        [
+          0.25,
+          21.5
+        ],
+        [
+          42.25,
+          -21.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-010",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-011",
+      "name": "Б3.11",
+      "type": "bastion",
+      "size": "L3",
+      "x": 340.25,
+      "y": 757.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.75,
+          -65.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          43.75,
+          -22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-011",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-012",
+      "name": "Б3.12",
+      "type": "bastion",
+      "size": "L3",
+      "x": 819.53,
+      "y": 829.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          3.47,
+          -46.5
+        ],
+        [
+          -46.53,
+          2.5
+        ],
+        [
+          -2.53,
+          46.5
+        ],
+        [
+          46.47,
+          -2.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-012",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-013",
+      "name": "Б3.13",
+      "type": "bastion",
+      "size": "L3",
+      "x": 434.0,
+      "y": 851.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -66.0
+        ],
+        [
+          -44.0,
+          -22.0
+        ],
+        [
+          0.0,
+          22.0
+        ],
+        [
+          44.0,
+          -22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-013",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-014",
+      "name": "Б3.14",
+      "type": "bastion",
+      "size": "L3",
+      "x": 531.0,
+      "y": 926.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -42.0
+        ],
+        [
+          -42.0,
+          1.0
+        ],
+        [
+          -2.0,
+          42.0
+        ],
+        [
+          42.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-014",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-015",
+      "name": "Б3.15",
+      "type": "bastion",
+      "size": "L3",
+      "x": 722.5,
+      "y": 948.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -66.0
+        ],
+        [
+          -43.5,
+          -22.0
+        ],
+        [
+          -0.5,
+          22.0
+        ],
+        [
+          44.5,
+          -22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-015",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b3-016",
+      "name": "Б3.16",
+      "type": "bastion",
+      "size": "L3",
+      "x": 627.0,
+      "y": 1044.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.0,
+          -66.0
+        ],
+        [
+          -44.0,
+          -22.0
+        ],
+        [
+          0.0,
+          22.0
+        ],
+        [
+          44.0,
+          -22.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b3-016",
+      "winterType": "bastion",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-b4-001",
+      "name": "Б4.1",
+      "type": "bastion",
+      "size": "L4",
+      "x": 629.0,
+      "y": 352.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -44.0
+        ],
+        [
+          -44.0,
+          1.0
+        ],
+        [
+          -1.0,
+          44.0
+        ],
+        [
+          44.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-001",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-002",
+      "name": "Б4.2",
+      "type": "bastion",
+      "size": "L4",
+      "x": 723.02,
+      "y": 445.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.98,
+          -42.5
+        ],
+        [
+          -43.02,
+          1.5
+        ],
+        [
+          -2.02,
+          43.5
+        ],
+        [
+          42.98,
+          -1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-002",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-003",
+      "name": "Б4.3",
+      "type": "bastion",
+      "size": "L4",
+      "x": 535.75,
+      "y": 467.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.75,
+          -63.0
+        ],
+        [
+          -42.75,
+          -22.0
+        ],
+        [
+          0.25,
+          21.0
+        ],
+        [
+          41.25,
+          -21.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-003",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-004",
+      "name": "Б4.4",
+      "type": "bastion",
+      "size": "L4",
+      "x": 819.49,
+      "y": 542.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-004",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-005",
+      "name": "Б4.5",
+      "type": "bastion",
+      "size": "L4",
+      "x": 436.75,
+      "y": 566.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.75,
+          -63.0
+        ],
+        [
+          -42.75,
+          -22.0
+        ],
+        [
+          0.25,
+          21.0
+        ],
+        [
+          41.25,
+          -21.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-005",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-006",
+      "name": "Б4.6",
+      "type": "bastion",
+      "size": "L4",
+      "x": 914.5,
+      "y": 659.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.5,
+          -67.5
+        ],
+        [
+          -45.5,
+          -22.5
+        ],
+        [
+          0.5,
+          22.5
+        ],
+        [
+          44.5,
+          -22.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-006",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-007",
+      "name": "Б4.7",
+      "type": "bastion",
+      "size": "L4",
+      "x": 340.5,
+      "y": 661.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.5,
+          -64.5
+        ],
+        [
+          -42.5,
+          -21.5
+        ],
+        [
+          -0.5,
+          21.5
+        ],
+        [
+          43.5,
+          -21.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-007",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-008",
+      "name": "Б4.8",
+      "type": "bastion",
+      "size": "L4",
+      "x": 820.5,
+      "y": 731.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -43.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          43.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-008",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-009",
+      "name": "Б4.9",
+      "type": "bastion",
+      "size": "L4",
+      "x": 434.5,
+      "y": 734.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -42.0
+        ],
+        [
+          -42.5,
+          1.0
+        ],
+        [
+          -1.5,
+          42.0
+        ],
+        [
+          42.5,
+          -1.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-009",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-010",
+      "name": "Б4.10",
+      "type": "bastion",
+      "size": "L4",
+      "x": 721.5,
+      "y": 830.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -43.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          43.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-010",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-011",
+      "name": "Б4.11",
+      "type": "bastion",
+      "size": "L4",
+      "x": 531.0,
+      "y": 830.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.0,
+          -44.5
+        ],
+        [
+          -45.0,
+          -1.5
+        ],
+        [
+          2.0,
+          44.5
+        ],
+        [
+          45.0,
+          1.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-011",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b4-012",
+      "name": "Б4.12",
+      "type": "bastion",
+      "size": "L4",
+      "x": 626.0,
+      "y": 925.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -44.5
+        ],
+        [
+          -44.0,
+          -0.5
+        ],
+        [
+          1.0,
+          44.5
+        ],
+        [
+          44.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b4-012",
+      "winterType": "bastion",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-b5-001",
+      "name": "Б5.1",
+      "type": "bastion",
+      "size": "L5",
+      "x": 628.75,
+      "y": 468.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.75,
+          -64.5
+        ],
+        [
+          -42.75,
+          -21.5
+        ],
+        [
+          0.25,
+          21.5
+        ],
+        [
+          42.25,
+          -21.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-001",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-002",
+      "name": "Б5.2",
+      "type": "bastion",
+      "size": "L5",
+      "x": 722.0,
+      "y": 540.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -43.5
+        ],
+        [
+          -43.0,
+          -0.5
+        ],
+        [
+          1.0,
+          43.5
+        ],
+        [
+          43.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-002",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-003",
+      "name": "Б5.3",
+      "type": "bastion",
+      "size": "L5",
+      "x": 533.0,
+      "y": 542.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          3.0,
+          -46.5
+        ],
+        [
+          -46.0,
+          2.5
+        ],
+        [
+          -3.0,
+          46.5
+        ],
+        [
+          46.0,
+          -2.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-003",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-004",
+      "name": "Б5.4",
+      "type": "bastion",
+      "size": "L5",
+      "x": 819.49,
+      "y": 637.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.51,
+          -41.5
+        ],
+        [
+          -41.49,
+          0.5
+        ],
+        [
+          -1.49,
+          41.5
+        ],
+        [
+          41.51,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-004",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-005",
+      "name": "Б5.5",
+      "type": "bastion",
+      "size": "L5",
+      "x": 435.99,
+      "y": 639.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -44.5
+        ],
+        [
+          -43.99,
+          0.5
+        ],
+        [
+          -0.99,
+          43.5
+        ],
+        [
+          44.01,
+          -0.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-005",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-006",
+      "name": "Б5.6",
+      "type": "bastion",
+      "size": "L5",
+      "x": 529.75,
+      "y": 710.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.5
+        ],
+        [
+          -44.75,
+          22.5
+        ],
+        [
+          -0.75,
+          66.5
+        ],
+        [
+          44.25,
+          22.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-006",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-007",
+      "name": "Б5.7",
+      "type": "bastion",
+      "size": "L5",
+      "x": 723.96,
+      "y": 733.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          4.04,
+          -45.0
+        ],
+        [
+          -44.96,
+          4.0
+        ],
+        [
+          -4.96,
+          45.0
+        ],
+        [
+          45.04,
+          -4.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-007",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b5-008",
+      "name": "Б5.8",
+      "type": "bastion",
+      "size": "L5",
+      "x": 627.0,
+      "y": 830.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b5-008",
+      "winterType": "bastion",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-b6-001",
+      "name": "Б6.1",
+      "type": "bastion",
+      "size": "L6",
+      "x": 628.76,
+      "y": 518.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.24,
+          -20.5
+        ],
+        [
+          -40.76,
+          20.5
+        ],
+        [
+          -14.76,
+          47.5
+        ],
+        [
+          6.24,
+          27.5
+        ],
+        [
+          9.24,
+          28.5
+        ],
+        [
+          22.24,
+          40.5
+        ],
+        [
+          41.24,
+          21.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b6-001",
+      "winterType": "bastion",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-b6-002",
+      "name": "Б6.2",
+      "type": "bastion",
+      "size": "L6",
+      "x": 735.75,
+      "y": 625.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -12.75,
+          -33.0
+        ],
+        [
+          -32.75,
+          -13.0
+        ],
+        [
+          -7.75,
+          13.0
+        ],
+        [
+          -8.75,
+          16.0
+        ],
+        [
+          -27.75,
+          35.0
+        ],
+        [
+          -7.75,
+          55.0
+        ],
+        [
+          33.25,
+          13.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b6-002",
+      "winterType": "bastion",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-b6-003",
+      "name": "Б6.3",
+      "type": "bastion",
+      "size": "L6",
+      "x": 516.33,
+      "y": 638.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          13.67,
+          -41.5
+        ],
+        [
+          -27.33,
+          -0.5
+        ],
+        [
+          13.67,
+          41.5
+        ],
+        [
+          39.67,
+          15.5
+        ],
+        [
+          26.67,
+          0.5
+        ],
+        [
+          27.67,
+          -2.5
+        ],
+        [
+          39.67,
+          -15.5
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b6-003",
+      "winterType": "bastion",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-b6-004",
+      "name": "Б6.4",
+      "type": "bastion",
+      "size": "L6",
+      "x": 628.75,
+      "y": 758.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -19.75,
+          -52.0
+        ],
+        [
+          -45.75,
+          -25.0
+        ],
+        [
+          0.25,
+          21.0
+        ],
+        [
+          41.25,
+          -21.0
+        ],
+        [
+          22.25,
+          -40.0
+        ],
+        [
+          9.25,
+          -28.0
+        ],
+        [
+          4.25,
+          -28.0
+        ]
+      ],
+      "baseColor": "#eef2ea",
+      "sourceId": "winter-b6-004",
+      "winterType": "bastion",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-pg1-001",
+      "name": "ПГ1.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 676.01,
+      "y": 111.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -46.0
+        ],
+        [
+          -46.01,
+          -1.0
+        ],
+        [
+          1.99,
+          46.0
+        ],
+        [
+          45.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-001",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-002",
+      "name": "ПГ1.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 579.0,
+      "y": 112.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-002",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-003",
+      "name": "ПГ1.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 484.0,
+      "y": 207.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-003",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-004",
+      "name": "ПГ1.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 773.0,
+      "y": 208.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -44.0
+        ],
+        [
+          -44.0,
+          1.0
+        ],
+        [
+          -1.0,
+          44.0
+        ],
+        [
+          44.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-004",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-005",
+      "name": "ПГ1.5",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 867.02,
+      "y": 301.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.98,
+          -42.5
+        ],
+        [
+          -43.02,
+          1.5
+        ],
+        [
+          -2.02,
+          43.5
+        ],
+        [
+          42.98,
+          -1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-005",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-006",
+      "name": "ПГ1.6",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 390.0,
+      "y": 321.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-006",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-007",
+      "name": "ПГ1.7",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 963.49,
+      "y": 398.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-007",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-008",
+      "name": "ПГ1.8",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 291.0,
+      "y": 420.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-008",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-009",
+      "name": "ПГ1.9",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 195.99,
+      "y": 495.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -42.0
+        ],
+        [
+          -41.99,
+          1.0
+        ],
+        [
+          -1.99,
+          42.0
+        ],
+        [
+          42.01,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-009",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-010",
+      "name": "ПГ1.10",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1058.5,
+      "y": 515.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.5,
+          -67.5
+        ],
+        [
+          -45.5,
+          -22.5
+        ],
+        [
+          0.5,
+          22.5
+        ],
+        [
+          44.5,
+          -22.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-010",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-011",
+      "name": "ПГ1.11",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 100.0,
+      "y": 591.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -42.0
+        ],
+        [
+          -42.0,
+          1.0
+        ],
+        [
+          -2.0,
+          42.0
+        ],
+        [
+          42.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-011",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-012",
+      "name": "ПГ1.12",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1156.49,
+      "y": 591.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-012",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-013",
+      "name": "ПГ1.13",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 101.5,
+      "y": 686.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -3.5,
+          -44.0
+        ],
+        [
+          -44.5,
+          -3.0
+        ],
+        [
+          3.5,
+          44.0
+        ],
+        [
+          44.5,
+          3.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-013",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-014",
+      "name": "ПГ1.14",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1161.0,
+      "y": 694.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -4.0,
+          -49.0
+        ],
+        [
+          -49.0,
+          -4.0
+        ],
+        [
+          4.0,
+          49.0
+        ],
+        [
+          49.0,
+          4.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-014",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-015",
+      "name": "ПГ1.15",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1066.0,
+      "y": 789.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -4.0,
+          -49.0
+        ],
+        [
+          -49.0,
+          -4.0
+        ],
+        [
+          4.0,
+          49.0
+        ],
+        [
+          49.0,
+          4.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-015",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-016",
+      "name": "ПГ1.16",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 198.75,
+      "y": 804.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.75,
+          -63.0
+        ],
+        [
+          -42.75,
+          -22.0
+        ],
+        [
+          0.25,
+          21.0
+        ],
+        [
+          41.25,
+          -21.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-016",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-017",
+      "name": "ПГ1.17",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 292.0,
+      "y": 876.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.0,
+          -41.5
+        ],
+        [
+          -41.0,
+          -0.5
+        ],
+        [
+          0.0,
+          41.5
+        ],
+        [
+          41.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-017",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-018",
+      "name": "ПГ1.18",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 971.95,
+      "y": 882.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.95,
+          -46.5
+        ],
+        [
+          -46.95,
+          -5.5
+        ],
+        [
+          6.05,
+          47.5
+        ],
+        [
+          47.05,
+          5.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-018",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-019",
+      "name": "ПГ1.19",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 388.5,
+      "y": 973.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-019",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-020",
+      "name": "ПГ1.20",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 872.95,
+      "y": 981.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.95,
+          -46.5
+        ],
+        [
+          -46.95,
+          -5.5
+        ],
+        [
+          6.05,
+          47.5
+        ],
+        [
+          47.05,
+          5.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-020",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-021",
+      "name": "ПГ1.21",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 483.5,
+      "y": 1068.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -43.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          43.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-021",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-022",
+      "name": "ПГ1.22",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 778.04,
+      "y": 1077.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.04,
+          -48.5
+        ],
+        [
+          -48.04,
+          -4.5
+        ],
+        [
+          4.96,
+          47.5
+        ],
+        [
+          47.96,
+          4.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-022",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-023",
+      "name": "ПГ1.23",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 581.5,
+      "y": 1166.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -43.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          43.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-023",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg1-024",
+      "name": "ПГ1.24",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 682.0,
+      "y": 1173.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -5.0,
+          -48.0
+        ],
+        [
+          -48.0,
+          -4.0
+        ],
+        [
+          5.0,
+          48.0
+        ],
+        [
+          48.0,
+          4.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg1-024",
+      "winterType": "gasBase",
+      "winterLevel": 1
+    },
+    {
+      "id": "winter-pg2-001",
+      "name": "ПГ2.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 579.53,
+      "y": 207.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.53,
+          -44.5
+        ],
+        [
+          -44.53,
+          -2.5
+        ],
+        [
+          3.47,
+          44.5
+        ],
+        [
+          44.47,
+          2.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-001",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-002",
+      "name": "ПГ2.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 676.25,
+      "y": 232.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.75,
+          -66.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          44.75,
+          -23.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-002",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-003",
+      "name": "ПГ2.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 484.5,
+      "y": 303.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -45.0
+        ],
+        [
+          -44.5,
+          -2.0
+        ],
+        [
+          2.5,
+          45.0
+        ],
+        [
+          44.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-003",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-004",
+      "name": "ПГ2.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 770.99,
+      "y": 304.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -44.5
+        ],
+        [
+          -43.99,
+          0.5
+        ],
+        [
+          -0.99,
+          43.5
+        ],
+        [
+          44.01,
+          -0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-004",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-005",
+      "name": "ПГ2.5",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 864.75,
+      "y": 375.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.5
+        ],
+        [
+          -44.75,
+          22.5
+        ],
+        [
+          -0.75,
+          66.5
+        ],
+        [
+          44.25,
+          22.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-005",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-006",
+      "name": "ПГ2.6",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 389.0,
+      "y": 398.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -48.5
+        ],
+        [
+          -48.0,
+          0.5
+        ],
+        [
+          -1.0,
+          48.5
+        ],
+        [
+          48.0,
+          -0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-006",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-007",
+      "name": "ПГ2.7",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 292.01,
+      "y": 495.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -46.0
+        ],
+        [
+          -46.01,
+          -1.0
+        ],
+        [
+          1.99,
+          46.0
+        ],
+        [
+          45.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-007",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-008",
+      "name": "ПГ2.8",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 962.0,
+      "y": 495.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-008",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-009",
+      "name": "ПГ2.9",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 196.48,
+      "y": 591.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.48,
+          -45.5
+        ],
+        [
+          -45.48,
+          -1.5
+        ],
+        [
+          1.52,
+          45.5
+        ],
+        [
+          45.52,
+          1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-009",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-010",
+      "name": "ПГ2.10",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1057.5,
+      "y": 613.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -66.0
+        ],
+        [
+          -43.5,
+          -22.0
+        ],
+        [
+          -0.5,
+          22.0
+        ],
+        [
+          44.5,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-010",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-011",
+      "name": "ПГ2.11",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 197.75,
+      "y": 667.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.0
+        ],
+        [
+          -43.75,
+          22.0
+        ],
+        [
+          -0.75,
+          65.0
+        ],
+        [
+          43.25,
+          22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-011",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-012",
+      "name": "ПГ2.12",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 1059.98,
+      "y": 688.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.98,
+          -44.0
+        ],
+        [
+          -43.98,
+          -2.0
+        ],
+        [
+          2.02,
+          44.0
+        ],
+        [
+          44.02,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-012",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-013",
+      "name": "ПГ2.13",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 964.5,
+      "y": 783.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -44.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          44.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-013",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-014",
+      "name": "ПГ2.14",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 292.25,
+      "y": 805.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.75,
+          -65.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          43.75,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-014",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-015",
+      "name": "ПГ2.15",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 869.0,
+      "y": 878.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -47.5
+        ],
+        [
+          -48.0,
+          1.5
+        ],
+        [
+          -2.0,
+          47.5
+        ],
+        [
+          48.0,
+          -1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-015",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-016",
+      "name": "ПГ2.16",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 386.0,
+      "y": 899.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -66.0
+        ],
+        [
+          -44.0,
+          -22.0
+        ],
+        [
+          0.0,
+          22.0
+        ],
+        [
+          44.0,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-016",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-017",
+      "name": "ПГ2.17",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 483.0,
+      "y": 974.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -42.0
+        ],
+        [
+          -42.0,
+          1.0
+        ],
+        [
+          -2.0,
+          42.0
+        ],
+        [
+          42.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-017",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-018",
+      "name": "ПГ2.18",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 772.49,
+      "y": 975.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-018",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-019",
+      "name": "ПГ2.19",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 676.01,
+      "y": 1071.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -45.0
+        ],
+        [
+          -45.01,
+          -1.0
+        ],
+        [
+          1.99,
+          45.0
+        ],
+        [
+          44.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-019",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg2-020",
+      "name": "ПГ2.20",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 579.0,
+      "y": 1092.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.0,
+          -66.0
+        ],
+        [
+          -44.0,
+          -22.0
+        ],
+        [
+          0.0,
+          22.0
+        ],
+        [
+          44.0,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg2-020",
+      "winterType": "gasBase",
+      "winterLevel": 2
+    },
+    {
+      "id": "winter-pg3-001",
+      "name": "ПГ3.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 676.5,
+      "y": 304.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.5,
+          -42.5
+        ],
+        [
+          -42.5,
+          -0.5
+        ],
+        [
+          0.5,
+          42.5
+        ],
+        [
+          42.5,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-001",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-002",
+      "name": "ПГ3.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 581.25,
+      "y": 327.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.75,
+          -66.0
+        ],
+        [
+          -43.25,
+          -22.0
+        ],
+        [
+          -0.25,
+          22.0
+        ],
+        [
+          44.75,
+          -23.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-002",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-003",
+      "name": "ПГ3.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 488.0,
+      "y": 398.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -42.5
+        ],
+        [
+          -42.0,
+          -0.5
+        ],
+        [
+          1.0,
+          42.5
+        ],
+        [
+          42.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-003",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-004",
+      "name": "ПГ3.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 770.25,
+      "y": 419.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.75,
+          -62.0
+        ],
+        [
+          -41.25,
+          -21.0
+        ],
+        [
+          -0.25,
+          21.0
+        ],
+        [
+          41.75,
+          -21.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-004",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-005",
+      "name": "ПГ3.5",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 866.98,
+      "y": 495.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.98,
+          -44.0
+        ],
+        [
+          -43.98,
+          -2.0
+        ],
+        [
+          2.02,
+          44.0
+        ],
+        [
+          44.02,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-005",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-006",
+      "name": "ПГ3.6",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 389.0,
+      "y": 497.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.0,
+          -42.5
+        ],
+        [
+          -42.0,
+          -0.5
+        ],
+        [
+          1.0,
+          42.5
+        ],
+        [
+          42.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-006",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-007",
+      "name": "ПГ3.7",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 961.52,
+      "y": 589.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.52,
+          -43.5
+        ],
+        [
+          -43.52,
+          -1.5
+        ],
+        [
+          2.48,
+          43.5
+        ],
+        [
+          43.48,
+          1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-007",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-008",
+      "name": "ПГ3.8",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 293.75,
+      "y": 614.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.75,
+          -64.5
+        ],
+        [
+          -43.75,
+          -21.5
+        ],
+        [
+          0.25,
+          21.5
+        ],
+        [
+          43.25,
+          -21.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-008",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-009",
+      "name": "ПГ3.9",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 962.5,
+      "y": 708.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -66.0
+        ],
+        [
+          -43.5,
+          -22.0
+        ],
+        [
+          -0.5,
+          22.0
+        ],
+        [
+          44.5,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-009",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-010",
+      "name": "ПГ3.10",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 292.5,
+      "y": 709.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.5,
+          -64.5
+        ],
+        [
+          -42.5,
+          -21.5
+        ],
+        [
+          -0.5,
+          21.5
+        ],
+        [
+          43.5,
+          -21.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-010",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-011",
+      "name": "ПГ3.11",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 869.51,
+      "y": 780.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.51,
+          -43.0
+        ],
+        [
+          -42.51,
+          -1.0
+        ],
+        [
+          1.49,
+          42.0
+        ],
+        [
+          42.49,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-011",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-012",
+      "name": "ПГ3.12",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 386.49,
+      "y": 782.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.51,
+          -43.0
+        ],
+        [
+          -42.49,
+          1.0
+        ],
+        [
+          -1.49,
+          42.0
+        ],
+        [
+          42.51,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-012",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-013",
+      "name": "ПГ3.13",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 483.01,
+      "y": 878.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.01,
+          -45.0
+        ],
+        [
+          -45.01,
+          -1.0
+        ],
+        [
+          1.99,
+          45.0
+        ],
+        [
+          44.99,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-013",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-014",
+      "name": "ПГ3.14",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 770.51,
+      "y": 879.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.51,
+          -43.0
+        ],
+        [
+          -42.51,
+          -1.0
+        ],
+        [
+          1.49,
+          42.0
+        ],
+        [
+          42.49,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-014",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-015",
+      "name": "ПГ3.15",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 578.49,
+      "y": 973.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -44.5
+        ],
+        [
+          -44.49,
+          -0.5
+        ],
+        [
+          0.51,
+          44.5
+        ],
+        [
+          44.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-015",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg3-016",
+      "name": "ПГ3.16",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 674.75,
+      "y": 996.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.75,
+          -65.0
+        ],
+        [
+          -43.75,
+          -22.0
+        ],
+        [
+          0.25,
+          22.0
+        ],
+        [
+          43.25,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg3-016",
+      "winterType": "gasBase",
+      "winterLevel": 3
+    },
+    {
+      "id": "winter-pg4-001",
+      "name": "ПГ4.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 581.25,
+      "y": 378.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.25,
+          -21.5
+        ],
+        [
+          -42.25,
+          21.5
+        ],
+        [
+          0.75,
+          63.5
+        ],
+        [
+          42.75,
+          21.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-001",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-002",
+      "name": "ПГ4.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 675.99,
+      "y": 399.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -44.5
+        ],
+        [
+          -43.99,
+          0.5
+        ],
+        [
+          -0.99,
+          43.5
+        ],
+        [
+          44.01,
+          -0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-002",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-003",
+      "name": "ПГ4.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 769.75,
+      "y": 470.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.25,
+          -22.5
+        ],
+        [
+          -44.75,
+          22.5
+        ],
+        [
+          -0.75,
+          66.5
+        ],
+        [
+          44.25,
+          22.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-003",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-004",
+      "name": "ПГ4.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 485.97,
+      "y": 495.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          3.03,
+          -46.0
+        ],
+        [
+          -45.97,
+          3.0
+        ],
+        [
+          -3.97,
+          46.0
+        ],
+        [
+          46.03,
+          -3.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-004",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-005",
+      "name": "ПГ4.5",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 867.0,
+      "y": 590.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -43.0
+        ],
+        [
+          -43.0,
+          2.0
+        ],
+        [
+          -2.0,
+          43.0
+        ],
+        [
+          43.0,
+          -2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-005",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-006",
+      "name": "ПГ4.6",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 389.0,
+      "y": 592.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -44.0
+        ],
+        [
+          -44.0,
+          1.0
+        ],
+        [
+          -1.0,
+          44.0
+        ],
+        [
+          44.0,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-006",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-007",
+      "name": "ПГ4.7",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 866.5,
+      "y": 685.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.5,
+          -44.0
+        ],
+        [
+          -43.5,
+          -1.0
+        ],
+        [
+          1.5,
+          44.0
+        ],
+        [
+          43.5,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-007",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-008",
+      "name": "ПГ4.8",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 388.0,
+      "y": 687.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          0.0,
+          -43.5
+        ],
+        [
+          -43.0,
+          -0.5
+        ],
+        [
+          0.0,
+          43.5
+        ],
+        [
+          43.0,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-008",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-009",
+      "name": "ПГ4.9",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 771.0,
+      "y": 780.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          2.0,
+          -47.5
+        ],
+        [
+          -47.0,
+          1.5
+        ],
+        [
+          -2.0,
+          47.5
+        ],
+        [
+          47.0,
+          -1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-009",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-010",
+      "name": "ПГ4.10",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 481.75,
+      "y": 803.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.75,
+          -66.0
+        ],
+        [
+          -43.75,
+          -22.0
+        ],
+        [
+          0.25,
+          22.0
+        ],
+        [
+          43.25,
+          -22.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-010",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-011",
+      "name": "ПГ4.11",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 578.99,
+      "y": 878.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.01,
+          -42.0
+        ],
+        [
+          -41.99,
+          1.0
+        ],
+        [
+          -1.99,
+          42.0
+        ],
+        [
+          42.01,
+          -1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-011",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg4-012",
+      "name": "ПГ4.12",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 674.5,
+      "y": 899.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -0.5,
+          -67.5
+        ],
+        [
+          -45.5,
+          -22.5
+        ],
+        [
+          0.5,
+          22.5
+        ],
+        [
+          44.5,
+          -22.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg4-012",
+      "winterType": "gasBase",
+      "winterLevel": 4
+    },
+    {
+      "id": "winter-pg5-001",
+      "name": "ПГ5.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 582.5,
+      "y": 493.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.5,
+          -42.0
+        ],
+        [
+          -42.5,
+          -1.0
+        ],
+        [
+          1.5,
+          42.0
+        ],
+        [
+          42.5,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-001",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-002",
+      "name": "ПГ5.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 675.0,
+      "y": 493.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -41.5
+        ],
+        [
+          -42.0,
+          0.5
+        ],
+        [
+          -1.0,
+          41.5
+        ],
+        [
+          42.0,
+          -0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-002",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-003",
+      "name": "ПГ5.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 771.5,
+      "y": 590.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -2.5,
+          -44.0
+        ],
+        [
+          -44.5,
+          -2.0
+        ],
+        [
+          2.5,
+          44.0
+        ],
+        [
+          44.5,
+          2.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-003",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-004",
+      "name": "ПГ5.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 483.5,
+      "y": 592.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.5,
+          -42.0
+        ],
+        [
+          -42.5,
+          -1.0
+        ],
+        [
+          1.5,
+          42.0
+        ],
+        [
+          42.5,
+          1.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-004",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-005",
+      "name": "ПГ5.5",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 483.02,
+      "y": 685.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.98,
+          -42.5
+        ],
+        [
+          -43.02,
+          1.5
+        ],
+        [
+          -2.02,
+          43.5
+        ],
+        [
+          42.98,
+          -1.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-005",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-006",
+      "name": "ПГ5.6",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 773.0,
+      "y": 704.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-006",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-007",
+      "name": "ПГ5.7",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 579.49,
+      "y": 782.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -1.49,
+          -45.5
+        ],
+        [
+          -45.49,
+          -0.5
+        ],
+        [
+          0.51,
+          45.5
+        ],
+        [
+          45.51,
+          0.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-007",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg5-008",
+      "name": "ПГ5.8",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 674.0,
+      "y": 803.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          1.0,
+          -61.5
+        ],
+        [
+          -41.0,
+          -20.5
+        ],
+        [
+          0.0,
+          20.5
+        ],
+        [
+          41.0,
+          -20.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg5-008",
+      "winterType": "gasBase",
+      "winterLevel": 5
+    },
+    {
+      "id": "winter-pg6-001",
+      "name": "ПГ6.1",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 686.86,
+      "y": 576.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -12.86,
+          -32.0
+        ],
+        [
+          -31.86,
+          -12.0
+        ],
+        [
+          12.14,
+          32.0
+        ],
+        [
+          32.14,
+          12.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg6-001",
+      "winterType": "gasBase",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-pg6-002",
+      "name": "ПГ6.2",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 572.0,
+      "y": 581.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          12.0,
+          -37.5
+        ],
+        [
+          -38.0,
+          11.5
+        ],
+        [
+          -12.0,
+          37.5
+        ],
+        [
+          38.0,
+          -11.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg6-002",
+      "winterType": "gasBase",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-pg6-003",
+      "name": "ПГ6.3",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 569.5,
+      "y": 693.0,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          -9.5,
+          -35.0
+        ],
+        [
+          -35.5,
+          -9.0
+        ],
+        [
+          9.5,
+          35.0
+        ],
+        [
+          35.5,
+          9.0
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg6-003",
+      "winterType": "gasBase",
+      "winterLevel": 6
+    },
+    {
+      "id": "winter-pg6-004",
+      "name": "ПГ6.4",
+      "type": "tradingPost",
+      "size": "—",
+      "x": 689.35,
+      "y": 698.5,
+      "value": 0,
+      "copperPerHour": 0,
+      "defaultShape": "polygon",
+      "points": [
+        [
+          14.65,
+          -34.5
+        ],
+        [
+          -34.35,
+          14.5
+        ],
+        [
+          -15.35,
+          34.5
+        ],
+        [
+          34.65,
+          -14.5
+        ]
+      ],
+      "baseColor": "#d8e3ea",
+      "sourceId": "winter-pg6-004",
+      "winterType": "gasBase",
+      "winterLevel": 6
+    }
+  ],
+  "connections": [
+    {
+      "id": "winter-b1-001--winter-pg1-001",
+      "from": "winter-b1-001",
+      "to": "winter-pg1-001"
+    },
+    {
+      "id": "winter-b1-001--winter-pg1-002",
+      "from": "winter-b1-001",
+      "to": "winter-pg1-002"
+    },
+    {
+      "id": "winter-b1-002--winter-pg1-002",
+      "from": "winter-b1-002",
+      "to": "winter-pg1-002"
+    },
+    {
+      "id": "winter-b1-002--winter-pg1-003",
+      "from": "winter-b1-002",
+      "to": "winter-pg1-003"
+    },
+    {
+      "id": "winter-b1-002--winter-pg2-001",
+      "from": "winter-b1-002",
+      "to": "winter-pg2-001"
+    },
+    {
+      "id": "winter-b1-003--winter-pg1-001",
+      "from": "winter-b1-003",
+      "to": "winter-pg1-001"
+    },
+    {
+      "id": "winter-b1-003--winter-pg1-004",
+      "from": "winter-b1-003",
+      "to": "winter-pg1-004"
+    },
+    {
+      "id": "winter-b1-003--winter-pg2-002",
+      "from": "winter-b1-003",
+      "to": "winter-pg2-002"
+    },
+    {
+      "id": "winter-b1-004--winter-pg1-003",
+      "from": "winter-b1-004",
+      "to": "winter-pg1-003"
+    },
+    {
+      "id": "winter-b1-004--winter-pg1-006",
+      "from": "winter-b1-004",
+      "to": "winter-pg1-006"
+    },
+    {
+      "id": "winter-b1-004--winter-pg2-003",
+      "from": "winter-b1-004",
+      "to": "winter-pg2-003"
+    },
+    {
+      "id": "winter-b1-005--winter-pg1-004",
+      "from": "winter-b1-005",
+      "to": "winter-pg1-004"
+    },
+    {
+      "id": "winter-b1-005--winter-pg1-005",
+      "from": "winter-b1-005",
+      "to": "winter-pg1-005"
+    },
+    {
+      "id": "winter-b1-005--winter-pg2-004",
+      "from": "winter-b1-005",
+      "to": "winter-pg2-004"
+    },
+    {
+      "id": "winter-b1-006--winter-pg1-005",
+      "from": "winter-b1-006",
+      "to": "winter-pg1-005"
+    },
+    {
+      "id": "winter-b1-006--winter-pg1-007",
+      "from": "winter-b1-006",
+      "to": "winter-pg1-007"
+    },
+    {
+      "id": "winter-b1-006--winter-pg2-005",
+      "from": "winter-b1-006",
+      "to": "winter-pg2-005"
+    },
+    {
+      "id": "winter-b1-007--winter-pg1-006",
+      "from": "winter-b1-007",
+      "to": "winter-pg1-006"
+    },
+    {
+      "id": "winter-b1-007--winter-pg1-008",
+      "from": "winter-b1-007",
+      "to": "winter-pg1-008"
+    },
+    {
+      "id": "winter-b1-007--winter-pg2-006",
+      "from": "winter-b1-007",
+      "to": "winter-pg2-006"
+    },
+    {
+      "id": "winter-b1-008--winter-pg1-007",
+      "from": "winter-b1-008",
+      "to": "winter-pg1-007"
+    },
+    {
+      "id": "winter-b1-008--winter-pg1-010",
+      "from": "winter-b1-008",
+      "to": "winter-pg1-010"
+    },
+    {
+      "id": "winter-b1-008--winter-pg2-008",
+      "from": "winter-b1-008",
+      "to": "winter-pg2-008"
+    },
+    {
+      "id": "winter-b1-009--winter-pg1-008",
+      "from": "winter-b1-009",
+      "to": "winter-pg1-008"
+    },
+    {
+      "id": "winter-b1-009--winter-pg1-009",
+      "from": "winter-b1-009",
+      "to": "winter-pg1-009"
+    },
+    {
+      "id": "winter-b1-009--winter-pg2-007",
+      "from": "winter-b1-009",
+      "to": "winter-pg2-007"
+    },
+    {
+      "id": "winter-b1-010--winter-pg1-009",
+      "from": "winter-b1-010",
+      "to": "winter-pg1-009"
+    },
+    {
+      "id": "winter-b1-010--winter-pg1-011",
+      "from": "winter-b1-010",
+      "to": "winter-pg1-011"
+    },
+    {
+      "id": "winter-b1-010--winter-pg2-009",
+      "from": "winter-b1-010",
+      "to": "winter-pg2-009"
+    },
+    {
+      "id": "winter-b1-011--winter-pg1-010",
+      "from": "winter-b1-011",
+      "to": "winter-pg1-010"
+    },
+    {
+      "id": "winter-b1-011--winter-pg1-012",
+      "from": "winter-b1-011",
+      "to": "winter-pg1-012"
+    },
+    {
+      "id": "winter-b1-011--winter-pg2-010",
+      "from": "winter-b1-011",
+      "to": "winter-pg2-010"
+    },
+    {
+      "id": "winter-b1-012--winter-pg1-012",
+      "from": "winter-b1-012",
+      "to": "winter-pg1-012"
+    },
+    {
+      "id": "winter-b1-012--winter-pg1-014",
+      "from": "winter-b1-012",
+      "to": "winter-pg1-014"
+    },
+    {
+      "id": "winter-b1-013--winter-pg1-011",
+      "from": "winter-b1-013",
+      "to": "winter-pg1-011"
+    },
+    {
+      "id": "winter-b1-013--winter-pg1-013",
+      "from": "winter-b1-013",
+      "to": "winter-pg1-013"
+    },
+    {
+      "id": "winter-b1-014--winter-pg1-013",
+      "from": "winter-b1-014",
+      "to": "winter-pg1-013"
+    },
+    {
+      "id": "winter-b1-014--winter-pg1-016",
+      "from": "winter-b1-014",
+      "to": "winter-pg1-016"
+    },
+    {
+      "id": "winter-b1-014--winter-pg2-011",
+      "from": "winter-b1-014",
+      "to": "winter-pg2-011"
+    },
+    {
+      "id": "winter-b1-015--winter-pg1-014",
+      "from": "winter-b1-015",
+      "to": "winter-pg1-014"
+    },
+    {
+      "id": "winter-b1-015--winter-pg1-015",
+      "from": "winter-b1-015",
+      "to": "winter-pg1-015"
+    },
+    {
+      "id": "winter-b1-015--winter-pg2-012",
+      "from": "winter-b1-015",
+      "to": "winter-pg2-012"
+    },
+    {
+      "id": "winter-b1-016--winter-pg1-016",
+      "from": "winter-b1-016",
+      "to": "winter-pg1-016"
+    },
+    {
+      "id": "winter-b1-016--winter-pg1-017",
+      "from": "winter-b1-016",
+      "to": "winter-pg1-017"
+    },
+    {
+      "id": "winter-b1-016--winter-pg2-014",
+      "from": "winter-b1-016",
+      "to": "winter-pg2-014"
+    },
+    {
+      "id": "winter-b1-017--winter-pg1-015",
+      "from": "winter-b1-017",
+      "to": "winter-pg1-015"
+    },
+    {
+      "id": "winter-b1-017--winter-pg1-018",
+      "from": "winter-b1-017",
+      "to": "winter-pg1-018"
+    },
+    {
+      "id": "winter-b1-017--winter-pg2-013",
+      "from": "winter-b1-017",
+      "to": "winter-pg2-013"
+    },
+    {
+      "id": "winter-b1-018--winter-pg1-017",
+      "from": "winter-b1-018",
+      "to": "winter-pg1-017"
+    },
+    {
+      "id": "winter-b1-018--winter-pg1-019",
+      "from": "winter-b1-018",
+      "to": "winter-pg1-019"
+    },
+    {
+      "id": "winter-b1-018--winter-pg2-016",
+      "from": "winter-b1-018",
+      "to": "winter-pg2-016"
+    },
+    {
+      "id": "winter-b1-019--winter-pg1-018",
+      "from": "winter-b1-019",
+      "to": "winter-pg1-018"
+    },
+    {
+      "id": "winter-b1-019--winter-pg1-020",
+      "from": "winter-b1-019",
+      "to": "winter-pg1-020"
+    },
+    {
+      "id": "winter-b1-019--winter-pg2-015",
+      "from": "winter-b1-019",
+      "to": "winter-pg2-015"
+    },
+    {
+      "id": "winter-b1-020--winter-pg1-020",
+      "from": "winter-b1-020",
+      "to": "winter-pg1-020"
+    },
+    {
+      "id": "winter-b1-020--winter-pg1-022",
+      "from": "winter-b1-020",
+      "to": "winter-pg1-022"
+    },
+    {
+      "id": "winter-b1-020--winter-pg2-018",
+      "from": "winter-b1-020",
+      "to": "winter-pg2-018"
+    },
+    {
+      "id": "winter-b1-021--winter-pg1-019",
+      "from": "winter-b1-021",
+      "to": "winter-pg1-019"
+    },
+    {
+      "id": "winter-b1-021--winter-pg1-021",
+      "from": "winter-b1-021",
+      "to": "winter-pg1-021"
+    },
+    {
+      "id": "winter-b1-021--winter-pg2-017",
+      "from": "winter-b1-021",
+      "to": "winter-pg2-017"
+    },
+    {
+      "id": "winter-b1-022--winter-pg1-021",
+      "from": "winter-b1-022",
+      "to": "winter-pg1-021"
+    },
+    {
+      "id": "winter-b1-022--winter-pg1-023",
+      "from": "winter-b1-022",
+      "to": "winter-pg1-023"
+    },
+    {
+      "id": "winter-b1-022--winter-pg2-020",
+      "from": "winter-b1-022",
+      "to": "winter-pg2-020"
+    },
+    {
+      "id": "winter-b1-023--winter-pg1-022",
+      "from": "winter-b1-023",
+      "to": "winter-pg1-022"
+    },
+    {
+      "id": "winter-b1-023--winter-pg1-024",
+      "from": "winter-b1-023",
+      "to": "winter-pg1-024"
+    },
+    {
+      "id": "winter-b1-023--winter-pg2-019",
+      "from": "winter-b1-023",
+      "to": "winter-pg2-019"
+    },
+    {
+      "id": "winter-b1-024--winter-pg1-023",
+      "from": "winter-b1-024",
+      "to": "winter-pg1-023"
+    },
+    {
+      "id": "winter-b1-024--winter-pg1-024",
+      "from": "winter-b1-024",
+      "to": "winter-pg1-024"
+    },
+    {
+      "id": "winter-b2-001--winter-pg1-001",
+      "from": "winter-b2-001",
+      "to": "winter-pg1-001"
+    },
+    {
+      "id": "winter-b2-001--winter-pg1-002",
+      "from": "winter-b2-001",
+      "to": "winter-pg1-002"
+    },
+    {
+      "id": "winter-b2-001--winter-pg2-001",
+      "from": "winter-b2-001",
+      "to": "winter-pg2-001"
+    },
+    {
+      "id": "winter-b2-001--winter-pg2-002",
+      "from": "winter-b2-001",
+      "to": "winter-pg2-002"
+    },
+    {
+      "id": "winter-b2-002--winter-pg1-003",
+      "from": "winter-b2-002",
+      "to": "winter-pg1-003"
+    },
+    {
+      "id": "winter-b2-002--winter-pg2-001",
+      "from": "winter-b2-002",
+      "to": "winter-pg2-001"
+    },
+    {
+      "id": "winter-b2-002--winter-pg2-003",
+      "from": "winter-b2-002",
+      "to": "winter-pg2-003"
+    },
+    {
+      "id": "winter-b2-002--winter-pg3-002",
+      "from": "winter-b2-002",
+      "to": "winter-pg3-002"
+    },
+    {
+      "id": "winter-b2-003--winter-pg1-004",
+      "from": "winter-b2-003",
+      "to": "winter-pg1-004"
+    },
+    {
+      "id": "winter-b2-003--winter-pg2-002",
+      "from": "winter-b2-003",
+      "to": "winter-pg2-002"
+    },
+    {
+      "id": "winter-b2-003--winter-pg2-004",
+      "from": "winter-b2-003",
+      "to": "winter-pg2-004"
+    },
+    {
+      "id": "winter-b2-003--winter-pg3-001",
+      "from": "winter-b2-003",
+      "to": "winter-pg3-001"
+    },
+    {
+      "id": "winter-b2-004--winter-pg1-006",
+      "from": "winter-b2-004",
+      "to": "winter-pg1-006"
+    },
+    {
+      "id": "winter-b2-004--winter-pg2-003",
+      "from": "winter-b2-004",
+      "to": "winter-pg2-003"
+    },
+    {
+      "id": "winter-b2-004--winter-pg2-006",
+      "from": "winter-b2-004",
+      "to": "winter-pg2-006"
+    },
+    {
+      "id": "winter-b2-004--winter-pg3-003",
+      "from": "winter-b2-004",
+      "to": "winter-pg3-003"
+    },
+    {
+      "id": "winter-b2-005--winter-pg1-005",
+      "from": "winter-b2-005",
+      "to": "winter-pg1-005"
+    },
+    {
+      "id": "winter-b2-005--winter-pg2-004",
+      "from": "winter-b2-005",
+      "to": "winter-pg2-004"
+    },
+    {
+      "id": "winter-b2-005--winter-pg2-005",
+      "from": "winter-b2-005",
+      "to": "winter-pg2-005"
+    },
+    {
+      "id": "winter-b2-005--winter-pg3-004",
+      "from": "winter-b2-005",
+      "to": "winter-pg3-004"
+    },
+    {
+      "id": "winter-b2-006--winter-pg1-007",
+      "from": "winter-b2-006",
+      "to": "winter-pg1-007"
+    },
+    {
+      "id": "winter-b2-006--winter-pg2-005",
+      "from": "winter-b2-006",
+      "to": "winter-pg2-005"
+    },
+    {
+      "id": "winter-b2-006--winter-pg2-008",
+      "from": "winter-b2-006",
+      "to": "winter-pg2-008"
+    },
+    {
+      "id": "winter-b2-006--winter-pg3-005",
+      "from": "winter-b2-006",
+      "to": "winter-pg3-005"
+    },
+    {
+      "id": "winter-b2-007--winter-pg1-008",
+      "from": "winter-b2-007",
+      "to": "winter-pg1-008"
+    },
+    {
+      "id": "winter-b2-007--winter-pg2-006",
+      "from": "winter-b2-007",
+      "to": "winter-pg2-006"
+    },
+    {
+      "id": "winter-b2-007--winter-pg2-007",
+      "from": "winter-b2-007",
+      "to": "winter-pg2-007"
+    },
+    {
+      "id": "winter-b2-007--winter-pg3-006",
+      "from": "winter-b2-007",
+      "to": "winter-pg3-006"
+    },
+    {
+      "id": "winter-b2-008--winter-pg1-009",
+      "from": "winter-b2-008",
+      "to": "winter-pg1-009"
+    },
+    {
+      "id": "winter-b2-008--winter-pg2-007",
+      "from": "winter-b2-008",
+      "to": "winter-pg2-007"
+    },
+    {
+      "id": "winter-b2-008--winter-pg2-009",
+      "from": "winter-b2-008",
+      "to": "winter-pg2-009"
+    },
+    {
+      "id": "winter-b2-008--winter-pg3-008",
+      "from": "winter-b2-008",
+      "to": "winter-pg3-008"
+    },
+    {
+      "id": "winter-b2-009--winter-pg1-010",
+      "from": "winter-b2-009",
+      "to": "winter-pg1-010"
+    },
+    {
+      "id": "winter-b2-009--winter-pg2-008",
+      "from": "winter-b2-009",
+      "to": "winter-pg2-008"
+    },
+    {
+      "id": "winter-b2-009--winter-pg2-010",
+      "from": "winter-b2-009",
+      "to": "winter-pg2-010"
+    },
+    {
+      "id": "winter-b2-009--winter-pg3-007",
+      "from": "winter-b2-009",
+      "to": "winter-pg3-007"
+    },
+    {
+      "id": "winter-b2-010--winter-pg1-011",
+      "from": "winter-b2-010",
+      "to": "winter-pg1-011"
+    },
+    {
+      "id": "winter-b2-010--winter-pg1-013",
+      "from": "winter-b2-010",
+      "to": "winter-pg1-013"
+    },
+    {
+      "id": "winter-b2-010--winter-pg2-009",
+      "from": "winter-b2-010",
+      "to": "winter-pg2-009"
+    },
+    {
+      "id": "winter-b2-010--winter-pg2-011",
+      "from": "winter-b2-010",
+      "to": "winter-pg2-011"
+    },
+    {
+      "id": "winter-b2-011--winter-pg1-012",
+      "from": "winter-b2-011",
+      "to": "winter-pg1-012"
+    },
+    {
+      "id": "winter-b2-011--winter-pg1-014",
+      "from": "winter-b2-011",
+      "to": "winter-pg1-014"
+    },
+    {
+      "id": "winter-b2-011--winter-pg2-010",
+      "from": "winter-b2-011",
+      "to": "winter-pg2-010"
+    },
+    {
+      "id": "winter-b2-011--winter-pg2-012",
+      "from": "winter-b2-011",
+      "to": "winter-pg2-012"
+    },
+    {
+      "id": "winter-b2-012--winter-pg1-015",
+      "from": "winter-b2-012",
+      "to": "winter-pg1-015"
+    },
+    {
+      "id": "winter-b2-012--winter-pg2-012",
+      "from": "winter-b2-012",
+      "to": "winter-pg2-012"
+    },
+    {
+      "id": "winter-b2-012--winter-pg2-013",
+      "from": "winter-b2-012",
+      "to": "winter-pg2-013"
+    },
+    {
+      "id": "winter-b2-012--winter-pg3-009",
+      "from": "winter-b2-012",
+      "to": "winter-pg3-009"
+    },
+    {
+      "id": "winter-b2-013--winter-pg1-016",
+      "from": "winter-b2-013",
+      "to": "winter-pg1-016"
+    },
+    {
+      "id": "winter-b2-013--winter-pg2-011",
+      "from": "winter-b2-013",
+      "to": "winter-pg2-011"
+    },
+    {
+      "id": "winter-b2-013--winter-pg2-014",
+      "from": "winter-b2-013",
+      "to": "winter-pg2-014"
+    },
+    {
+      "id": "winter-b2-013--winter-pg3-010",
+      "from": "winter-b2-013",
+      "to": "winter-pg3-010"
+    },
+    {
+      "id": "winter-b2-014--winter-pg1-018",
+      "from": "winter-b2-014",
+      "to": "winter-pg1-018"
+    },
+    {
+      "id": "winter-b2-014--winter-pg2-013",
+      "from": "winter-b2-014",
+      "to": "winter-pg2-013"
+    },
+    {
+      "id": "winter-b2-014--winter-pg2-015",
+      "from": "winter-b2-014",
+      "to": "winter-pg2-015"
+    },
+    {
+      "id": "winter-b2-014--winter-pg3-011",
+      "from": "winter-b2-014",
+      "to": "winter-pg3-011"
+    },
+    {
+      "id": "winter-b2-015--winter-pg1-017",
+      "from": "winter-b2-015",
+      "to": "winter-pg1-017"
+    },
+    {
+      "id": "winter-b2-015--winter-pg2-014",
+      "from": "winter-b2-015",
+      "to": "winter-pg2-014"
+    },
+    {
+      "id": "winter-b2-015--winter-pg2-016",
+      "from": "winter-b2-015",
+      "to": "winter-pg2-016"
+    },
+    {
+      "id": "winter-b2-015--winter-pg3-012",
+      "from": "winter-b2-015",
+      "to": "winter-pg3-012"
+    },
+    {
+      "id": "winter-b2-016--winter-pg1-019",
+      "from": "winter-b2-016",
+      "to": "winter-pg1-019"
+    },
+    {
+      "id": "winter-b2-016--winter-pg2-016",
+      "from": "winter-b2-016",
+      "to": "winter-pg2-016"
+    },
+    {
+      "id": "winter-b2-016--winter-pg2-017",
+      "from": "winter-b2-016",
+      "to": "winter-pg2-017"
+    },
+    {
+      "id": "winter-b2-016--winter-pg3-013",
+      "from": "winter-b2-016",
+      "to": "winter-pg3-013"
+    },
+    {
+      "id": "winter-b2-017--winter-pg1-020",
+      "from": "winter-b2-017",
+      "to": "winter-pg1-020"
+    },
+    {
+      "id": "winter-b2-017--winter-pg2-015",
+      "from": "winter-b2-017",
+      "to": "winter-pg2-015"
+    },
+    {
+      "id": "winter-b2-017--winter-pg2-018",
+      "from": "winter-b2-017",
+      "to": "winter-pg2-018"
+    },
+    {
+      "id": "winter-b2-017--winter-pg3-014",
+      "from": "winter-b2-017",
+      "to": "winter-pg3-014"
+    },
+    {
+      "id": "winter-b2-018--winter-pg1-021",
+      "from": "winter-b2-018",
+      "to": "winter-pg1-021"
+    },
+    {
+      "id": "winter-b2-018--winter-pg2-017",
+      "from": "winter-b2-018",
+      "to": "winter-pg2-017"
+    },
+    {
+      "id": "winter-b2-018--winter-pg2-020",
+      "from": "winter-b2-018",
+      "to": "winter-pg2-020"
+    },
+    {
+      "id": "winter-b2-018--winter-pg3-015",
+      "from": "winter-b2-018",
+      "to": "winter-pg3-015"
+    },
+    {
+      "id": "winter-b2-019--winter-pg1-022",
+      "from": "winter-b2-019",
+      "to": "winter-pg1-022"
+    },
+    {
+      "id": "winter-b2-019--winter-pg2-018",
+      "from": "winter-b2-019",
+      "to": "winter-pg2-018"
+    },
+    {
+      "id": "winter-b2-019--winter-pg2-019",
+      "from": "winter-b2-019",
+      "to": "winter-pg2-019"
+    },
+    {
+      "id": "winter-b2-019--winter-pg3-016",
+      "from": "winter-b2-019",
+      "to": "winter-pg3-016"
+    },
+    {
+      "id": "winter-b2-020--winter-pg1-023",
+      "from": "winter-b2-020",
+      "to": "winter-pg1-023"
+    },
+    {
+      "id": "winter-b2-020--winter-pg1-024",
+      "from": "winter-b2-020",
+      "to": "winter-pg1-024"
+    },
+    {
+      "id": "winter-b2-020--winter-pg2-019",
+      "from": "winter-b2-020",
+      "to": "winter-pg2-019"
+    },
+    {
+      "id": "winter-b2-020--winter-pg2-020",
+      "from": "winter-b2-020",
+      "to": "winter-pg2-020"
+    },
+    {
+      "id": "winter-b3-001--winter-pg2-001",
+      "from": "winter-b3-001",
+      "to": "winter-pg2-001"
+    },
+    {
+      "id": "winter-b3-001--winter-pg2-002",
+      "from": "winter-b3-001",
+      "to": "winter-pg2-002"
+    },
+    {
+      "id": "winter-b3-001--winter-pg3-001",
+      "from": "winter-b3-001",
+      "to": "winter-pg3-001"
+    },
+    {
+      "id": "winter-b3-001--winter-pg3-002",
+      "from": "winter-b3-001",
+      "to": "winter-pg3-002"
+    },
+    {
+      "id": "winter-b3-002--winter-pg2-004",
+      "from": "winter-b3-002",
+      "to": "winter-pg2-004"
+    },
+    {
+      "id": "winter-b3-002--winter-pg3-001",
+      "from": "winter-b3-002",
+      "to": "winter-pg3-001"
+    },
+    {
+      "id": "winter-b3-002--winter-pg3-004",
+      "from": "winter-b3-002",
+      "to": "winter-pg3-004"
+    },
+    {
+      "id": "winter-b3-002--winter-pg4-002",
+      "from": "winter-b3-002",
+      "to": "winter-pg4-002"
+    },
+    {
+      "id": "winter-b3-003--winter-pg2-003",
+      "from": "winter-b3-003",
+      "to": "winter-pg2-003"
+    },
+    {
+      "id": "winter-b3-003--winter-pg3-002",
+      "from": "winter-b3-003",
+      "to": "winter-pg3-002"
+    },
+    {
+      "id": "winter-b3-003--winter-pg3-003",
+      "from": "winter-b3-003",
+      "to": "winter-pg3-003"
+    },
+    {
+      "id": "winter-b3-003--winter-pg4-001",
+      "from": "winter-b3-003",
+      "to": "winter-pg4-001"
+    },
+    {
+      "id": "winter-b3-004--winter-pg2-005",
+      "from": "winter-b3-004",
+      "to": "winter-pg2-005"
+    },
+    {
+      "id": "winter-b3-004--winter-pg3-004",
+      "from": "winter-b3-004",
+      "to": "winter-pg3-004"
+    },
+    {
+      "id": "winter-b3-004--winter-pg3-005",
+      "from": "winter-b3-004",
+      "to": "winter-pg3-005"
+    },
+    {
+      "id": "winter-b3-004--winter-pg4-003",
+      "from": "winter-b3-004",
+      "to": "winter-pg4-003"
+    },
+    {
+      "id": "winter-b3-005--winter-pg2-006",
+      "from": "winter-b3-005",
+      "to": "winter-pg2-006"
+    },
+    {
+      "id": "winter-b3-005--winter-pg3-003",
+      "from": "winter-b3-005",
+      "to": "winter-pg3-003"
+    },
+    {
+      "id": "winter-b3-005--winter-pg3-006",
+      "from": "winter-b3-005",
+      "to": "winter-pg3-006"
+    },
+    {
+      "id": "winter-b3-005--winter-pg4-004",
+      "from": "winter-b3-005",
+      "to": "winter-pg4-004"
+    },
+    {
+      "id": "winter-b3-006--winter-pg2-008",
+      "from": "winter-b3-006",
+      "to": "winter-pg2-008"
+    },
+    {
+      "id": "winter-b3-006--winter-pg3-005",
+      "from": "winter-b3-006",
+      "to": "winter-pg3-005"
+    },
+    {
+      "id": "winter-b3-006--winter-pg3-007",
+      "from": "winter-b3-006",
+      "to": "winter-pg3-007"
+    },
+    {
+      "id": "winter-b3-006--winter-pg4-005",
+      "from": "winter-b3-006",
+      "to": "winter-pg4-005"
+    },
+    {
+      "id": "winter-b3-007--winter-pg2-007",
+      "from": "winter-b3-007",
+      "to": "winter-pg2-007"
+    },
+    {
+      "id": "winter-b3-007--winter-pg3-006",
+      "from": "winter-b3-007",
+      "to": "winter-pg3-006"
+    },
+    {
+      "id": "winter-b3-007--winter-pg3-008",
+      "from": "winter-b3-007",
+      "to": "winter-pg3-008"
+    },
+    {
+      "id": "winter-b3-007--winter-pg4-006",
+      "from": "winter-b3-007",
+      "to": "winter-pg4-006"
+    },
+    {
+      "id": "winter-b3-008--winter-pg2-009",
+      "from": "winter-b3-008",
+      "to": "winter-pg2-009"
+    },
+    {
+      "id": "winter-b3-008--winter-pg2-011",
+      "from": "winter-b3-008",
+      "to": "winter-pg2-011"
+    },
+    {
+      "id": "winter-b3-008--winter-pg3-008",
+      "from": "winter-b3-008",
+      "to": "winter-pg3-008"
+    },
+    {
+      "id": "winter-b3-008--winter-pg3-010",
+      "from": "winter-b3-008",
+      "to": "winter-pg3-010"
+    },
+    {
+      "id": "winter-b3-009--winter-pg2-010",
+      "from": "winter-b3-009",
+      "to": "winter-pg2-010"
+    },
+    {
+      "id": "winter-b3-009--winter-pg2-012",
+      "from": "winter-b3-009",
+      "to": "winter-pg2-012"
+    },
+    {
+      "id": "winter-b3-009--winter-pg3-007",
+      "from": "winter-b3-009",
+      "to": "winter-pg3-007"
+    },
+    {
+      "id": "winter-b3-009--winter-pg3-009",
+      "from": "winter-b3-009",
+      "to": "winter-pg3-009"
+    },
+    {
+      "id": "winter-b3-010--winter-pg2-013",
+      "from": "winter-b3-010",
+      "to": "winter-pg2-013"
+    },
+    {
+      "id": "winter-b3-010--winter-pg3-009",
+      "from": "winter-b3-010",
+      "to": "winter-pg3-009"
+    },
+    {
+      "id": "winter-b3-010--winter-pg3-011",
+      "from": "winter-b3-010",
+      "to": "winter-pg3-011"
+    },
+    {
+      "id": "winter-b3-010--winter-pg4-007",
+      "from": "winter-b3-010",
+      "to": "winter-pg4-007"
+    },
+    {
+      "id": "winter-b3-011--winter-pg2-014",
+      "from": "winter-b3-011",
+      "to": "winter-pg2-014"
+    },
+    {
+      "id": "winter-b3-011--winter-pg3-010",
+      "from": "winter-b3-011",
+      "to": "winter-pg3-010"
+    },
+    {
+      "id": "winter-b3-011--winter-pg3-012",
+      "from": "winter-b3-011",
+      "to": "winter-pg3-012"
+    },
+    {
+      "id": "winter-b3-011--winter-pg4-008",
+      "from": "winter-b3-011",
+      "to": "winter-pg4-008"
+    },
+    {
+      "id": "winter-b3-012--winter-pg2-015",
+      "from": "winter-b3-012",
+      "to": "winter-pg2-015"
+    },
+    {
+      "id": "winter-b3-012--winter-pg3-011",
+      "from": "winter-b3-012",
+      "to": "winter-pg3-011"
+    },
+    {
+      "id": "winter-b3-012--winter-pg3-014",
+      "from": "winter-b3-012",
+      "to": "winter-pg3-014"
+    },
+    {
+      "id": "winter-b3-012--winter-pg4-009",
+      "from": "winter-b3-012",
+      "to": "winter-pg4-009"
+    },
+    {
+      "id": "winter-b3-013--winter-pg2-016",
+      "from": "winter-b3-013",
+      "to": "winter-pg2-016"
+    },
+    {
+      "id": "winter-b3-013--winter-pg3-012",
+      "from": "winter-b3-013",
+      "to": "winter-pg3-012"
+    },
+    {
+      "id": "winter-b3-013--winter-pg3-013",
+      "from": "winter-b3-013",
+      "to": "winter-pg3-013"
+    },
+    {
+      "id": "winter-b3-013--winter-pg4-010",
+      "from": "winter-b3-013",
+      "to": "winter-pg4-010"
+    },
+    {
+      "id": "winter-b3-014--winter-pg2-017",
+      "from": "winter-b3-014",
+      "to": "winter-pg2-017"
+    },
+    {
+      "id": "winter-b3-014--winter-pg3-013",
+      "from": "winter-b3-014",
+      "to": "winter-pg3-013"
+    },
+    {
+      "id": "winter-b3-014--winter-pg3-015",
+      "from": "winter-b3-014",
+      "to": "winter-pg3-015"
+    },
+    {
+      "id": "winter-b3-014--winter-pg4-011",
+      "from": "winter-b3-014",
+      "to": "winter-pg4-011"
+    },
+    {
+      "id": "winter-b3-015--winter-pg2-018",
+      "from": "winter-b3-015",
+      "to": "winter-pg2-018"
+    },
+    {
+      "id": "winter-b3-015--winter-pg3-014",
+      "from": "winter-b3-015",
+      "to": "winter-pg3-014"
+    },
+    {
+      "id": "winter-b3-015--winter-pg3-016",
+      "from": "winter-b3-015",
+      "to": "winter-pg3-016"
+    },
+    {
+      "id": "winter-b3-015--winter-pg4-012",
+      "from": "winter-b3-015",
+      "to": "winter-pg4-012"
+    },
+    {
+      "id": "winter-b3-016--winter-pg2-019",
+      "from": "winter-b3-016",
+      "to": "winter-pg2-019"
+    },
+    {
+      "id": "winter-b3-016--winter-pg2-020",
+      "from": "winter-b3-016",
+      "to": "winter-pg2-020"
+    },
+    {
+      "id": "winter-b3-016--winter-pg3-015",
+      "from": "winter-b3-016",
+      "to": "winter-pg3-015"
+    },
+    {
+      "id": "winter-b3-016--winter-pg3-016",
+      "from": "winter-b3-016",
+      "to": "winter-pg3-016"
+    },
+    {
+      "id": "winter-b4-001--winter-pg3-001",
+      "from": "winter-b4-001",
+      "to": "winter-pg3-001"
+    },
+    {
+      "id": "winter-b4-001--winter-pg3-002",
+      "from": "winter-b4-001",
+      "to": "winter-pg3-002"
+    },
+    {
+      "id": "winter-b4-001--winter-pg4-001",
+      "from": "winter-b4-001",
+      "to": "winter-pg4-001"
+    },
+    {
+      "id": "winter-b4-001--winter-pg4-002",
+      "from": "winter-b4-001",
+      "to": "winter-pg4-002"
+    },
+    {
+      "id": "winter-b4-002--winter-pg3-004",
+      "from": "winter-b4-002",
+      "to": "winter-pg3-004"
+    },
+    {
+      "id": "winter-b4-002--winter-pg4-002",
+      "from": "winter-b4-002",
+      "to": "winter-pg4-002"
+    },
+    {
+      "id": "winter-b4-002--winter-pg4-003",
+      "from": "winter-b4-002",
+      "to": "winter-pg4-003"
+    },
+    {
+      "id": "winter-b4-002--winter-pg5-002",
+      "from": "winter-b4-002",
+      "to": "winter-pg5-002"
+    },
+    {
+      "id": "winter-b4-003--winter-pg3-003",
+      "from": "winter-b4-003",
+      "to": "winter-pg3-003"
+    },
+    {
+      "id": "winter-b4-003--winter-pg4-001",
+      "from": "winter-b4-003",
+      "to": "winter-pg4-001"
+    },
+    {
+      "id": "winter-b4-003--winter-pg4-004",
+      "from": "winter-b4-003",
+      "to": "winter-pg4-004"
+    },
+    {
+      "id": "winter-b4-003--winter-pg5-001",
+      "from": "winter-b4-003",
+      "to": "winter-pg5-001"
+    },
+    {
+      "id": "winter-b4-004--winter-pg3-005",
+      "from": "winter-b4-004",
+      "to": "winter-pg3-005"
+    },
+    {
+      "id": "winter-b4-004--winter-pg4-003",
+      "from": "winter-b4-004",
+      "to": "winter-pg4-003"
+    },
+    {
+      "id": "winter-b4-004--winter-pg4-005",
+      "from": "winter-b4-004",
+      "to": "winter-pg4-005"
+    },
+    {
+      "id": "winter-b4-004--winter-pg5-003",
+      "from": "winter-b4-004",
+      "to": "winter-pg5-003"
+    },
+    {
+      "id": "winter-b4-005--winter-pg3-006",
+      "from": "winter-b4-005",
+      "to": "winter-pg3-006"
+    },
+    {
+      "id": "winter-b4-005--winter-pg4-004",
+      "from": "winter-b4-005",
+      "to": "winter-pg4-004"
+    },
+    {
+      "id": "winter-b4-005--winter-pg4-006",
+      "from": "winter-b4-005",
+      "to": "winter-pg4-006"
+    },
+    {
+      "id": "winter-b4-005--winter-pg5-004",
+      "from": "winter-b4-005",
+      "to": "winter-pg5-004"
+    },
+    {
+      "id": "winter-b4-006--winter-pg3-007",
+      "from": "winter-b4-006",
+      "to": "winter-pg3-007"
+    },
+    {
+      "id": "winter-b4-006--winter-pg3-009",
+      "from": "winter-b4-006",
+      "to": "winter-pg3-009"
+    },
+    {
+      "id": "winter-b4-006--winter-pg4-005",
+      "from": "winter-b4-006",
+      "to": "winter-pg4-005"
+    },
+    {
+      "id": "winter-b4-006--winter-pg4-007",
+      "from": "winter-b4-006",
+      "to": "winter-pg4-007"
+    },
+    {
+      "id": "winter-b4-007--winter-pg3-008",
+      "from": "winter-b4-007",
+      "to": "winter-pg3-008"
+    },
+    {
+      "id": "winter-b4-007--winter-pg3-010",
+      "from": "winter-b4-007",
+      "to": "winter-pg3-010"
+    },
+    {
+      "id": "winter-b4-007--winter-pg4-006",
+      "from": "winter-b4-007",
+      "to": "winter-pg4-006"
+    },
+    {
+      "id": "winter-b4-007--winter-pg4-008",
+      "from": "winter-b4-007",
+      "to": "winter-pg4-008"
+    },
+    {
+      "id": "winter-b4-008--winter-pg3-011",
+      "from": "winter-b4-008",
+      "to": "winter-pg3-011"
+    },
+    {
+      "id": "winter-b4-008--winter-pg4-007",
+      "from": "winter-b4-008",
+      "to": "winter-pg4-007"
+    },
+    {
+      "id": "winter-b4-008--winter-pg4-009",
+      "from": "winter-b4-008",
+      "to": "winter-pg4-009"
+    },
+    {
+      "id": "winter-b4-008--winter-pg5-006",
+      "from": "winter-b4-008",
+      "to": "winter-pg5-006"
+    },
+    {
+      "id": "winter-b4-009--winter-pg3-012",
+      "from": "winter-b4-009",
+      "to": "winter-pg3-012"
+    },
+    {
+      "id": "winter-b4-009--winter-pg4-008",
+      "from": "winter-b4-009",
+      "to": "winter-pg4-008"
+    },
+    {
+      "id": "winter-b4-009--winter-pg4-010",
+      "from": "winter-b4-009",
+      "to": "winter-pg4-010"
+    },
+    {
+      "id": "winter-b4-009--winter-pg5-005",
+      "from": "winter-b4-009",
+      "to": "winter-pg5-005"
+    },
+    {
+      "id": "winter-b4-010--winter-pg3-014",
+      "from": "winter-b4-010",
+      "to": "winter-pg3-014"
+    },
+    {
+      "id": "winter-b4-010--winter-pg4-009",
+      "from": "winter-b4-010",
+      "to": "winter-pg4-009"
+    },
+    {
+      "id": "winter-b4-010--winter-pg4-012",
+      "from": "winter-b4-010",
+      "to": "winter-pg4-012"
+    },
+    {
+      "id": "winter-b4-010--winter-pg5-008",
+      "from": "winter-b4-010",
+      "to": "winter-pg5-008"
+    },
+    {
+      "id": "winter-b4-011--winter-pg3-013",
+      "from": "winter-b4-011",
+      "to": "winter-pg3-013"
+    },
+    {
+      "id": "winter-b4-011--winter-pg4-010",
+      "from": "winter-b4-011",
+      "to": "winter-pg4-010"
+    },
+    {
+      "id": "winter-b4-011--winter-pg4-011",
+      "from": "winter-b4-011",
+      "to": "winter-pg4-011"
+    },
+    {
+      "id": "winter-b4-011--winter-pg5-007",
+      "from": "winter-b4-011",
+      "to": "winter-pg5-007"
+    },
+    {
+      "id": "winter-b4-012--winter-pg3-015",
+      "from": "winter-b4-012",
+      "to": "winter-pg3-015"
+    },
+    {
+      "id": "winter-b4-012--winter-pg3-016",
+      "from": "winter-b4-012",
+      "to": "winter-pg3-016"
+    },
+    {
+      "id": "winter-b4-012--winter-pg4-011",
+      "from": "winter-b4-012",
+      "to": "winter-pg4-011"
+    },
+    {
+      "id": "winter-b4-012--winter-pg4-012",
+      "from": "winter-b4-012",
+      "to": "winter-pg4-012"
+    },
+    {
+      "id": "winter-b5-001--winter-pg4-001",
+      "from": "winter-b5-001",
+      "to": "winter-pg4-001"
+    },
+    {
+      "id": "winter-b5-001--winter-pg4-002",
+      "from": "winter-b5-001",
+      "to": "winter-pg4-002"
+    },
+    {
+      "id": "winter-b5-001--winter-pg5-001",
+      "from": "winter-b5-001",
+      "to": "winter-pg5-001"
+    },
+    {
+      "id": "winter-b5-001--winter-pg5-002",
+      "from": "winter-b5-001",
+      "to": "winter-pg5-002"
+    },
+    {
+      "id": "winter-b5-002--winter-pg4-003",
+      "from": "winter-b5-002",
+      "to": "winter-pg4-003"
+    },
+    {
+      "id": "winter-b5-002--winter-pg5-002",
+      "from": "winter-b5-002",
+      "to": "winter-pg5-002"
+    },
+    {
+      "id": "winter-b5-002--winter-pg5-003",
+      "from": "winter-b5-002",
+      "to": "winter-pg5-003"
+    },
+    {
+      "id": "winter-b5-002--winter-pg6-001",
+      "from": "winter-b5-002",
+      "to": "winter-pg6-001"
+    },
+    {
+      "id": "winter-b5-003--winter-pg4-004",
+      "from": "winter-b5-003",
+      "to": "winter-pg4-004"
+    },
+    {
+      "id": "winter-b5-003--winter-pg5-001",
+      "from": "winter-b5-003",
+      "to": "winter-pg5-001"
+    },
+    {
+      "id": "winter-b5-003--winter-pg5-004",
+      "from": "winter-b5-003",
+      "to": "winter-pg5-004"
+    },
+    {
+      "id": "winter-b5-003--winter-pg6-002",
+      "from": "winter-b5-003",
+      "to": "winter-pg6-002"
+    },
+    {
+      "id": "winter-b5-004--winter-pg4-005",
+      "from": "winter-b5-004",
+      "to": "winter-pg4-005"
+    },
+    {
+      "id": "winter-b5-004--winter-pg4-007",
+      "from": "winter-b5-004",
+      "to": "winter-pg4-007"
+    },
+    {
+      "id": "winter-b5-004--winter-pg5-003",
+      "from": "winter-b5-004",
+      "to": "winter-pg5-003"
+    },
+    {
+      "id": "winter-b5-004--winter-pg5-006",
+      "from": "winter-b5-004",
+      "to": "winter-pg5-006"
+    },
+    {
+      "id": "winter-b5-005--winter-pg4-006",
+      "from": "winter-b5-005",
+      "to": "winter-pg4-006"
+    },
+    {
+      "id": "winter-b5-005--winter-pg4-008",
+      "from": "winter-b5-005",
+      "to": "winter-pg4-008"
+    },
+    {
+      "id": "winter-b5-005--winter-pg5-004",
+      "from": "winter-b5-005",
+      "to": "winter-pg5-004"
+    },
+    {
+      "id": "winter-b5-005--winter-pg5-005",
+      "from": "winter-b5-005",
+      "to": "winter-pg5-005"
+    },
+    {
+      "id": "winter-b5-006--winter-pg4-010",
+      "from": "winter-b5-006",
+      "to": "winter-pg4-010"
+    },
+    {
+      "id": "winter-b5-006--winter-pg5-005",
+      "from": "winter-b5-006",
+      "to": "winter-pg5-005"
+    },
+    {
+      "id": "winter-b5-006--winter-pg5-007",
+      "from": "winter-b5-006",
+      "to": "winter-pg5-007"
+    },
+    {
+      "id": "winter-b5-006--winter-pg6-003",
+      "from": "winter-b5-006",
+      "to": "winter-pg6-003"
+    },
+    {
+      "id": "winter-b5-007--winter-pg4-009",
+      "from": "winter-b5-007",
+      "to": "winter-pg4-009"
+    },
+    {
+      "id": "winter-b5-007--winter-pg5-006",
+      "from": "winter-b5-007",
+      "to": "winter-pg5-006"
+    },
+    {
+      "id": "winter-b5-007--winter-pg5-008",
+      "from": "winter-b5-007",
+      "to": "winter-pg5-008"
+    },
+    {
+      "id": "winter-b5-007--winter-pg6-004",
+      "from": "winter-b5-007",
+      "to": "winter-pg6-004"
+    },
+    {
+      "id": "winter-b5-008--winter-pg4-011",
+      "from": "winter-b5-008",
+      "to": "winter-pg4-011"
+    },
+    {
+      "id": "winter-b5-008--winter-pg4-012",
+      "from": "winter-b5-008",
+      "to": "winter-pg4-012"
+    },
+    {
+      "id": "winter-b5-008--winter-pg5-007",
+      "from": "winter-b5-008",
+      "to": "winter-pg5-007"
+    },
+    {
+      "id": "winter-b5-008--winter-pg5-008",
+      "from": "winter-b5-008",
+      "to": "winter-pg5-008"
+    },
+    {
+      "id": "winter-b6-001--winter-pg5-001",
+      "from": "winter-b6-001",
+      "to": "winter-pg5-001"
+    },
+    {
+      "id": "winter-b6-001--winter-pg5-002",
+      "from": "winter-b6-001",
+      "to": "winter-pg5-002"
+    },
+    {
+      "id": "winter-b6-001--winter-pg6-001",
+      "from": "winter-b6-001",
+      "to": "winter-pg6-001"
+    },
+    {
+      "id": "winter-b6-001--winter-pg6-002",
+      "from": "winter-b6-001",
+      "to": "winter-pg6-002"
+    },
+    {
+      "id": "winter-b6-002--winter-pg5-003",
+      "from": "winter-b6-002",
+      "to": "winter-pg5-003"
+    },
+    {
+      "id": "winter-b6-002--winter-pg5-006",
+      "from": "winter-b6-002",
+      "to": "winter-pg5-006"
+    },
+    {
+      "id": "winter-b6-002--winter-pg6-001",
+      "from": "winter-b6-002",
+      "to": "winter-pg6-001"
+    },
+    {
+      "id": "winter-b6-002--winter-pg6-004",
+      "from": "winter-b6-002",
+      "to": "winter-pg6-004"
+    },
+    {
+      "id": "winter-b6-003--winter-pg5-004",
+      "from": "winter-b6-003",
+      "to": "winter-pg5-004"
+    },
+    {
+      "id": "winter-b6-003--winter-pg5-005",
+      "from": "winter-b6-003",
+      "to": "winter-pg5-005"
+    },
+    {
+      "id": "winter-b6-003--winter-pg6-002",
+      "from": "winter-b6-003",
+      "to": "winter-pg6-002"
+    },
+    {
+      "id": "winter-b6-003--winter-pg6-003",
+      "from": "winter-b6-003",
+      "to": "winter-pg6-003"
+    },
+    {
+      "id": "winter-b6-004--winter-pg5-007",
+      "from": "winter-b6-004",
+      "to": "winter-pg5-007"
+    },
+    {
+      "id": "winter-b6-004--winter-pg5-008",
+      "from": "winter-b6-004",
+      "to": "winter-pg5-008"
+    },
+    {
+      "id": "winter-b6-004--winter-pg6-003",
+      "from": "winter-b6-004",
+      "to": "winter-pg6-003"
+    },
+    {
+      "id": "winter-b6-004--winter-pg6-004",
+      "from": "winter-b6-004",
+      "to": "winter-pg6-004"
+    }
+  ],
+  "bases": [],
+  "baseConnections": [],
+  "decorations": [
+    {
+      "id": "winter-arcadia",
+      "name": "Аркадия",
+      "x": 640,
+      "y": 640,
+      "points": [
+        [
+          -90,
+          0
+        ],
+        [
+          0,
+          -90
+        ],
+        [
+          90,
+          0
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "fill": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "expectedTotal": 168,
+  "actualTotal": 168,
+  "counts": {
+    "bastion-1": 24,
+    "bastion-2": 20,
+    "bastion-3": 16,
+    "bastion-4": 12,
+    "bastion-5": 8,
+    "bastion-6": 4,
+    "gasBase-1": 24,
+    "gasBase-2": 20,
+    "gasBase-3": 16,
+    "gasBase-4": 12,
+    "gasBase-5": 8,
+    "gasBase-6": 4
+  },
+  "candidateConnections": 308,
+  "unresolvedPassagePolicy": true,
+  "issues": []
+}

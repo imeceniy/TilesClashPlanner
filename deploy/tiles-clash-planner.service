@@ -1,0 +1,32 @@
+[Unit]
+Description=Tiles Clash Planner collaboration API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tilesclash
+Group=tilesclash
+WorkingDirectory=/opt/tiles-clash-planner/current
+Environment=NODE_ENV=production
+Environment=PLANNER_PORT=8787
+Environment=PLANNER_DATA_FILE=/var/lib/tiles-clash-planner/database.json
+Environment=PLANNER_STATIC_DIR=/opt/tiles-clash-planner/current/dist
+ExecStart=/usr/bin/node /opt/tiles-clash-planner/current/server/index.mjs
+Restart=on-failure
+RestartSec=3
+StateDirectory=tiles-clash-planner
+StateDirectoryMode=0750
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+ReadWritePaths=/var/lib/tiles-clash-planner
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+{
+  "errors": [],
+  "warnings": [
+    {
+      "code": "COVERAGE_UNVERIFIED",
+      "message": "No authoritative coverageGeometry; cannot certify absence of gaps vs intentional background"
+    },
+    {
+      "code": "NOT_PROJECT_ADAPTED",
+      "message": "Canonical candidate is not typed against the actual React TypeScript project interfaces"
+    }
+  ],
+  "components": [
+    [
+      "north",
+      "south"
+    ]
+  ],
+  "ok": true
+}

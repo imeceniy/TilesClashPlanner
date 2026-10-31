@@ -1,0 +1,3030 @@
+{
+  "id": "gene-clash-oil-clash-season-5",
+  "name": "Gene Clash · Oil Clash",
+  "width": 1280,
+  "height": 1246,
+  "source": "Corrected against factual Season 5 reference map (2026-08-15)",
+  "renderer": "konva",
+  "territories": [
+    {
+      "id": "lair-XS08",
+      "name": "XS08",
+      "type": "lair",
+      "size": "XS",
+      "x": 443,
+      "y": 34,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-08"
+    },
+    {
+      "id": "lair-XS22",
+      "name": "XS22",
+      "type": "lair",
+      "size": "XS",
+      "x": 844.5,
+      "y": 34,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-22"
+    },
+    {
+      "id": "lair-XS14",
+      "name": "XS14",
+      "type": "lair",
+      "size": "XS",
+      "x": 542,
+      "y": 83,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-14"
+    },
+    {
+      "id": "lair-XS21",
+      "name": "XS21",
+      "type": "lair",
+      "size": "XS",
+      "x": 738.5,
+      "y": 83,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-21"
+    },
+    {
+      "id": "lair-XS02",
+      "name": "XS02",
+      "type": "lair",
+      "size": "XS",
+      "x": 222,
+      "y": 91.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-02"
+    },
+    {
+      "id": "lair-XS32",
+      "name": "XS32",
+      "type": "lair",
+      "size": "XS",
+      "x": 1058,
+      "y": 91.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-32"
+    },
+    {
+      "id": "lair-XS26",
+      "name": "XS26",
+      "type": "lair",
+      "size": "XS",
+      "x": 918.5,
+      "y": 116,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-26"
+    },
+    {
+      "id": "lair-XS07",
+      "name": "XS07",
+      "type": "lair",
+      "size": "XS",
+      "x": 370,
+      "y": 124.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-07"
+    },
+    {
+      "id": "lair-XS06",
+      "name": "XS06",
+      "type": "lair",
+      "size": "XS",
+      "x": 288,
+      "y": 157,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-06"
+    },
+    {
+      "id": "lair-XS31",
+      "name": "XS31",
+      "type": "lair",
+      "size": "XS",
+      "x": 992.5,
+      "y": 157,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-31"
+    },
+    {
+      "id": "lair-XS16",
+      "name": "XS16",
+      "type": "lair",
+      "size": "XS",
+      "x": 542,
+      "y": 173.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-16"
+    },
+    {
+      "id": "lair-XS25",
+      "name": "XS25",
+      "type": "lair",
+      "size": "XS",
+      "x": 862,
+      "y": 173.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-25"
+    },
+    {
+      "id": "lair-XS20",
+      "name": "XS20",
+      "type": "lair",
+      "size": "XS",
+      "x": 738,
+      "y": 174,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-20"
+    },
+    {
+      "id": "lair-XS12",
+      "name": "XS12",
+      "type": "lair",
+      "size": "XS",
+      "x": 427,
+      "y": 182,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-12"
+    },
+    {
+      "id": "lair-XS11",
+      "name": "XS11",
+      "type": "lair",
+      "size": "XS",
+      "x": 354,
+      "y": 206,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-11"
+    },
+    {
+      "id": "lair-XS30",
+      "name": "XS30",
+      "type": "lair",
+      "size": "XS",
+      "x": 926.5,
+      "y": 206,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-30"
+    },
+    {
+      "id": "lair-XS01",
+      "name": "XS01",
+      "type": "lair",
+      "size": "XS",
+      "x": 100,
+      "y": 214,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-01"
+    },
+    {
+      "id": "lair-XS38",
+      "name": "XS38",
+      "type": "lair",
+      "size": "XS",
+      "x": 1181,
+      "y": 214,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-38"
+    },
+    {
+      "id": "lair-M02",
+      "name": "M02",
+      "type": "lair",
+      "size": "M",
+      "x": 476,
+      "y": 230.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-02"
+    },
+    {
+      "id": "lair-M13",
+      "name": "M13",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 231,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-13"
+    },
+    {
+      "id": "lair-XS05",
+      "name": "XS05",
+      "type": "lair",
+      "size": "XS",
+      "x": 165,
+      "y": 280,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-05"
+    },
+    {
+      "id": "lair-S02",
+      "name": "S02",
+      "type": "lair",
+      "size": "S",
+      "x": 525.5,
+      "y": 280,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-02"
+    },
+    {
+      "id": "lair-XS37",
+      "name": "XS37",
+      "type": "lair",
+      "size": "XS",
+      "x": 1115,
+      "y": 280,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-37"
+    },
+    {
+      "id": "lair-S04",
+      "name": "S04",
+      "type": "lair",
+      "size": "S",
+      "x": 747,
+      "y": 288.5,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-04"
+    },
+    {
+      "id": "lair-M05",
+      "name": "M05",
+      "type": "lair",
+      "size": "M",
+      "x": 476,
+      "y": 329,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-05"
+    },
+    {
+      "id": "lair-M17",
+      "name": "M17",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 329,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-17"
+    },
+    {
+      "id": "lair-M07",
+      "name": "M07",
+      "type": "lair",
+      "size": "M",
+      "x": 574,
+      "y": 329.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-07"
+    },
+    {
+      "id": "lair-M12",
+      "name": "M12",
+      "type": "lair",
+      "size": "M",
+      "x": 697.5,
+      "y": 337,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-12"
+    },
+    {
+      "id": "lair-XS10",
+      "name": "XS10",
+      "type": "lair",
+      "size": "XS",
+      "x": 222,
+      "y": 337.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-10"
+    },
+    {
+      "id": "lair-XS36",
+      "name": "XS36",
+      "type": "lair",
+      "size": "XS",
+      "x": 1058,
+      "y": 337.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-36"
+    },
+    {
+      "id": "lair-XS04",
+      "name": "XS04",
+      "type": "lair",
+      "size": "XS",
+      "x": 132,
+      "y": 345.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-04"
+    },
+    {
+      "id": "lair-XS42",
+      "name": "XS42",
+      "type": "lair",
+      "size": "XS",
+      "x": 1148,
+      "y": 346,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-42"
+    },
+    {
+      "id": "lair-XS09",
+      "name": "XS09",
+      "type": "lair",
+      "size": "XS",
+      "x": 190,
+      "y": 402.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-09"
+    },
+    {
+      "id": "lair-XS41",
+      "name": "XS41",
+      "type": "lair",
+      "size": "XS",
+      "x": 1091,
+      "y": 402.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-41"
+    },
+    {
+      "id": "lair-XS48",
+      "name": "XS48",
+      "type": "lair",
+      "size": "XS",
+      "x": 1246,
+      "y": 410.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-48"
+    },
+    {
+      "id": "lair-XS03",
+      "name": "XS03",
+      "type": "lair",
+      "size": "XS",
+      "x": 34,
+      "y": 411,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-03"
+    },
+    {
+      "id": "lair-M16",
+      "name": "M16",
+      "type": "lair",
+      "size": "M",
+      "x": 706,
+      "y": 459.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-16"
+    },
+    {
+      "id": "lair-M01",
+      "name": "M01",
+      "type": "lair",
+      "size": "M",
+      "x": 247,
+      "y": 460,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-01"
+    },
+    {
+      "id": "lair-M03",
+      "name": "M03",
+      "type": "lair",
+      "size": "M",
+      "x": 346,
+      "y": 460,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-03"
+    },
+    {
+      "id": "lair-M11",
+      "name": "M11",
+      "type": "lair",
+      "size": "M",
+      "x": 574.5,
+      "y": 460,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-11"
+    },
+    {
+      "id": "lair-M21",
+      "name": "M21",
+      "type": "lair",
+      "size": "M",
+      "x": 935,
+      "y": 460,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-21"
+    },
+    {
+      "id": "lair-M27",
+      "name": "M27",
+      "type": "lair",
+      "size": "M",
+      "x": 1033,
+      "y": 460,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-27"
+    },
+    {
+      "id": "lair-XS13",
+      "name": "XS13",
+      "type": "lair",
+      "size": "XS",
+      "x": 91.5,
+      "y": 468,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-13"
+    },
+    {
+      "id": "lair-XS47",
+      "name": "XS47",
+      "type": "lair",
+      "size": "XS",
+      "x": 1189,
+      "y": 468,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-47"
+    },
+    {
+      "id": "lair-S01",
+      "name": "S01",
+      "type": "lair",
+      "size": "S",
+      "x": 296,
+      "y": 509,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-01"
+    },
+    {
+      "id": "lair-S06",
+      "name": "S06",
+      "type": "lair",
+      "size": "S",
+      "x": 984,
+      "y": 509,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-06"
+    },
+    {
+      "id": "lair-XS15",
+      "name": "XS15",
+      "type": "lair",
+      "size": "XS",
+      "x": 165,
+      "y": 526,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-15"
+    },
+    {
+      "id": "lair-XS46",
+      "name": "XS46",
+      "type": "lair",
+      "size": "XS",
+      "x": 1115,
+      "y": 526,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-46"
+    },
+    {
+      "id": "lair-M06",
+      "name": "M06",
+      "type": "lair",
+      "size": "M",
+      "x": 345.5,
+      "y": 558,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-06"
+    },
+    {
+      "id": "lair-M20",
+      "name": "M20",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 558,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-20"
+    },
+    {
+      "id": "lair-M26",
+      "name": "M26",
+      "type": "lair",
+      "size": "M",
+      "x": 934.5,
+      "y": 558,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-26"
+    },
+    {
+      "id": "lair-M10",
+      "name": "M10",
+      "type": "lair",
+      "size": "M",
+      "x": 468,
+      "y": 566,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-10"
+    },
+    {
+      "id": "lair-M15",
+      "name": "M15",
+      "type": "lair",
+      "size": "M",
+      "x": 468.5,
+      "y": 681.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-15"
+    },
+    {
+      "id": "lair-M25",
+      "name": "M25",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 689,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-25"
+    },
+    {
+      "id": "lair-M29",
+      "name": "M29",
+      "type": "lair",
+      "size": "M",
+      "x": 935.5,
+      "y": 689,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-29"
+    },
+    {
+      "id": "lair-M09",
+      "name": "M09",
+      "type": "lair",
+      "size": "M",
+      "x": 345.5,
+      "y": 689.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-09"
+    },
+    {
+      "id": "lair-XS19",
+      "name": "XS19",
+      "type": "lair",
+      "size": "XS",
+      "x": 165,
+      "y": 722,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-19"
+    },
+    {
+      "id": "lair-XS50",
+      "name": "XS50",
+      "type": "lair",
+      "size": "XS",
+      "x": 1115,
+      "y": 722,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-50"
+    },
+    {
+      "id": "lair-S03",
+      "name": "S03",
+      "type": "lair",
+      "size": "S",
+      "x": 296.5,
+      "y": 738,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-03"
+    },
+    {
+      "id": "lair-S08",
+      "name": "S08",
+      "type": "lair",
+      "size": "S",
+      "x": 984.5,
+      "y": 738,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-08"
+    },
+    {
+      "id": "lair-XS52",
+      "name": "XS52",
+      "type": "lair",
+      "size": "XS",
+      "x": 1188.5,
+      "y": 746.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-52"
+    },
+    {
+      "id": "lair-XS18",
+      "name": "XS18",
+      "type": "lair",
+      "size": "XS",
+      "x": 92,
+      "y": 747,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-18"
+    },
+    {
+      "id": "lair-M14",
+      "name": "M14",
+      "type": "lair",
+      "size": "M",
+      "x": 345.5,
+      "y": 787,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-14"
+    },
+    {
+      "id": "lair-M31",
+      "name": "M31",
+      "type": "lair",
+      "size": "M",
+      "x": 935,
+      "y": 787,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-31"
+    },
+    {
+      "id": "lair-M33",
+      "name": "M33",
+      "type": "lair",
+      "size": "M",
+      "x": 1033.5,
+      "y": 787,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-33"
+    },
+    {
+      "id": "lair-M08",
+      "name": "M08",
+      "type": "lair",
+      "size": "M",
+      "x": 247.5,
+      "y": 787.5,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-08"
+    },
+    {
+      "id": "lair-M19",
+      "name": "M19",
+      "type": "lair",
+      "size": "M",
+      "x": 574.5,
+      "y": 788,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-19"
+    },
+    {
+      "id": "lair-M24",
+      "name": "M24",
+      "type": "lair",
+      "size": "M",
+      "x": 706,
+      "y": 788,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-24"
+    },
+    {
+      "id": "lair-XS17",
+      "name": "XS17",
+      "type": "lair",
+      "size": "XS",
+      "x": 34,
+      "y": 803.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-17"
+    },
+    {
+      "id": "lair-XS62",
+      "name": "XS62",
+      "type": "lair",
+      "size": "XS",
+      "x": 1246,
+      "y": 804,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-62"
+    },
+    {
+      "id": "lair-XS24",
+      "name": "XS24",
+      "type": "lair",
+      "size": "XS",
+      "x": 198,
+      "y": 836.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-24"
+    },
+    {
+      "id": "lair-XS56",
+      "name": "XS56",
+      "type": "lair",
+      "size": "XS",
+      "x": 1082,
+      "y": 837,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-56"
+    },
+    {
+      "id": "lair-XS23",
+      "name": "XS23",
+      "type": "lair",
+      "size": "XS",
+      "x": 149,
+      "y": 885.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-23"
+    },
+    {
+      "id": "lair-XS61",
+      "name": "XS61",
+      "type": "lair",
+      "size": "XS",
+      "x": 1132,
+      "y": 885.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-61"
+    },
+    {
+      "id": "lair-XS29",
+      "name": "XS29",
+      "type": "lair",
+      "size": "XS",
+      "x": 222,
+      "y": 910,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-29"
+    },
+    {
+      "id": "lair-M23",
+      "name": "M23",
+      "type": "lair",
+      "size": "M",
+      "x": 583,
+      "y": 910,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-23"
+    },
+    {
+      "id": "lair-M28",
+      "name": "M28",
+      "type": "lair",
+      "size": "M",
+      "x": 697.5,
+      "y": 910,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-28"
+    },
+    {
+      "id": "lair-XS55",
+      "name": "XS55",
+      "type": "lair",
+      "size": "XS",
+      "x": 1058,
+      "y": 910,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-55"
+    },
+    {
+      "id": "lair-M18",
+      "name": "M18",
+      "type": "lair",
+      "size": "M",
+      "x": 476.5,
+      "y": 918,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-18"
+    },
+    {
+      "id": "lair-M30",
+      "name": "M30",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 918,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-30"
+    },
+    {
+      "id": "lair-S05",
+      "name": "S05",
+      "type": "lair",
+      "size": "S",
+      "x": 534,
+      "y": 959,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-05"
+    },
+    {
+      "id": "lair-S07",
+      "name": "S07",
+      "type": "lair",
+      "size": "S",
+      "x": 738.5,
+      "y": 959,
+      "value": 200,
+      "defaultShape": "circle",
+      "sourceId": "S-07"
+    },
+    {
+      "id": "lair-XS28",
+      "name": "XS28",
+      "type": "lair",
+      "size": "XS",
+      "x": 165,
+      "y": 967.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-28"
+    },
+    {
+      "id": "lair-XS60",
+      "name": "XS60",
+      "type": "lair",
+      "size": "XS",
+      "x": 1115.5,
+      "y": 968,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-60"
+    },
+    {
+      "id": "lair-M22",
+      "name": "M22",
+      "type": "lair",
+      "size": "M",
+      "x": 476.5,
+      "y": 1017,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-22"
+    },
+    {
+      "id": "lair-M32",
+      "name": "M32",
+      "type": "lair",
+      "size": "M",
+      "x": 804,
+      "y": 1017,
+      "value": 375,
+      "defaultShape": "circle",
+      "sourceId": "M-32"
+    },
+    {
+      "id": "lair-XS27",
+      "name": "XS27",
+      "type": "lair",
+      "size": "XS",
+      "x": 100,
+      "y": 1033.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-27"
+    },
+    {
+      "id": "lair-XS64",
+      "name": "XS64",
+      "type": "lair",
+      "size": "XS",
+      "x": 1181,
+      "y": 1033.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-64"
+    },
+    {
+      "id": "lair-XS35",
+      "name": "XS35",
+      "type": "lair",
+      "size": "XS",
+      "x": 354,
+      "y": 1042,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-35"
+    },
+    {
+      "id": "lair-XS54",
+      "name": "XS54",
+      "type": "lair",
+      "size": "XS",
+      "x": 926,
+      "y": 1042,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-54"
+    },
+    {
+      "id": "lair-XS40",
+      "name": "XS40",
+      "type": "lair",
+      "size": "XS",
+      "x": 427,
+      "y": 1066,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-40"
+    },
+    {
+      "id": "lair-XS45",
+      "name": "XS45",
+      "type": "lair",
+      "size": "XS",
+      "x": 542,
+      "y": 1074,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-45"
+    },
+    {
+      "id": "lair-XS49",
+      "name": "XS49",
+      "type": "lair",
+      "size": "XS",
+      "x": 738,
+      "y": 1074,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-49"
+    },
+    {
+      "id": "lair-XS53",
+      "name": "XS53",
+      "type": "lair",
+      "size": "XS",
+      "x": 861.5,
+      "y": 1074,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-53"
+    },
+    {
+      "id": "lair-XS34",
+      "name": "XS34",
+      "type": "lair",
+      "size": "XS",
+      "x": 288,
+      "y": 1090,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-34"
+    },
+    {
+      "id": "lair-XS59",
+      "name": "XS59",
+      "type": "lair",
+      "size": "XS",
+      "x": 992,
+      "y": 1090,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-59"
+    },
+    {
+      "id": "lair-XS39",
+      "name": "XS39",
+      "type": "lair",
+      "size": "XS",
+      "x": 370,
+      "y": 1123,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-39"
+    },
+    {
+      "id": "lair-XS58",
+      "name": "XS58",
+      "type": "lair",
+      "size": "XS",
+      "x": 918,
+      "y": 1131,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-58"
+    },
+    {
+      "id": "lair-XS63",
+      "name": "XS63",
+      "type": "lair",
+      "size": "XS",
+      "x": 1058,
+      "y": 1155.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-63"
+    },
+    {
+      "id": "lair-XS33",
+      "name": "XS33",
+      "type": "lair",
+      "size": "XS",
+      "x": 222,
+      "y": 1156,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-33"
+    },
+    {
+      "id": "lair-XS44",
+      "name": "XS44",
+      "type": "lair",
+      "size": "XS",
+      "x": 542,
+      "y": 1164,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-44"
+    },
+    {
+      "id": "lair-XS51",
+      "name": "XS51",
+      "type": "lair",
+      "size": "XS",
+      "x": 738.5,
+      "y": 1164,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-51"
+    },
+    {
+      "id": "lair-XS43",
+      "name": "XS43",
+      "type": "lair",
+      "size": "XS",
+      "x": 443.5,
+      "y": 1212.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-43"
+    },
+    {
+      "id": "lair-XS57",
+      "name": "XS57",
+      "type": "lair",
+      "size": "XS",
+      "x": 844.5,
+      "y": 1212.5,
+      "value": 100,
+      "defaultShape": "circle",
+      "sourceId": "XS-57"
+    },
+    {
+      "id": "workbench-S06",
+      "name": "S06",
+      "type": "workbench",
+      "size": "S",
+      "x": 639.5,
+      "y": 34.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-06"
+    },
+    {
+      "id": "workbench-S08",
+      "name": "S08",
+      "type": "workbench",
+      "size": "S",
+      "x": 640.5,
+      "y": 99.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-08"
+    },
+    {
+      "id": "workbench-S01",
+      "name": "S01",
+      "type": "workbench",
+      "size": "S",
+      "x": 165.5,
+      "y": 148.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-01"
+    },
+    {
+      "id": "workbench-S18",
+      "name": "S18",
+      "type": "workbench",
+      "size": "S",
+      "x": 1115.5,
+      "y": 148.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-18"
+    },
+    {
+      "id": "workbench-S02",
+      "name": "S02",
+      "type": "workbench",
+      "size": "S",
+      "x": 230.5,
+      "y": 214.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-02"
+    },
+    {
+      "id": "workbench-S17",
+      "name": "S17",
+      "type": "workbench",
+      "size": "S",
+      "x": 1049.5,
+      "y": 214.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-17"
+    },
+    {
+      "id": "workbench-S10",
+      "name": "S10",
+      "type": "workbench",
+      "size": "S",
+      "x": 598.5,
+      "y": 230.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-10"
+    },
+    {
+      "id": "workbench-S12",
+      "name": "S12",
+      "type": "workbench",
+      "size": "S",
+      "x": 681.5,
+      "y": 230.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-12"
+    },
+    {
+      "id": "workbench-S05",
+      "name": "S05",
+      "type": "workbench",
+      "size": "S",
+      "x": 418.5,
+      "y": 271.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-05"
+    },
+    {
+      "id": "workbench-S14",
+      "name": "S14",
+      "type": "workbench",
+      "size": "S",
+      "x": 860.5,
+      "y": 271.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-14"
+    },
+    {
+      "id": "workbench-L03",
+      "name": "L03",
+      "type": "workbench",
+      "size": "L",
+      "x": 639.5,
+      "y": 295.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-03"
+    },
+    {
+      "id": "workbench-L01",
+      "name": "L01",
+      "type": "workbench",
+      "size": "L",
+      "x": 353.5,
+      "y": 337.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-01"
+    },
+    {
+      "id": "workbench-L07",
+      "name": "L07",
+      "type": "workbench",
+      "size": "L",
+      "x": 926.5,
+      "y": 337.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-07"
+    },
+    {
+      "id": "workbench-M01",
+      "name": "M01",
+      "type": "workbench",
+      "size": "M",
+      "x": 410.5,
+      "y": 394.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-01"
+    },
+    {
+      "id": "workbench-L05",
+      "name": "L05",
+      "type": "workbench",
+      "size": "L",
+      "x": 640.5,
+      "y": 394.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-05"
+    },
+    {
+      "id": "workbench-M06",
+      "name": "M06",
+      "type": "workbench",
+      "size": "M",
+      "x": 869.5,
+      "y": 394.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-06"
+    },
+    {
+      "id": "workbench-S04",
+      "name": "S04",
+      "type": "workbench",
+      "size": "S",
+      "x": 288.5,
+      "y": 402.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-04"
+    },
+    {
+      "id": "workbench-S20",
+      "name": "S20",
+      "type": "workbench",
+      "size": "S",
+      "x": 991.5,
+      "y": 402.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-20"
+    },
+    {
+      "id": "workbench-XL01",
+      "name": "XL01",
+      "type": "workbench",
+      "size": "XL",
+      "x": 467.5,
+      "y": 451.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-01"
+    },
+    {
+      "id": "workbench-XL06",
+      "name": "XL06",
+      "type": "workbench",
+      "size": "XL",
+      "x": 812.5,
+      "y": 451.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-06"
+    },
+    {
+      "id": "workbench-XL02",
+      "name": "XL02",
+      "type": "workbench",
+      "size": "XL",
+      "x": 525.5,
+      "y": 509.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-02"
+    },
+    {
+      "id": "workbench-XL05",
+      "name": "XL05",
+      "type": "workbench",
+      "size": "XL",
+      "x": 754.5,
+      "y": 509.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-05"
+    },
+    {
+      "id": "workbench-M02",
+      "name": "M02",
+      "type": "workbench",
+      "size": "M",
+      "x": 582.5,
+      "y": 566.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-02"
+    },
+    {
+      "id": "workbench-M05",
+      "name": "M05",
+      "type": "workbench",
+      "size": "M",
+      "x": 697.5,
+      "y": 566.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-05"
+    },
+    {
+      "id": "workbench-S22",
+      "name": "S22",
+      "type": "workbench",
+      "size": "S",
+      "x": 1049.5,
+      "y": 574.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-22"
+    },
+    {
+      "id": "workbench-S09",
+      "name": "S09",
+      "type": "workbench",
+      "size": "S",
+      "x": 230.5,
+      "y": 582.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-09"
+    },
+    {
+      "id": "workbench-S03",
+      "name": "S03",
+      "type": "workbench",
+      "size": "S",
+      "x": 34.5,
+      "y": 623.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-03"
+    },
+    {
+      "id": "workbench-S07",
+      "name": "S07",
+      "type": "workbench",
+      "size": "S",
+      "x": 107.5,
+      "y": 623.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-07"
+    },
+    {
+      "id": "workbench-L02",
+      "name": "L02",
+      "type": "workbench",
+      "size": "L",
+      "x": 312.5,
+      "y": 623.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-02"
+    },
+    {
+      "id": "workbench-L04",
+      "name": "L04",
+      "type": "workbench",
+      "size": "L",
+      "x": 410.5,
+      "y": 623.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-04"
+    },
+    {
+      "id": "workbench-XXL01",
+      "name": "XXL01",
+      "type": "workbench",
+      "size": "XXL",
+      "x": 640.5,
+      "y": 623.5,
+      "value": 2000,
+      "defaultShape": "square",
+      "sourceId": "R-XXL-01"
+    },
+    {
+      "id": "workbench-L09",
+      "name": "L09",
+      "type": "workbench",
+      "size": "L",
+      "x": 869.5,
+      "y": 623.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-09"
+    },
+    {
+      "id": "workbench-L11",
+      "name": "L11",
+      "type": "workbench",
+      "size": "L",
+      "x": 967.5,
+      "y": 623.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-11"
+    },
+    {
+      "id": "workbench-S26",
+      "name": "S26",
+      "type": "workbench",
+      "size": "S",
+      "x": 1172.5,
+      "y": 623.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-26"
+    },
+    {
+      "id": "workbench-S30",
+      "name": "S30",
+      "type": "workbench",
+      "size": "S",
+      "x": 1245.5,
+      "y": 623.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-30"
+    },
+    {
+      "id": "workbench-S11",
+      "name": "S11",
+      "type": "workbench",
+      "size": "S",
+      "x": 230.5,
+      "y": 664.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-11"
+    },
+    {
+      "id": "workbench-S24",
+      "name": "S24",
+      "type": "workbench",
+      "size": "S",
+      "x": 1049.5,
+      "y": 672.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-24"
+    },
+    {
+      "id": "workbench-M04",
+      "name": "M04",
+      "type": "workbench",
+      "size": "M",
+      "x": 582.5,
+      "y": 680.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-04"
+    },
+    {
+      "id": "workbench-M07",
+      "name": "M07",
+      "type": "workbench",
+      "size": "M",
+      "x": 697.5,
+      "y": 680.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-07"
+    },
+    {
+      "id": "workbench-XL04",
+      "name": "XL04",
+      "type": "workbench",
+      "size": "XL",
+      "x": 525.5,
+      "y": 737.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-04"
+    },
+    {
+      "id": "workbench-XL07",
+      "name": "XL07",
+      "type": "workbench",
+      "size": "XL",
+      "x": 754.5,
+      "y": 737.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-07"
+    },
+    {
+      "id": "workbench-XL03",
+      "name": "XL03",
+      "type": "workbench",
+      "size": "XL",
+      "x": 467.5,
+      "y": 795.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-03"
+    },
+    {
+      "id": "workbench-XL08",
+      "name": "XL08",
+      "type": "workbench",
+      "size": "XL",
+      "x": 812.5,
+      "y": 795.5,
+      "value": 1000,
+      "defaultShape": "square",
+      "sourceId": "R-XL-08"
+    },
+    {
+      "id": "workbench-S13",
+      "name": "S13",
+      "type": "workbench",
+      "size": "S",
+      "x": 288.5,
+      "y": 844.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-13"
+    },
+    {
+      "id": "workbench-S29",
+      "name": "S29",
+      "type": "workbench",
+      "size": "S",
+      "x": 991.5,
+      "y": 844.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-29"
+    },
+    {
+      "id": "workbench-M03",
+      "name": "M03",
+      "type": "workbench",
+      "size": "M",
+      "x": 410.5,
+      "y": 852.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-03"
+    },
+    {
+      "id": "workbench-L08",
+      "name": "L08",
+      "type": "workbench",
+      "size": "L",
+      "x": 640.5,
+      "y": 852.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-08"
+    },
+    {
+      "id": "workbench-M08",
+      "name": "M08",
+      "type": "workbench",
+      "size": "M",
+      "x": 869.5,
+      "y": 852.5,
+      "value": 400,
+      "defaultShape": "square",
+      "sourceId": "R-M-08"
+    },
+    {
+      "id": "workbench-L12",
+      "name": "L12",
+      "type": "workbench",
+      "size": "L",
+      "x": 926.5,
+      "y": 909.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-12"
+    },
+    {
+      "id": "workbench-L06",
+      "name": "L06",
+      "type": "workbench",
+      "size": "L",
+      "x": 353.5,
+      "y": 910.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-06"
+    },
+    {
+      "id": "workbench-L10",
+      "name": "L10",
+      "type": "workbench",
+      "size": "L",
+      "x": 639.5,
+      "y": 951.5,
+      "value": 600,
+      "defaultShape": "square",
+      "sourceId": "R-L-10"
+    },
+    {
+      "id": "workbench-S19",
+      "name": "S19",
+      "type": "workbench",
+      "size": "S",
+      "x": 418.5,
+      "y": 975.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-19"
+    },
+    {
+      "id": "workbench-S28",
+      "name": "S28",
+      "type": "workbench",
+      "size": "S",
+      "x": 860.5,
+      "y": 975.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-28"
+    },
+    {
+      "id": "workbench-S21",
+      "name": "S21",
+      "type": "workbench",
+      "size": "S",
+      "x": 598.5,
+      "y": 1016.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-21"
+    },
+    {
+      "id": "workbench-S23",
+      "name": "S23",
+      "type": "workbench",
+      "size": "S",
+      "x": 681.5,
+      "y": 1016.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-23"
+    },
+    {
+      "id": "workbench-S16",
+      "name": "S16",
+      "type": "workbench",
+      "size": "S",
+      "x": 230.5,
+      "y": 1033.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-16"
+    },
+    {
+      "id": "workbench-S31",
+      "name": "S31",
+      "type": "workbench",
+      "size": "S",
+      "x": 1049.5,
+      "y": 1033.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-31"
+    },
+    {
+      "id": "workbench-S15",
+      "name": "S15",
+      "type": "workbench",
+      "size": "S",
+      "x": 165.5,
+      "y": 1098.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-15"
+    },
+    {
+      "id": "workbench-S32",
+      "name": "S32",
+      "type": "workbench",
+      "size": "S",
+      "x": 1114.5,
+      "y": 1098.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-32"
+    },
+    {
+      "id": "workbench-S25",
+      "name": "S25",
+      "type": "workbench",
+      "size": "S",
+      "x": 640.5,
+      "y": 1147.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-25"
+    },
+    {
+      "id": "workbench-S27",
+      "name": "S27",
+      "type": "workbench",
+      "size": "S",
+      "x": 639.5,
+      "y": 1213.5,
+      "value": 300,
+      "defaultShape": "square",
+      "sourceId": "R-S-27"
+    }
+  ],
+  "connections": [
+    {
+      "from": "lair-XS08",
+      "to": "lair-XS14",
+      "id": "e-1"
+    },
+    {
+      "from": "lair-XS08",
+      "to": "workbench-S06",
+      "id": "e-2"
+    },
+    {
+      "from": "lair-XS22",
+      "to": "lair-XS21",
+      "id": "e-3"
+    },
+    {
+      "from": "lair-XS22",
+      "to": "workbench-S06",
+      "id": "e-4"
+    },
+    {
+      "from": "lair-XS14",
+      "to": "workbench-S08",
+      "id": "e-5"
+    },
+    {
+      "from": "lair-XS21",
+      "to": "workbench-S08",
+      "id": "e-6"
+    },
+    {
+      "from": "lair-XS02",
+      "to": "lair-XS06",
+      "id": "e-7"
+    },
+    {
+      "from": "lair-XS02",
+      "to": "workbench-S01",
+      "id": "e-8"
+    },
+    {
+      "from": "lair-XS32",
+      "to": "lair-XS31",
+      "id": "e-9"
+    },
+    {
+      "from": "lair-XS32",
+      "to": "workbench-S18",
+      "id": "e-10"
+    },
+    {
+      "from": "lair-XS26",
+      "to": "lair-XS25",
+      "id": "e-11"
+    },
+    {
+      "from": "lair-XS07",
+      "to": "lair-XS12",
+      "id": "e-12"
+    },
+    {
+      "from": "lair-XS06",
+      "to": "workbench-S02",
+      "id": "e-13"
+    },
+    {
+      "from": "lair-XS31",
+      "to": "workbench-S17",
+      "id": "e-14"
+    },
+    {
+      "from": "lair-XS16",
+      "to": "workbench-S08",
+      "id": "e-15"
+    },
+    {
+      "from": "lair-XS16",
+      "to": "workbench-S10",
+      "id": "e-16"
+    },
+    {
+      "from": "lair-XS25",
+      "to": "lair-M13",
+      "id": "e-17"
+    },
+    {
+      "from": "lair-XS20",
+      "to": "workbench-S08",
+      "id": "e-18"
+    },
+    {
+      "from": "lair-XS20",
+      "to": "workbench-S12",
+      "id": "e-19"
+    },
+    {
+      "from": "lair-XS12",
+      "to": "lair-M02",
+      "id": "e-20"
+    },
+    {
+      "from": "lair-XS11",
+      "to": "lair-XS10",
+      "id": "e-21"
+    },
+    {
+      "from": "lair-XS11",
+      "to": "workbench-S05",
+      "id": "e-22"
+    },
+    {
+      "from": "lair-XS30",
+      "to": "lair-XS36",
+      "id": "e-23"
+    },
+    {
+      "from": "lair-XS30",
+      "to": "workbench-S14",
+      "id": "e-24"
+    },
+    {
+      "from": "lair-XS01",
+      "to": "lair-XS05",
+      "id": "e-25"
+    },
+    {
+      "from": "lair-XS01",
+      "to": "workbench-S01",
+      "id": "e-26"
+    },
+    {
+      "from": "lair-XS38",
+      "to": "lair-XS37",
+      "id": "e-27"
+    },
+    {
+      "from": "lair-XS38",
+      "to": "workbench-S18",
+      "id": "e-28"
+    },
+    {
+      "from": "lair-M02",
+      "to": "lair-S02",
+      "id": "e-29"
+    },
+    {
+      "from": "lair-M02",
+      "to": "workbench-S10",
+      "id": "e-30"
+    },
+    {
+      "from": "lair-M13",
+      "to": "lair-S04",
+      "id": "e-31"
+    },
+    {
+      "from": "lair-M13",
+      "to": "workbench-S12",
+      "id": "e-32"
+    },
+    {
+      "from": "lair-M13",
+      "to": "workbench-S14",
+      "id": "e-33"
+    },
+    {
+      "from": "lair-XS05",
+      "to": "workbench-S02",
+      "id": "e-34"
+    },
+    {
+      "from": "lair-S02",
+      "to": "lair-M05",
+      "id": "e-35"
+    },
+    {
+      "from": "lair-S02",
+      "to": "lair-M07",
+      "id": "e-36"
+    },
+    {
+      "from": "lair-XS37",
+      "to": "workbench-S17",
+      "id": "e-37"
+    },
+    {
+      "from": "lair-S04",
+      "to": "lair-M17",
+      "id": "e-38"
+    },
+    {
+      "from": "lair-S04",
+      "to": "lair-M12",
+      "id": "e-39"
+    },
+    {
+      "from": "lair-M05",
+      "to": "workbench-S05",
+      "id": "e-40"
+    },
+    {
+      "from": "lair-M05",
+      "to": "workbench-M01",
+      "id": "e-41"
+    },
+    {
+      "from": "lair-M17",
+      "to": "workbench-S14",
+      "id": "e-42"
+    },
+    {
+      "from": "lair-M17",
+      "to": "workbench-M06",
+      "id": "e-43"
+    },
+    {
+      "from": "lair-M07",
+      "to": "workbench-L05",
+      "id": "e-44"
+    },
+    {
+      "from": "lair-M12",
+      "to": "workbench-L05",
+      "id": "e-45"
+    },
+    {
+      "from": "lair-XS10",
+      "to": "workbench-S04",
+      "id": "e-46"
+    },
+    {
+      "from": "lair-XS36",
+      "to": "workbench-S20",
+      "id": "e-47"
+    },
+    {
+      "from": "lair-XS04",
+      "to": "lair-XS09",
+      "id": "e-48"
+    },
+    {
+      "from": "lair-XS42",
+      "to": "lair-XS41",
+      "id": "e-49"
+    },
+    {
+      "from": "lair-XS41",
+      "to": "lair-M27",
+      "id": "e-50"
+    },
+    {
+      "from": "lair-XS48",
+      "to": "lair-XS47",
+      "id": "e-51"
+    },
+    {
+      "from": "lair-XS48",
+      "to": "workbench-S30",
+      "id": "e-52"
+    },
+    {
+      "from": "lair-XS03",
+      "to": "lair-XS13",
+      "id": "e-53"
+    },
+    {
+      "from": "lair-XS03",
+      "to": "workbench-S03",
+      "id": "e-54"
+    },
+    {
+      "from": "lair-M16",
+      "to": "workbench-L05",
+      "id": "e-55"
+    },
+    {
+      "from": "lair-M16",
+      "to": "workbench-XL05",
+      "id": "e-56"
+    },
+    {
+      "from": "lair-M01",
+      "to": "lair-S01",
+      "id": "e-57"
+    },
+    {
+      "from": "lair-M03",
+      "to": "lair-S01",
+      "id": "e-58"
+    },
+    {
+      "from": "lair-M03",
+      "to": "workbench-M01",
+      "id": "e-59"
+    },
+    {
+      "from": "lair-M03",
+      "to": "workbench-S04",
+      "id": "e-60"
+    },
+    {
+      "from": "lair-M11",
+      "to": "workbench-L05",
+      "id": "e-61"
+    },
+    {
+      "from": "lair-M11",
+      "to": "workbench-XL02",
+      "id": "e-62"
+    },
+    {
+      "from": "lair-M21",
+      "to": "lair-S06",
+      "id": "e-63"
+    },
+    {
+      "from": "lair-M21",
+      "to": "workbench-M06",
+      "id": "e-64"
+    },
+    {
+      "from": "lair-M21",
+      "to": "workbench-S20",
+      "id": "e-65"
+    },
+    {
+      "from": "lair-M27",
+      "to": "lair-S06",
+      "id": "e-66"
+    },
+    {
+      "from": "lair-S01",
+      "to": "lair-M06",
+      "id": "e-67"
+    },
+    {
+      "from": "lair-S06",
+      "to": "lair-M26",
+      "id": "e-68"
+    },
+    {
+      "from": "lair-XS15",
+      "to": "workbench-S09",
+      "id": "e-69"
+    },
+    {
+      "from": "lair-XS15",
+      "to": "workbench-S07",
+      "id": "e-70"
+    },
+    {
+      "from": "lair-XS46",
+      "to": "workbench-S22",
+      "id": "e-71"
+    },
+    {
+      "from": "lair-XS46",
+      "to": "workbench-S26",
+      "id": "e-72"
+    },
+    {
+      "from": "lair-M06",
+      "to": "workbench-L04",
+      "id": "e-73"
+    },
+    {
+      "from": "lair-M20",
+      "to": "workbench-XL05",
+      "id": "e-74"
+    },
+    {
+      "from": "lair-M20",
+      "to": "workbench-L09",
+      "id": "e-75"
+    },
+    {
+      "from": "lair-M26",
+      "to": "workbench-L09",
+      "id": "e-76"
+    },
+    {
+      "from": "lair-M10",
+      "to": "workbench-XL02",
+      "id": "e-77"
+    },
+    {
+      "from": "lair-M10",
+      "to": "workbench-L04",
+      "id": "e-78"
+    },
+    {
+      "from": "lair-M15",
+      "to": "workbench-L04",
+      "id": "e-79"
+    },
+    {
+      "from": "lair-M15",
+      "to": "workbench-XL04",
+      "id": "e-80"
+    },
+    {
+      "from": "lair-M25",
+      "to": "workbench-L09",
+      "id": "e-81"
+    },
+    {
+      "from": "lair-M25",
+      "to": "workbench-XL07",
+      "id": "e-82"
+    },
+    {
+      "from": "lair-M29",
+      "to": "lair-S08",
+      "id": "e-83"
+    },
+    {
+      "from": "lair-M29",
+      "to": "workbench-L09",
+      "id": "e-84"
+    },
+    {
+      "from": "lair-M09",
+      "to": "lair-S03",
+      "id": "e-85"
+    },
+    {
+      "from": "lair-M09",
+      "to": "workbench-L04",
+      "id": "e-86"
+    },
+    {
+      "from": "lair-XS19",
+      "to": "workbench-S07",
+      "id": "e-87"
+    },
+    {
+      "from": "lair-XS19",
+      "to": "workbench-S11",
+      "id": "e-88"
+    },
+    {
+      "from": "lair-XS50",
+      "to": "workbench-S24",
+      "id": "e-89"
+    },
+    {
+      "from": "lair-S03",
+      "to": "lair-M14",
+      "id": "e-90"
+    },
+    {
+      "from": "lair-S03",
+      "to": "lair-M08",
+      "id": "e-91"
+    },
+    {
+      "from": "lair-S08",
+      "to": "lair-M31",
+      "id": "e-92"
+    },
+    {
+      "from": "lair-S08",
+      "to": "lair-M33",
+      "id": "e-93"
+    },
+    {
+      "from": "lair-XS52",
+      "to": "lair-XS62",
+      "id": "e-94"
+    },
+    {
+      "from": "lair-XS18",
+      "to": "lair-XS17",
+      "id": "e-95"
+    },
+    {
+      "from": "lair-M14",
+      "to": "workbench-S13",
+      "id": "e-96"
+    },
+    {
+      "from": "lair-M14",
+      "to": "workbench-M03",
+      "id": "e-97"
+    },
+    {
+      "from": "lair-M31",
+      "to": "workbench-S29",
+      "id": "e-98"
+    },
+    {
+      "from": "lair-M31",
+      "to": "workbench-M08",
+      "id": "e-99"
+    },
+    {
+      "from": "lair-M33",
+      "to": "lair-XS56",
+      "id": "e-100"
+    },
+    {
+      "from": "lair-M33",
+      "to": "workbench-S29",
+      "id": "e-101"
+    },
+    {
+      "from": "lair-M08",
+      "to": "lair-XS24",
+      "id": "e-102"
+    },
+    {
+      "from": "lair-M08",
+      "to": "workbench-S13",
+      "id": "e-103"
+    },
+    {
+      "from": "lair-M19",
+      "to": "workbench-XL04",
+      "id": "e-104"
+    },
+    {
+      "from": "lair-M19",
+      "to": "workbench-L08",
+      "id": "e-105"
+    },
+    {
+      "from": "lair-M24",
+      "to": "workbench-XL07",
+      "id": "e-106"
+    },
+    {
+      "from": "lair-M24",
+      "to": "workbench-L08",
+      "id": "e-107"
+    },
+    {
+      "from": "lair-XS17",
+      "to": "workbench-S03",
+      "id": "e-108"
+    },
+    {
+      "from": "lair-XS62",
+      "to": "workbench-S30",
+      "id": "e-109"
+    },
+    {
+      "from": "lair-XS24",
+      "to": "lair-XS23",
+      "id": "e-110"
+    },
+    {
+      "from": "lair-XS56",
+      "to": "lair-XS61",
+      "id": "e-111"
+    },
+    {
+      "from": "lair-XS29",
+      "to": "lair-XS35",
+      "id": "e-112"
+    },
+    {
+      "from": "lair-XS29",
+      "to": "workbench-S13",
+      "id": "e-113"
+    },
+    {
+      "from": "lair-M23",
+      "to": "lair-S05",
+      "id": "e-114"
+    },
+    {
+      "from": "lair-M23",
+      "to": "workbench-L08",
+      "id": "e-115"
+    },
+    {
+      "from": "lair-M28",
+      "to": "workbench-L08",
+      "id": "e-116"
+    },
+    {
+      "from": "lair-XS55",
+      "to": "lair-XS54",
+      "id": "e-117"
+    },
+    {
+      "from": "lair-XS55",
+      "to": "workbench-S29",
+      "id": "e-118"
+    },
+    {
+      "from": "lair-M18",
+      "to": "lair-S05",
+      "id": "e-119"
+    },
+    {
+      "from": "lair-M18",
+      "to": "workbench-M03",
+      "id": "e-120"
+    },
+    {
+      "from": "lair-M18",
+      "to": "workbench-S19",
+      "id": "e-121"
+    },
+    {
+      "from": "lair-M30",
+      "to": "lair-S07",
+      "id": "e-122"
+    },
+    {
+      "from": "lair-M30",
+      "to": "workbench-M08",
+      "id": "e-123"
+    },
+    {
+      "from": "lair-M30",
+      "to": "workbench-S28",
+      "id": "e-124"
+    },
+    {
+      "from": "lair-S05",
+      "to": "lair-M22",
+      "id": "e-125"
+    },
+    {
+      "from": "lair-S07",
+      "to": "lair-M32",
+      "id": "e-126"
+    },
+    {
+      "from": "lair-XS28",
+      "to": "lair-XS27",
+      "id": "e-127"
+    },
+    {
+      "from": "lair-XS28",
+      "to": "workbench-S16",
+      "id": "e-128"
+    },
+    {
+      "from": "lair-XS60",
+      "to": "lair-XS64",
+      "id": "e-129"
+    },
+    {
+      "from": "lair-XS60",
+      "to": "workbench-S31",
+      "id": "e-130"
+    },
+    {
+      "from": "lair-M22",
+      "to": "lair-XS40",
+      "id": "e-131"
+    },
+    {
+      "from": "lair-M22",
+      "to": "workbench-S19",
+      "id": "e-132"
+    },
+    {
+      "from": "lair-M22",
+      "to": "workbench-S21",
+      "id": "e-133"
+    },
+    {
+      "from": "lair-M32",
+      "to": "lair-XS53",
+      "id": "e-134"
+    },
+    {
+      "from": "lair-M32",
+      "to": "workbench-S28",
+      "id": "e-135"
+    },
+    {
+      "from": "lair-M32",
+      "to": "workbench-S23",
+      "id": "e-136"
+    },
+    {
+      "from": "lair-XS27",
+      "to": "workbench-S15",
+      "id": "e-137"
+    },
+    {
+      "from": "lair-XS64",
+      "to": "workbench-S32",
+      "id": "e-138"
+    },
+    {
+      "from": "lair-XS35",
+      "to": "workbench-S19",
+      "id": "e-139"
+    },
+    {
+      "from": "lair-XS54",
+      "to": "workbench-S28",
+      "id": "e-140"
+    },
+    {
+      "from": "lair-XS40",
+      "to": "lair-XS39",
+      "id": "e-141"
+    },
+    {
+      "from": "lair-XS45",
+      "to": "workbench-S21",
+      "id": "e-142"
+    },
+    {
+      "from": "lair-XS45",
+      "to": "workbench-S25",
+      "id": "e-143"
+    },
+    {
+      "from": "lair-XS49",
+      "to": "workbench-S23",
+      "id": "e-144"
+    },
+    {
+      "from": "lair-XS53",
+      "to": "lair-XS58",
+      "id": "e-145"
+    },
+    {
+      "from": "lair-XS34",
+      "to": "lair-XS33",
+      "id": "e-146"
+    },
+    {
+      "from": "lair-XS34",
+      "to": "workbench-S16",
+      "id": "e-147"
+    },
+    {
+      "from": "lair-XS59",
+      "to": "lair-XS63",
+      "id": "e-148"
+    },
+    {
+      "from": "lair-XS59",
+      "to": "workbench-S31",
+      "id": "e-149"
+    },
+    {
+      "from": "lair-XS63",
+      "to": "workbench-S32",
+      "id": "e-150"
+    },
+    {
+      "from": "lair-XS33",
+      "to": "workbench-S15",
+      "id": "e-151"
+    },
+    {
+      "from": "lair-XS43",
+      "to": "workbench-S27",
+      "id": "e-152"
+    },
+    {
+      "from": "lair-XS57",
+      "to": "workbench-S27",
+      "id": "e-153"
+    },
+    {
+      "from": "workbench-S10",
+      "to": "workbench-L03",
+      "id": "e-154"
+    },
+    {
+      "from": "workbench-S12",
+      "to": "workbench-L03",
+      "id": "e-155"
+    },
+    {
+      "from": "workbench-S05",
+      "to": "workbench-L01",
+      "id": "e-156"
+    },
+    {
+      "from": "workbench-S14",
+      "to": "workbench-L07",
+      "id": "e-157"
+    },
+    {
+      "from": "workbench-L01",
+      "to": "workbench-M01",
+      "id": "e-158"
+    },
+    {
+      "from": "workbench-L01",
+      "to": "workbench-S04",
+      "id": "e-159"
+    },
+    {
+      "from": "workbench-L07",
+      "to": "workbench-M06",
+      "id": "e-160"
+    },
+    {
+      "from": "workbench-L07",
+      "to": "workbench-S20",
+      "id": "e-161"
+    },
+    {
+      "from": "workbench-M01",
+      "to": "workbench-XL01",
+      "id": "e-162"
+    },
+    {
+      "from": "workbench-M06",
+      "to": "workbench-XL06",
+      "id": "e-163"
+    },
+    {
+      "from": "workbench-XL02",
+      "to": "workbench-M02",
+      "id": "e-164"
+    },
+    {
+      "from": "workbench-XL05",
+      "to": "workbench-M05",
+      "id": "e-165"
+    },
+    {
+      "from": "workbench-M02",
+      "to": "workbench-XXL01",
+      "id": "e-166"
+    },
+    {
+      "from": "workbench-M05",
+      "to": "workbench-XXL01",
+      "id": "e-167"
+    },
+    {
+      "from": "workbench-S22",
+      "to": "workbench-L11",
+      "id": "e-168"
+    },
+    {
+      "from": "workbench-S09",
+      "to": "workbench-L02",
+      "id": "e-169"
+    },
+    {
+      "from": "workbench-L02",
+      "to": "workbench-S11",
+      "id": "e-170"
+    },
+    {
+      "from": "workbench-XXL01",
+      "to": "workbench-M04",
+      "id": "e-171"
+    },
+    {
+      "from": "workbench-XXL01",
+      "to": "workbench-M07",
+      "id": "e-172"
+    },
+    {
+      "from": "workbench-L11",
+      "to": "workbench-S24",
+      "id": "e-173"
+    },
+    {
+      "from": "workbench-M04",
+      "to": "workbench-XL04",
+      "id": "e-174"
+    },
+    {
+      "from": "workbench-M07",
+      "to": "workbench-XL07",
+      "id": "e-175"
+    },
+    {
+      "from": "workbench-XL03",
+      "to": "workbench-M03",
+      "id": "e-176"
+    },
+    {
+      "from": "workbench-XL08",
+      "to": "workbench-M08",
+      "id": "e-177"
+    },
+    {
+      "from": "workbench-S13",
+      "to": "workbench-L06",
+      "id": "e-178"
+    },
+    {
+      "from": "workbench-S29",
+      "to": "workbench-L12",
+      "id": "e-179"
+    },
+    {
+      "from": "workbench-M03",
+      "to": "workbench-L06",
+      "id": "e-180"
+    },
+    {
+      "from": "workbench-M08",
+      "to": "workbench-L12",
+      "id": "e-181"
+    },
+    {
+      "from": "workbench-L12",
+      "to": "workbench-S28",
+      "id": "e-182"
+    },
+    {
+      "from": "workbench-L06",
+      "to": "workbench-S19",
+      "id": "e-183"
+    },
+    {
+      "from": "workbench-L10",
+      "to": "workbench-S21",
+      "id": "e-184"
+    },
+    {
+      "from": "workbench-L10",
+      "to": "workbench-S23",
+      "id": "e-185"
+    },
+    {
+      "from": "workbench-S16",
+      "to": "workbench-S15",
+      "id": "e-186"
+    },
+    {
+      "from": "workbench-S31",
+      "to": "workbench-S32",
+      "id": "e-187"
+    },
+    {
+      "from": "lair-XS44",
+      "to": "workbench-S25",
+      "id": "e-188"
+    },
+    {
+      "from": "lair-XS51",
+      "to": "workbench-S25",
+      "id": "e-189"
+    },
+    {
+      "from": "lair-M28",
+      "to": "lair-S07",
+      "id": "e-190"
+    },
+    {
+      "from": "lair-M27",
+      "to": "workbench-S20",
+      "id": "e-191"
+    },
+    {
+      "from": "lair-M27",
+      "to": "workbench-S22",
+      "id": "e-192"
+    },
+    {
+      "from": "lair-M33",
+      "to": "workbench-S24",
+      "id": "e-193"
+    },
+    {
+      "from": "lair-M01",
+      "to": "workbench-S04",
+      "id": "e-194"
+    },
+    {
+      "from": "lair-M01",
+      "to": "workbench-S09",
+      "id": "e-195"
+    },
+    {
+      "from": "lair-XS49",
+      "to": "workbench-S25",
+      "id": "e-196"
+    },
+    {
+      "from": "lair-XS51",
+      "to": "lair-XS57",
+      "id": "e-197"
+    },
+    {
+      "from": "lair-XS43",
+      "to": "lair-XS44",
+      "id": "e-198"
+    },
+    {
+      "from": "lair-XS18",
+      "to": "workbench-S07",
+      "id": "e-199"
+    },
+    {
+      "from": "lair-XS52",
+      "to": "workbench-S26",
+      "id": "e-200"
+    },
+    {
+      "from": "lair-XS50",
+      "to": "workbench-S26",
+      "id": "e-201"
+    },
+    {
+      "from": "lair-XS13",
+      "to": "workbench-S07",
+      "id": "e-202"
+    },
+    {
+      "from": "lair-XS47",
+      "to": "workbench-S26",
+      "id": "e-203"
+    }
+  ],
+  "bases": [
+    {
+      "id": "base-nw",
+      "name": "Северо-запад",
+      "x": 280,
+      "y": 34,
+      "defaultColor": "green",
+      "sourceId": "BASE-TL"
+    },
+    {
+      "id": "base-ne",
+      "name": "Северо-восток",
+      "x": 1000,
+      "y": 34,
+      "defaultColor": "green",
+      "sourceId": "BASE-TR"
+    },
+    {
+      "id": "base-w",
+      "name": "Запад",
+      "x": 34,
+      "y": 295,
+      "defaultColor": "blue",
+      "sourceId": "BASE-L"
+    },
+    {
+      "id": "base-e",
+      "name": "Восток",
+      "x": 1245,
+      "y": 295,
+      "defaultColor": "purple",
+      "sourceId": "BASE-R"
+    },
+    {
+      "id": "base-sw",
+      "name": "Юго-запад",
+      "x": 34,
+      "y": 934,
+      "defaultColor": "magenta",
+      "sourceId": "BASE-BL"
+    },
+    {
+      "id": "base-se",
+      "name": "Юго-восток",
+      "x": 1246,
+      "y": 934,
+      "defaultColor": "red",
+      "sourceId": "BASE-BR"
+    },
+    {
+      "id": "base-ssw",
+      "name": "Нижняя западная",
+      "x": 312,
+      "y": 1213,
+      "defaultColor": "yellow",
+      "sourceId": "BASE-BTL"
+    },
+    {
+      "id": "base-sse",
+      "name": "Нижняя восточная",
+      "x": 967,
+      "y": 1213,
+      "defaultColor": "pink",
+      "sourceId": "BASE-BTR"
+    }
+  ],
+  "baseConnections": [
+    {
+      "from": "base-nw",
+      "to": "lair-XS02",
+      "id": "b-1"
+    },
+    {
+      "from": "base-nw",
+      "to": "lair-XS07",
+      "id": "b-2"
+    },
+    {
+      "from": "base-nw",
+      "to": "lair-XS08",
+      "id": "b-3"
+    },
+    {
+      "from": "base-ne",
+      "to": "lair-XS22",
+      "id": "b-4"
+    },
+    {
+      "from": "base-ne",
+      "to": "lair-XS26",
+      "id": "b-5"
+    },
+    {
+      "from": "base-ne",
+      "to": "lair-XS32",
+      "id": "b-6"
+    },
+    {
+      "from": "base-w",
+      "to": "lair-XS01",
+      "id": "b-7"
+    },
+    {
+      "from": "base-w",
+      "to": "lair-XS03",
+      "id": "b-8"
+    },
+    {
+      "from": "base-w",
+      "to": "lair-XS04",
+      "id": "b-9"
+    },
+    {
+      "from": "base-e",
+      "to": "lair-XS38",
+      "id": "b-10"
+    },
+    {
+      "from": "base-e",
+      "to": "lair-XS42",
+      "id": "b-11"
+    },
+    {
+      "from": "base-e",
+      "to": "lair-XS48",
+      "id": "b-12"
+    },
+    {
+      "from": "base-sw",
+      "to": "lair-XS17",
+      "id": "b-13"
+    },
+    {
+      "from": "base-sw",
+      "to": "lair-XS23",
+      "id": "b-14"
+    },
+    {
+      "from": "base-sw",
+      "to": "lair-XS27",
+      "id": "b-15"
+    },
+    {
+      "from": "base-se",
+      "to": "lair-XS61",
+      "id": "b-16"
+    },
+    {
+      "from": "base-se",
+      "to": "lair-XS62",
+      "id": "b-17"
+    },
+    {
+      "from": "base-se",
+      "to": "lair-XS64",
+      "id": "b-18"
+    },
+    {
+      "from": "base-ssw",
+      "to": "lair-XS33",
+      "id": "b-19"
+    },
+    {
+      "from": "base-ssw",
+      "to": "lair-XS39",
+      "id": "b-20"
+    },
+    {
+      "from": "base-ssw",
+      "to": "lair-XS43",
+      "id": "b-21"
+    },
+    {
+      "from": "base-sse",
+      "to": "lair-XS57",
+      "id": "b-22"
+    },
+    {
+      "from": "base-sse",
+      "to": "lair-XS58",
+      "id": "b-23"
+    },
+    {
+      "from": "base-sse",
+      "to": "lair-XS63",
+      "id": "b-24"
+    }
+  ]
+}
