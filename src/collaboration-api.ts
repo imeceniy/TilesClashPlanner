@@ -1,4 +1,5 @@
 import type { PlannerState } from "./types";
+import { toSharedState } from "./persistence";
 
 export type CloudRole = "R5" | "R4" | "MEMBER";
 export interface CloudUser {
@@ -31,6 +32,8 @@ export interface CloudRevision {
   authorId: string;
   summary: string;
   createdAt: string;
+  pinned?: boolean;
+  label?: string;
   author: CloudUser;
 }
 
@@ -61,14 +64,16 @@ export const collaborationApi = {
   projects: () => request<{ projects: CloudProject[] }>(api("/projects")),
   project: (id: string) => request<{ project: CloudProject }>(api(`/projects/${id}`)),
   createProject: (name: string, mapId: string, state: PlannerState) =>
-    post<{ project: CloudProject }>(api("/projects"), { name, mapId, state }),
+    post<{ project: CloudProject }>(api("/projects"), { name, mapId, state: toSharedState(state) }),
   saveProject: (id: string, state: PlannerState, baseRevision: number, summary: string) =>
     request<{ project: CloudProject }>(api(`/projects/${id}/state`), {
       method: "PUT",
-      body: JSON.stringify({ state, baseRevision, summary }),
+      body: JSON.stringify({ state: toSharedState(state), baseRevision, summary }),
       headers: { "content-type": "application/json" },
     }),
   history: (id: string) => request<{ revisions: CloudRevision[] }>(api(`/projects/${id}/history`)),
+  pinRevision: (id: string, revision: number, label: string) =>
+    post<{ revision: CloudRevision }>(api(`/projects/${id}/history/${revision}/pin`), { label }),
   restore: (id: string, revision: number) => post<{ project: CloudProject }>(api(`/projects/${id}/history/${revision}/restore`)),
   members: (id: string) => request<{ members: CloudMember[] }>(api(`/projects/${id}/members`)),
   addMember: (id: string, username: string, role: CloudRole) => post<{ ok: true }>(api(`/projects/${id}/members`), { username, role }),

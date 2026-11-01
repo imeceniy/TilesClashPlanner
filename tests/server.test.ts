@@ -62,13 +62,15 @@ test("collaboration API enforces roles, revisions, history, SSE and public share
     assert.equal(result.response.status, 201);
     return { cookie: result.response.headers.get("set-cookie")!.split(";")[0]!, user: result.payload.user as { id: string } };
   };
+  const teamState = structuredClone(state);
+  teamState.plans.push({ ...structuredClone(state.plans[0]!), id: "p2", name: "Day 3" });
 
   try {
     const owner = await register("owner");
     const editor = await register("editor");
     const created = await call(
       "/api/projects",
-      { method: "POST", body: JSON.stringify({ name: "War room", mapId: "gene-clash", state }) },
+      { method: "POST", body: JSON.stringify({ name: "War room", mapId: "gene-clash-oil-clash-season-5", state: teamState }) },
       owner.cookie,
     );
     assert.equal(created.response.status, 201);
@@ -99,7 +101,7 @@ test("collaboration API enforces roles, revisions, history, SSE and public share
     const firstEvent = new TextDecoder().decode((await reader.read()).value);
     assert.match(firstEvent, /event: ready/);
 
-    const changedState = structuredClone(state);
+    const changedState = structuredClone(teamState);
     changedState.plans[0]!.name = "Day 2";
     const saved = await call(
       `/api/projects/${projectId}/state`,
@@ -110,8 +112,6 @@ test("collaboration API enforces roles, revisions, history, SSE and public share
     assert.equal(saved.payload.project.revision, 2);
     const revisionEvent = new TextDecoder().decode((await reader.read()).value);
     assert.match(revisionEvent, /event: revision/);
-    await reader.cancel();
-
     const conflict = await call(
       `/api/projects/${projectId}/state`,
       { method: "PUT", body: JSON.stringify({ state, baseRevision: 1 }) },
@@ -129,6 +129,16 @@ test("collaboration API enforces roles, revisions, history, SSE and public share
     const publicView = await call(`/api/public/${shared.payload.shareId}`);
     assert.equal(publicView.response.status, 200);
     assert.equal(publicView.payload.project.state.plans[0].name, "Day 2");
+    assert.equal(publicView.payload.project.state.plans.length, 1);
+    assert.equal(publicView.payload.project.state.plans[0].id, "p1");
+    assert.equal("id" in publicView.payload.project, false);
+    assert.equal("settings" in publicView.payload.project.state, false);
+    const removed = await call(`/api/projects/${projectId}/members/${editor.user.id}`, { method: "DELETE" }, owner.cookie);
+    assert.equal(removed.response.status, 200);
+    const removalEvent = await reader.read();
+    assert.equal(removalEvent.done, false);
+    assert.match(new TextDecoder().decode(removalEvent.value), /event: members/);
+    assert.equal((await reader.read()).done, true);
   } finally {
     await new Promise<void>((resolve) => server.close(() => resolve()));
   }

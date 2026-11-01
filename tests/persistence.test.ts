@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { migrateProject, parseProject, serializeProject, STORAGE_VERSION } from "../src/persistence";
+import { loadState, migrateProject, parseProject, saveState, serializeProject, STORAGE_VERSION, toSharedState } from "../src/persistence";
 import type { PlannerState } from "../src/types";
 
 const defaults: PlannerState = {
@@ -35,6 +35,33 @@ const defaults: PlannerState = {
     viewBox: null,
   },
 };
+
+class FakeStorage implements Storage {
+  private values = new Map<string, string>();
+  quotaOnce = false;
+  get length(): number {
+    return this.values.size;
+  }
+  clear(): void {
+    this.values.clear();
+  }
+  getItem(key: string): string | null {
+    return this.values.get(key) ?? null;
+  }
+  key(index: number): string | null {
+    return [...this.values.keys()][index] ?? null;
+  }
+  removeItem(key: string): void {
+    this.values.delete(key);
+  }
+  setItem(key: string, value: string): void {
+    if (this.quotaOnce && key === "tiles-clash-planner:v6:map1" && [...this.values.keys()].some((item) => item.includes(":backup:"))) {
+      this.quotaOnce = false;
+      throw new DOMException("quota", "QuotaExceededError");
+    }
+    this.values.set(key, value);
+  }
+}
 
 test("v1 migrates to the current format and removes obsolete starts", () => {
   const legacy = structuredClone(defaults) as unknown as Record<string, unknown>;
@@ -88,6 +115,27 @@ test("alliance and refusal tags survive serialization", () => {
   assert.deepEqual(parseProject(serializeProject(project), defaults).plans[0]!.territoryTags, project.plans[0]!.territoryTags);
 });
 test("serialization round-trips", () => assert.deepEqual(parseProject(serializeProject(defaults), defaults), defaults));
+test("shared state excludes local view settings", () => {
+  const shared = toSharedState(defaults);
+  assert.equal("settings" in shared, false);
+  assert.equal(shared.plans[0]!.id, defaults.plans[0]!.id);
+});
+test("migration retains at most three backups per key family", () => {
+  const storage = new FakeStorage();
+  const old = { ...structuredClone(defaults), version: 5 };
+  storage.setItem("tiles-clash-planner:v6:map1", JSON.stringify(old));
+  for (let index = 1; index <= 4; index++) storage.setItem(`tiles-clash-planner:v6:map1:backup:${index}`, "old");
+  loadState(storage, defaults, "map1");
+  assert.equal([...Array(storage.length)].filter((_, index) => storage.key(index)?.includes(":backup:")).length, 3);
+});
+test("saveState clears backup copies and retries once after quota errors", () => {
+  const storage = new FakeStorage();
+  storage.setItem("tiles-clash-planner:v6:map1:backup:1", "old");
+  storage.quotaOnce = true;
+  saveState(storage, defaults, "map1");
+  assert.equal(storage.getItem("tiles-clash-planner:v6:map1"), serializeProject(defaults));
+  assert.equal(storage.length, 1);
+});
 test("strict validation rejects unknown nested fields", () => {
   const invalid = structuredClone(defaults) as unknown as Record<string, unknown>;
   (invalid.plans as Array<Record<string, unknown>>)[0]!.unexpected = true;

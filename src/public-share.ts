@@ -1,10 +1,11 @@
 import type { PlannerState } from "./types";
+import { toSharedState } from "./persistence";
 
 interface PublicSharePayload {
   format: 1;
   mapId: string;
   createdAt: string;
-  state: PlannerState;
+  state: Omit<PlannerState, "settings">;
 }
 
 const textEncoder = new TextEncoder();
@@ -35,8 +36,8 @@ async function gunzip(bytes: Uint8Array): Promise<Uint8Array> {
 export async function createPublicViewUrl(state: PlannerState, mapId: string): Promise<string> {
   const currentPlan = state.plans.find(({ id }) => id === state.currentPlanId) ?? state.plans[0];
   if (!currentPlan) throw new Error("Нет плана для публикации");
-  const publicState: PlannerState = {
-    ...structuredClone(state),
+  const publicState = {
+    ...toSharedState(state),
     plans: [structuredClone(currentPlan)],
     currentPlanId: currentPlan.id,
   };

@@ -38,10 +38,13 @@ export interface RevisionRecord {
   authorId: string;
   summary: string;
   createdAt: string;
+  pinned?: boolean;
+  label?: string;
 }
 export interface ShareRecord {
   id: string;
   projectId: string;
+  planId: string;
   createdBy: string;
   createdAt: string;
   revokedAt?: string;

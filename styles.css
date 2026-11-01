@@ -193,6 +193,13 @@ button {
   background: var(--yellow);
   box-shadow: none;
 }
+.save-state.save-error {
+  color: var(--red);
+}
+.save-state.save-error i {
+  background: var(--red);
+  box-shadow: none;
+}
 .icon-button,
 .toolbar button,
 .zoom-controls button {
@@ -838,7 +845,7 @@ body.readonly .workspace {
   color: #e85d75;
   font-size: 20px;
 }
-.copper-only[hidden] {
+.territory-tag-tool[hidden] {
   display: none;
 }
 .tool-divider {

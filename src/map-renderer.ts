@@ -221,7 +221,7 @@ export function renderMapScene(context: RenderContext): void {
           width: emphasized ? 130 : 80,
           align: "center",
           text: territory.name,
-          fontSize: emphasized ? 28 : map.variant === "polygon" ? 7 : 16,
+          fontSize: emphasized ? 28 : map.id === "winter-2026" ? 11 : map.variant === "polygon" ? 7 : 16,
           fontStyle: "bold",
           fill: labelFill,
           stroke: labelStroke,

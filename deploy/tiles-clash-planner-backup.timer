@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Tiles Clash Planner database backup
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=15m
+Unit=tiles-clash-planner-backup.service
+
+[Install]
+WantedBy=timers.target

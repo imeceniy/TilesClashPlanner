@@ -9,10 +9,11 @@ User=tilesclash
 Group=tilesclash
 WorkingDirectory=/opt/tiles-clash-planner/current
 Environment=NODE_ENV=production
+Environment=PLANNER_TRUST_PROXY=true
 Environment=PLANNER_PORT=8787
 Environment=PLANNER_DATA_FILE=/var/lib/tiles-clash-planner/database.json
 Environment=PLANNER_STATIC_DIR=/opt/tiles-clash-planner/current/dist
-ExecStart=/usr/bin/node /opt/tiles-clash-planner/current/server/index.mjs
+ExecStart=/usr/bin/node /opt/tiles-clash-planner/current/dist-server/index.mjs
 Restart=on-failure
 RestartSec=3
 StateDirectory=tiles-clash-planner

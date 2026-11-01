@@ -1,6 +1,9 @@
-import type { Alliance, MapData, Plan, PlannerSettings, PlannerState, TerritoryStatus, TerritoryTag } from "./types";
+import type { Alliance, Plan, PlannerSettings, PlannerState, TerritoryStatus, TerritoryTag } from "./types";
 
-export function validateProjectMapReferences(project: PlannerState, map: MapData): void {
+export function validateProjectMapReferences(
+  project: PlannerState,
+  map: { territories: Array<{ id: string }>; bases: Array<{ id: string }> },
+): void {
   const territoryIds = new Set(map.territories.map(({ id }) => id));
   const startIds = new Set([...territoryIds, ...map.bases.map(({ id }) => id)]);
   for (const plan of project.plans) {
@@ -254,6 +257,11 @@ export function migrateProject(raw: unknown, defaults: PlannerState): PlannerSta
 export function serializeProject(state: PlannerState): string {
   return JSON.stringify(state);
 }
+export function toSharedState(state: PlannerState): Omit<PlannerState, "settings"> {
+  const shared = structuredClone(state) as Partial<PlannerState>;
+  delete shared.settings;
+  return shared as Omit<PlannerState, "settings">;
+}
 export function parseProject(text: string, defaults: PlannerState): PlannerState {
   return migrateProject(JSON.parse(text) as unknown, defaults);
 }
@@ -268,7 +276,7 @@ export function loadState(storage: Storage, defaults: PlannerState, mapId?: stri
     if (!stored) continue;
     try {
       const migrated = parseProject(stored, defaults);
-      if (key !== currentKey || JSON.parse(stored).version !== STORAGE_VERSION) storage.setItem(`${key}:backup:${Date.now()}`, stored);
+      if (key !== currentKey || JSON.parse(stored).version !== STORAGE_VERSION) saveBackup(storage, key, stored);
       storage.setItem(currentKey, serializeProject(migrated));
       return migrated;
     } catch (error) {
@@ -279,5 +287,39 @@ export function loadState(storage: Storage, defaults: PlannerState, mapId?: stri
 }
 
 export function saveState(storage: Storage, state: PlannerState, mapId?: string): void {
-  storage.setItem(scopedStorageKey(mapId), serializeProject(state));
+  const key = scopedStorageKey(mapId);
+  const serialized = serializeProject(state);
+  try {
+    storage.setItem(key, serialized);
+  } catch (error) {
+    if (!isQuotaExceeded(error)) throw error;
+    removeBackups(storage, key);
+    storage.setItem(key, serialized);
+  }
+}
+
+const backupPrefix = (key: string): string => `${key}:backup:`;
+function backupKeys(storage: Storage, key: string): string[] {
+  const prefix = backupPrefix(key);
+  const keys: string[] = [];
+  for (let index = 0; index < storage.length; index++) {
+    const candidate = storage.key(index);
+    if (candidate?.startsWith(prefix)) keys.push(candidate);
+  }
+  return keys.sort((a, b) => Number(b.slice(prefix.length)) - Number(a.slice(prefix.length)));
+}
+function removeBackups(storage: Storage, key: string): void {
+  for (const backup of backupKeys(storage, key)) storage.removeItem(backup);
+}
+function saveBackup(storage: Storage, key: string, value: string): void {
+  const backup = `${backupPrefix(key)}${Date.now()}`;
+  const existing = backupKeys(storage, key);
+  if (existing.length >= 3) for (const old of existing.slice(2)) storage.removeItem(old);
+  storage.setItem(backup, value);
+  for (const old of backupKeys(storage, key).slice(3)) storage.removeItem(old);
+}
+function isQuotaExceeded(error: unknown): boolean {
+  return error instanceof DOMException
+    ? error.name === "QuotaExceededError" || error.code === 22
+    : Boolean(error && typeof error === "object" && "name" in error && (error as { name: string }).name === "QuotaExceededError");
 }

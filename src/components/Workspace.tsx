@@ -23,8 +23,8 @@ export function Workspace() {
         <Tool name="label" icon="T" label="Текст" />
         <Tool name="marker" icon="⌖" label="Маркер" />
         <Tool name="noAttack" label="1 удар" className="no-attack" />
-        <Tool name="allianceTag" icon="♜" label="Союз" className="copper-only" />
-        <Tool name="refusalTag" icon="×" label="Отказ" className="refusal copper-only" />
+        <Tool name="allianceTag" icon="♜" label="Союз" className="territory-tag-tool" />
+        <Tool name="refusalTag" icon="×" label="Отказ" className="refusal territory-tag-tool" />
         <button id="finishRoute" className="finish-route" hidden>
           ✓ Завершить маршрут
         </button>

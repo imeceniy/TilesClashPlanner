@@ -25,6 +25,12 @@ interface ExportTagGroup {
   territories: Territory[];
 }
 
+export interface AllianceTerritorySummary {
+  label: string;
+  color: string;
+  groups: Array<{ label: string; count: number }>;
+}
+
 function tagGroupsForExport(map: MapData, plan: Plan, state: PlannerState): ExportTagGroup[] {
   const territoryById = new Map(map.territories.map((territory) => [territory.id, territory]));
   const byTerritoryOrder = (left: Territory, right: Territory): number =>
@@ -47,6 +53,26 @@ function tagGroupsForExport(map: MapData, plan: Plan, state: PlannerState): Expo
   return refusals.length ? [...allianceGroups, { label: "ОТКАЗ", color: "#e85d75", territories: refusals }] : allianceGroups;
 }
 
+export function allianceTerritorySummariesForExport(map: MapData, plan: Plan, state: PlannerState): AllianceTerritorySummary[] {
+  const territoryById = new Map(map.territories.map((territory) => [territory.id, territory]));
+  return state.alliances
+    .map((alliance) => {
+      const counts = new Map<string, number>();
+      for (const tag of plan.territoryTags) {
+        if (tag.kind !== "alliance" || tag.allianceId !== alliance.id) continue;
+        const territory = territoryById.get(tag.territoryId);
+        if (!territory) continue;
+        const group = territory.name.match(/^(.+?)\.\d+$/)?.[1] ?? territory.name;
+        counts.set(group, (counts.get(group) ?? 0) + 1);
+      }
+      const groups = [...counts]
+        .map(([label, count]) => ({ label, count }))
+        .sort((left, right) => left.label.localeCompare(right.label, "ru", { numeric: true }));
+      return { label: alliance.shortName, color: alliance.color, groups };
+    })
+    .filter(({ groups }) => groups.length > 0);
+}
+
 interface PngExportOptions {
   stage: Konva.Stage;
   worldGroup: Konva.Group;
@@ -67,7 +93,8 @@ export async function exportMapPng(options: PngExportOptions): Promise<void> {
   const sidebarWidth = 310;
   const bannerHeight = map.eventRules === "classic" ? 88 : 0;
   const exportWidth = map.width + sidebarWidth;
-  const summary = calculateScoreSummary(map, plan);
+  const winterAllianceExport = map.id === "winter-2026";
+  const summary = winterAllianceExport ? null : calculateScoreSummary(map, plan);
   const numberFormat = new Intl.NumberFormat("ru-RU");
   const playerColor = state.alliances.find(({ isPlayerAlliance }) => isPlayerAlliance)?.color ?? STATUS.captured.color;
   const overlay = new Konva.Group({ listening: false });
@@ -95,23 +122,54 @@ export async function exportMapPng(options: PngExportOptions): Promise<void> {
     );
     sidebar.add(new Konva.Text({ x: 36, y: y + 80, width: 238, text: details, fill: "#718077", fontSize: 11 }));
   };
-  addScoreCard(
-    118,
-    "УЖЕ ЗАХВАЧЕНО",
-    summary.capturedPoints,
-    `${summary.capturedCount} территорий · ${numberFormat.format(summary.capturedCopperPerHour)} меди/ч`,
-    playerColor,
-  );
-  addScoreCard(
-    235,
-    "С ПЛАНИРУЕМЫМИ ЦЕЛЯМИ",
-    summary.theoreticalPoints,
-    `всего ${summary.theoreticalCount} · план +${numberFormat.format(summary.plannedPoints)} · ${numberFormat.format(summary.theoreticalCopperPerHour)} меди/ч`,
-    STATUS.priority.color,
-  );
+  let sidebarContentBottom = 118;
+  if (winterAllianceExport) {
+    sidebar.add(
+      new Konva.Text({ x: 24, y: 112, width: 262, text: "СОЮЗЫ И ТЕРРИТОРИИ", fill: "#9ba89f", fontSize: 12, fontStyle: "bold" }),
+    );
+    let y = 142;
+    const allianceSummaries = allianceTerritorySummariesForExport(map, plan, state);
+    if (!allianceSummaries.length) {
+      sidebar.add(new Konva.Text({ x: 24, y, width: 262, text: "Территории союзов не назначены", fill: "#eaf2ec", fontSize: 14 }));
+      y += 24;
+    }
+    for (const alliance of allianceSummaries) {
+      const territoryCounts = alliance.groups.map(({ label, count }) => `${label} — ${count} шт.`).join("; ");
+      const row = new Konva.Text({
+        x: 24,
+        y,
+        width: 262,
+        text: `${alliance.label}: ${territoryCounts}`,
+        fill: alliance.color,
+        fontSize: 14,
+        fontStyle: "bold",
+        lineHeight: 1.35,
+        wrap: "word",
+      });
+      sidebar.add(row);
+      y += row.height() + 12;
+    }
+    sidebarContentBottom = y;
+  } else {
+    const score = summary!;
+    addScoreCard(
+      118,
+      "УЖЕ ЗАХВАЧЕНО",
+      score.capturedPoints,
+      `${score.capturedCount} территорий · ${numberFormat.format(score.capturedCopperPerHour)} меди/ч`,
+      playerColor,
+    );
+    addScoreCard(
+      235,
+      "С ПЛАНИРУЕМЫМИ ЦЕЛЯМИ",
+      score.theoreticalPoints,
+      `всего ${score.theoreticalCount} · план +${numberFormat.format(score.plannedPoints)} · ${numberFormat.format(score.theoreticalCopperPerHour)} меди/ч`,
+      STATUS.priority.color,
+    );
+    sidebarContentBottom = 350;
+  }
 
-  let sidebarContentBottom = 350;
-  if (state.settings.showLegend) {
+  if (!winterAllianceExport && state.settings.showLegend) {
     const entries = [
       { color: playerColor, label: "Захвачено" },
       { color: STATUS.hold.color, label: "Удержать" },

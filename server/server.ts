@@ -1,9 +1,10 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
-import { extname, join, normalize } from "node:path";
+import { basename, extname, join, resolve, sep } from "node:path";
 import { readFile, stat } from "node:fs/promises";
 import { hashPassword, randomId, tokenHash, verifyPassword } from "./auth";
 import { JsonStore } from "./store";
-import type { ProjectRecord, ProjectRole, UserRecord } from "./types";
+import type { Database, ProjectRecord, ProjectRole, UserRecord } from "./types";
+import { migrateProject, toSharedState, validateProjectMapReferences } from "../src/persistence";
 
 const SESSION_COOKIE = "planner_session";
 const roleRank: Record<ProjectRole, number> = { MEMBER: 0, R4: 1, R5: 2 };
@@ -24,7 +25,11 @@ class HttpError extends Error {
 }
 
 function json(response: ServerResponse, status: number, value: unknown): void {
-  response.writeHead(status, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" });
+  response.writeHead(status, {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "x-content-type-options": "nosniff",
+  });
   response.end(JSON.stringify(value));
 }
 async function body(request: IncomingMessage): Promise<Record<string, unknown>> {
@@ -52,27 +57,121 @@ function cookies(request: IncomingMessage): Record<string, string> {
 function publicUser(user: UserRecord) {
   return { id: user.id, username: user.username, displayName: user.displayName, createdAt: user.createdAt };
 }
-function validateState(value: unknown): void {
-  if (!value || typeof value !== "object" || Array.isArray(value)) throw new HttpError(400, "Некорректное состояние проекта");
-  const state = value as Record<string, unknown>;
-  if (typeof state.version !== "number" || !Array.isArray(state.plans) || !Array.isArray(state.alliances))
-    throw new HttpError(400, "Состояние проекта не соответствует формату PlannerState");
+function trimHistory(revisions: Database["revisions"], projectId: string): void {
+  const projectHistory = revisions.filter((item) => item.projectId === projectId).sort((a, b) => a.revision - b.revision);
+  let excess = projectHistory.length - 100;
+  for (const revision of projectHistory) {
+    if (excess <= 0) break;
+    if (revision.pinned) continue;
+    const index = revisions.indexOf(revision);
+    if (index >= 0) revisions.splice(index, 1);
+    excess--;
+  }
+}
+const validationDefaults = {
+  version: 6 as const,
+  currentPlanId: "",
+  plans: [],
+  alliances: [],
+  settings: {
+    showNames: true,
+    showValues: true,
+    showEnemies: true,
+    showNeutral: true,
+    showArrows: true,
+    showConnections: true,
+    showLabels: true,
+    showMarkers: true,
+    showLegend: true,
+    showStrategic: false,
+    viewBox: null,
+  },
+};
+interface MapReferenceData {
+  territories: Array<{ id: string }>;
+  bases: Array<{ id: string }>;
+}
+function validateState(value: unknown, mapId: string, maps: Map<string, MapReferenceData>): unknown {
+  if (Buffer.byteLength(JSON.stringify(value) ?? "", "utf8") > 2_000_000) throw new HttpError(413, "Состояние проекта превышает 2 МБ");
+  const map = maps.get(mapId);
+  if (!map) throw new HttpError(400, "Неизвестная карта проекта");
+  try {
+    const state = migrateProject(value, validationDefaults);
+    validateProjectMapReferences(state, map);
+    return toSharedState(state);
+  } catch (error) {
+    throw new HttpError(400, error instanceof Error ? error.message : "Некорректное состояние проекта");
+  }
+}
+async function loadMapReferences(catalogPath: string, root: string): Promise<Map<string, MapReferenceData>> {
+  const catalog = JSON.parse(await readFile(catalogPath, "utf8")) as Array<{ id: string; dataUrl: string }>;
+  const maps = new Map<string, MapReferenceData>();
+  for (const entry of catalog) {
+    const filenames = [resolve(root, entry.dataUrl), resolve(root, "New event", basename(entry.dataUrl))];
+    try {
+      let rawText: string | undefined;
+      for (const filename of filenames) {
+        try {
+          rawText = await readFile(filename, "utf8");
+          break;
+        } catch {
+          // Try the next supported data location.
+        }
+      }
+      if (!rawText) continue;
+      const raw = JSON.parse(rawText) as {
+        territories?: Array<{ id: string }>;
+        bases?: Array<{ id: string }>;
+        regions?: Array<{ id: string; interactive?: boolean }>;
+      };
+      maps.set(entry.id, {
+        territories: raw.territories ?? raw.regions?.filter(({ interactive }) => interactive).map(({ id }) => ({ id })) ?? [],
+        bases: raw.bases ?? [],
+      });
+    } catch {
+      // A missing optional map must not prevent auth and collaboration APIs from starting.
+    }
+  }
+  return maps;
 }
 
 export interface PlannerServerOptions {
   dataFile: string;
   staticDir?: string;
   sessionSecure?: boolean;
+  authRateLimit?: { maxRequests: number; windowMs: number; trustProxy?: boolean };
+  trustProxy?: boolean;
 }
 
 export async function createPlannerServer(options: PlannerServerOptions) {
   const store = new JsonStore(options.dataFile);
   await store.load();
-  const streams = new Map<string, Set<ServerResponse>>();
-  const eventPadding = `: ${" ".repeat(2048)}\n`;
+  const liveSessions = store.data.sessions.filter((session) => new Date(session.expiresAt).getTime() > Date.now());
+  if (liveSessions.length !== store.data.sessions.length) {
+    store.data.sessions = liveSessions;
+    await store.save();
+  }
+  const catalogPath = join(options.staticDir ?? process.cwd(), "data/map-catalog.json");
+  let maps: Map<string, MapReferenceData>;
+  try {
+    maps = await loadMapReferences(catalogPath, options.staticDir ?? process.cwd());
+  } catch {
+    maps = await loadMapReferences(join(process.cwd(), "data/map-catalog.json"), process.cwd());
+  }
+  const streams = new Map<string, Set<{ response: ServerResponse; userId: string }>>();
+  const authBuckets = new Map<string, { count: number; resetAt: number }>();
   const emit = (projectId: string, event: string, payload: unknown): void => {
-    for (const response of streams.get(projectId) ?? [])
-      response.write(`${eventPadding}event: ${event}\ndata: ${JSON.stringify(payload)}\n\n`);
+    for (const stream of streams.get(projectId) ?? []) stream.response.write(`event: ${event}\ndata: ${JSON.stringify(payload)}\n\n`);
+  };
+  const closeUserStreams = (projectId: string, userId: string): void => {
+    const clients = streams.get(projectId);
+    if (!clients) return;
+    for (const stream of clients) {
+      if (stream.userId !== userId) continue;
+      clients.delete(stream);
+      stream.response.end();
+    }
+    if (!clients.size) streams.delete(projectId);
   };
   const currentUser = (request: IncomingMessage): UserRecord | undefined => {
     const raw = cookies(request)[SESSION_COOKIE];
@@ -100,6 +199,36 @@ export async function createPlannerServer(options: PlannerServerOptions) {
     const path = url.pathname;
     const method = request.method ?? "GET";
     try {
+      if (["POST", "PUT", "DELETE"].includes(method) && request.headers.origin) {
+        let originHost = "";
+        try {
+          originHost = new URL(request.headers.origin).host.toLowerCase();
+        } catch {
+          throw new HttpError(403, "Недопустимый источник запроса");
+        }
+        const trustedProxy = options.trustProxy ?? process.env.PLANNER_TRUST_PROXY === "true";
+        const forwardedHostHeader = trustedProxy ? request.headers["x-forwarded-host"] : undefined;
+        const forwardedHost = Array.isArray(forwardedHostHeader) ? forwardedHostHeader[0] : forwardedHostHeader;
+        const requestHost = forwardedHost || request.headers.host || "";
+        if (originHost !== String(requestHost).toLowerCase()) throw new HttpError(403, "Источник запроса не совпадает с хостом");
+      }
+      if (method === "POST" && /^\/api\/auth\/(?:login|register)$/.test(path)) {
+        const policy = options.authRateLimit ?? {
+          maxRequests: Number(process.env.PLANNER_AUTH_MAX_REQUESTS ?? 30),
+          windowMs: Number(process.env.PLANNER_AUTH_WINDOW_MS ?? 60_000),
+          trustProxy: process.env.PLANNER_TRUST_PROXY === "true",
+        };
+        const forwardedHeader = request.headers["x-forwarded-for"];
+        const forwardedValue = Array.isArray(forwardedHeader) ? forwardedHeader[0] : forwardedHeader;
+        const forwarded = policy.trustProxy ? forwardedValue?.split(",")[0]?.trim() : undefined;
+        const ip = forwarded || request.socket.remoteAddress || "unknown";
+        const timestamp = Date.now();
+        for (const [key, bucket] of authBuckets) if (bucket.resetAt <= timestamp) authBuckets.delete(key);
+        const bucket = authBuckets.get(ip);
+        if (bucket && bucket.count >= policy.maxRequests) throw new HttpError(429, "Слишком много попыток входа. Попробуйте позже.");
+        if (!bucket || bucket.resetAt <= timestamp) authBuckets.set(ip, { count: 1, resetAt: timestamp + policy.windowMs });
+        else bucket.count++;
+      }
       if (path === "/api/health") return json(response, 200, { ok: true, realtime: "sse" });
       if (path === "/api/auth/register" && method === "POST") {
         const input = await body(request);
@@ -112,6 +241,9 @@ export async function createPlannerServer(options: PlannerServerOptions) {
         if (password.length < 8) throw new HttpError(400, "Пароль должен содержать минимум 8 символов");
         if (store.data.users.some((item) => item.username === username)) throw new HttpError(409, "Логин уже занят");
         const credentials = await hashPassword(password);
+        // Password hashing yields to other requests, so uniqueness must be
+        // checked again immediately before the synchronous insertion.
+        if (store.data.users.some((item) => item.username === username)) throw new HttpError(409, "Логин уже занят");
         const user: UserRecord = {
           id: randomId(),
           username,
@@ -175,15 +307,16 @@ export async function createPlannerServer(options: PlannerServerOptions) {
       if (path === "/api/projects" && method === "POST") {
         const user = requireUser(request);
         const input = await body(request);
-        validateState(input.state);
+        const mapId = String(input.mapId ?? "gene-clash-oil-clash-season-5");
+        const validState = validateState(input.state, mapId, maps);
         const timestamp = now();
         const project: ProjectRecord = {
           id: randomId(),
           name: String(input.name ?? "Общий проект")
             .trim()
             .slice(0, 80),
-          mapId: String(input.mapId ?? "gene-clash"),
-          state: input.state,
+          mapId,
+          state: validState,
           revision: 1,
           createdBy: user.id,
           createdAt: timestamp,
@@ -210,12 +343,16 @@ export async function createPlannerServer(options: PlannerServerOptions) {
         const share = store.data.shares.find((item) => item.id === publicMatch[1] && !item.revokedAt);
         const project = share && store.data.projects.find((item) => item.id === share.projectId);
         if (!share || !project) throw new HttpError(404, "Ссылка не найдена");
+        const plans = (project.state as { plans?: Array<{ id: string }> }).plans ?? [];
+        const planId = share.planId || (project.state as { currentPlanId?: string }).currentPlanId || plans[0]?.id;
+        const plan = plans.find(({ id }) => id === planId);
+        if (!plan) throw new HttpError(410, "План по этой ссылке удалён");
+        const sharedState = toSharedState(migrateProject(project.state, validationDefaults));
         return json(response, 200, {
           project: {
-            id: project.id,
             name: project.name,
             mapId: project.mapId,
-            state: project.state,
+            state: { ...sharedState, plans: [plan], currentPlanId: planId },
             revision: project.revision,
             updatedAt: project.updatedAt,
           },
@@ -236,27 +373,28 @@ export async function createPlannerServer(options: PlannerServerOptions) {
             "content-type": "text/event-stream",
             "cache-control": "no-cache, no-transform",
             "x-accel-buffering": "no",
+            "x-content-type-options": "nosniff",
             connection: "keep-alive",
           });
           response.flushHeaders();
-          response.write(`${eventPadding}retry: 2000\nevent: ready\ndata: ${JSON.stringify({ revision: project.revision })}\n\n`);
-          const clients = streams.get(projectId) ?? new Set<ServerResponse>();
-          clients.add(response);
+          response.write(`retry: 2000\nevent: ready\ndata: ${JSON.stringify({ revision: project.revision })}\n\n`);
+          const clients = streams.get(projectId) ?? new Set<{ response: ServerResponse; userId: string }>();
+          const stream = { response, userId: user.id };
+          clients.add(stream);
           streams.set(projectId, clients);
-          const heartbeat = setInterval(() => response.write(": heartbeat\n\n"), 10_000);
           request.on("close", () => {
-            clearInterval(heartbeat);
-            clients.delete(response);
+            clients.delete(stream);
+            if (!clients.size) streams.delete(projectId);
           });
           return;
         }
         if (action === "state" && method === "PUT") {
           access(projectId, user.id, "R4");
           const input = await body(request);
-          validateState(input.state);
+          const validState = validateState(input.state, project.mapId, maps);
           if (Number(input.baseRevision) !== project.revision)
             throw new HttpError(409, "Проект уже изменён другим участником", { project: projectView(project, user.id) });
-          project.state = input.state;
+          project.state = validState;
           project.revision += 1;
           project.updatedAt = now();
           store.data.revisions.push({
@@ -269,10 +407,15 @@ export async function createPlannerServer(options: PlannerServerOptions) {
             createdAt: project.updatedAt,
           });
           const history = store.data.revisions.filter((item) => item.projectId === projectId);
-          if (history.length > 100)
-            store.data.revisions = store.data.revisions.filter(
-              (item) => item.projectId !== projectId || item.revision > project.revision - 100,
-            );
+          const previous = history.filter((item) => item.revision < project.revision).sort((a, b) => b.revision - a.revision)[0];
+          if (
+            previous &&
+            previous.authorId === user.id &&
+            !previous.pinned &&
+            Date.now() - new Date(previous.createdAt).getTime() <= 5 * 60_000
+          )
+            store.data.revisions = store.data.revisions.filter((item) => item.id !== previous.id);
+          trimHistory(store.data.revisions, projectId);
           await store.save();
           emit(projectId, "revision", { revision: project.revision, authorId: user.id, updatedAt: project.updatedAt });
           return json(response, 200, { project: projectView(project, user.id) });
@@ -289,16 +432,33 @@ export async function createPlannerServer(options: PlannerServerOptions) {
               authorId: item.authorId,
               summary: item.summary,
               createdAt: item.createdAt,
+              ...(item.pinned ? { pinned: true } : {}),
+              ...(item.label ? { label: item.label } : {}),
               author: publicUser(store.data.users.find((candidate) => candidate.id === item.authorId)!),
             }));
           return json(response, 200, { revisions });
+        }
+        const pinMatch = action.match(/^history\/(\d+)\/pin$/);
+        if (pinMatch && method === "POST") {
+          access(projectId, user.id, "R4");
+          const revision = store.data.revisions.find((item) => item.projectId === projectId && item.revision === Number(pinMatch[1]));
+          if (!revision) throw new HttpError(404, "Версия не найдена");
+          const input = await body(request);
+          const label = String(input.label ?? "")
+            .trim()
+            .slice(0, 80);
+          if (!label) throw new HttpError(400, "Укажите название закреплённой версии");
+          revision.pinned = true;
+          revision.label = label;
+          await store.save();
+          return json(response, 200, { revision });
         }
         const restoreMatch = action.match(/^history\/(\d+)\/restore$/);
         if (restoreMatch && method === "POST") {
           access(projectId, user.id, "R4");
           const source = store.data.revisions.find((item) => item.projectId === projectId && item.revision === Number(restoreMatch[1]));
           if (!source) throw new HttpError(404, "Версия не найдена");
-          project.state = source.state;
+          project.state = structuredClone(validateState(source.state, project.mapId, maps));
           project.revision += 1;
           project.updatedAt = now();
           store.data.revisions.push({
@@ -310,6 +470,7 @@ export async function createPlannerServer(options: PlannerServerOptions) {
             summary: `Восстановлена версия ${source.revision}`,
             createdAt: project.updatedAt,
           });
+          trimHistory(store.data.revisions, projectId);
           await store.save();
           emit(projectId, "revision", { revision: project.revision, authorId: user.id });
           return json(response, 200, { project: projectView(project, user.id) });
@@ -335,10 +496,12 @@ export async function createPlannerServer(options: PlannerServerOptions) {
             store.data.members.filter((item) => item.projectId === projectId && item.role === "R5").length === 1
           )
             throw new HttpError(400, "Нельзя понизить последнего R5");
+          const previousRole = member?.role;
           if (member) member.role = role;
           else store.data.members.push({ projectId, userId: target.id, role, joinedAt: now() });
           await store.save();
           emit(projectId, "members", { changed: true });
+          if (previousRole && roleRank[role] < roleRank[previousRole]) closeUserStreams(projectId, target.id);
           return json(response, 200, { ok: true });
         }
         const memberMatch = action.match(/^members\/([^/]+)$/);
@@ -352,12 +515,20 @@ export async function createPlannerServer(options: PlannerServerOptions) {
           store.data.members = store.data.members.filter((item) => !(item.projectId === projectId && item.userId === targetId));
           await store.save();
           emit(projectId, "members", { changed: true });
+          closeUserStreams(projectId, targetId);
           return json(response, 200, { ok: true });
         }
         if (action === "share" && method === "POST") {
           access(projectId, user.id, "R4");
           const existing = store.data.shares.find((item) => item.projectId === projectId && !item.revokedAt);
-          const share = existing ?? { id: randomId(8), projectId, createdBy: user.id, createdAt: now() };
+          const currentPlanId = (project.state as { currentPlanId?: string }).currentPlanId;
+          const share = existing ?? {
+            id: randomId(8),
+            projectId,
+            planId: currentPlanId ?? "",
+            createdBy: user.id,
+            createdAt: now(),
+          };
           if (!existing) store.data.shares.push(share);
           await store.save();
           return json(response, 200, { shareId: share.id, path: `/share/${share.id}` });
@@ -371,7 +542,7 @@ export async function createPlannerServer(options: PlannerServerOptions) {
       }
 
       if (options.staticDir && method === "GET") {
-        const sharedAsset = path.match(/^\/share\/(assets\/.*|data\/.*|README\.md)$/);
+        const sharedAsset = path.match(/^\/share\/(assets\/.*|data\/.*|docs\/USER_GUIDE\.md|README\.md)$/);
         const requested = sharedAsset
           ? `/${sharedAsset[1]}`
           : path.startsWith("/share/")
@@ -379,7 +550,15 @@ export async function createPlannerServer(options: PlannerServerOptions) {
             : path === "/"
               ? "/index.html"
               : path;
-        const filename = join(options.staticDir, normalize(requested).replace(/^(\.\.(\/|\\|$))+/, ""));
+        let decoded: string;
+        try {
+          decoded = decodeURIComponent(requested);
+        } catch {
+          throw new HttpError(404, "Файл не найден");
+        }
+        const root = resolve(options.staticDir);
+        const filename = resolve(root, `.${decoded.startsWith("/") ? decoded : `/${decoded}`}`);
+        if (filename !== root && !filename.startsWith(`${root}${sep}`)) throw new HttpError(404, "Файл не найден");
         try {
           if ((await stat(filename)).isFile()) {
             const types: Record<string, string> = {
@@ -388,8 +567,25 @@ export async function createPlannerServer(options: PlannerServerOptions) {
               ".css": "text/css",
               ".json": "application/json",
               ".md": "text/markdown",
+              ".png": "image/png",
+              ".jpg": "image/jpeg",
+              ".jpeg": "image/jpeg",
+              ".svg": "image/svg+xml",
+              ".webp": "image/webp",
+              ".woff": "font/woff",
+              ".woff2": "font/woff2",
+              ".ico": "image/x-icon",
             };
-            response.writeHead(200, { "content-type": `${types[extname(filename)] ?? "application/octet-stream"}; charset=utf-8` });
+            const headers: Record<string, string> = {
+              "content-type": types[extname(filename)] ?? "application/octet-stream",
+              "x-content-type-options": "nosniff",
+            };
+            if (extname(filename) === ".html")
+              headers["content-security-policy"] =
+                "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'";
+            if (decoded.startsWith("/assets/") && /[.-][A-Za-z0-9_-]{8,}\./.test(filename))
+              headers["cache-control"] = "public, max-age=31536000, immutable";
+            response.writeHead(200, headers);
             response.end(await readFile(filename));
             return;
           }
@@ -402,15 +598,24 @@ export async function createPlannerServer(options: PlannerServerOptions) {
       const status = error instanceof HttpError ? error.status : 500;
       if (status === 500) console.error(error);
       json(response, status, {
-        error: error instanceof Error ? error.message : "Ошибка сервера",
+        error: error instanceof HttpError ? error.message : "Ошибка сервера",
         ...(error instanceof HttpError && error.details ? { details: error.details } : {}),
       });
     }
   };
   const server = createServer((request, response) => void handler(request, response));
+  const sessionCleanup = setInterval(() => {
+    const active = store.data.sessions.filter((session) => new Date(session.expiresAt).getTime() > Date.now());
+    if (active.length === store.data.sessions.length) return;
+    store.data.sessions = active;
+    void store.save().catch((error) => console.error("Could not persist expired-session cleanup", error));
+  }, 60 * 60_000);
   const heartbeat = setInterval(() => {
-    for (const clients of streams.values()) for (const response of clients) response.write(": heartbeat\n\n");
+    for (const clients of streams.values()) for (const stream of clients) stream.response.write(": heartbeat\n\n");
   }, 20_000);
-  server.on("close", () => clearInterval(heartbeat));
+  server.on("close", () => {
+    clearInterval(heartbeat);
+    clearInterval(sessionCleanup);
+  });
   return { server, store };
 }
