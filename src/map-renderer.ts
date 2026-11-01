@@ -20,6 +20,21 @@ export const nodeSize = (territory: Territory): number => {
   if (territory.points?.length) return Math.max(18, ...territory.points.map(([x, y]) => Math.hypot(x, y)));
   return territory.type === "lair" ? 27 : 54;
 };
+function territoryBounds(territory: Territory): { minX: number; maxX: number; minY: number; maxY: number } {
+  if (territory.points?.length) {
+    return territory.points.reduce(
+      (bounds, [x, y]) => ({
+        minX: Math.min(bounds.minX, x),
+        maxX: Math.max(bounds.maxX, x),
+        minY: Math.min(bounds.minY, y),
+        maxY: Math.max(bounds.maxY, y),
+      }),
+      { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity },
+    );
+  }
+  const extent = territory.type === "lair" ? nodeSize(territory) : nodeSize(territory) / 2;
+  return { minX: -extent, maxX: extent, minY: -extent, maxY: extent };
+}
 export const baseIndex = (base: MapBase): string => base.id.replace(/^base-/, "").toUpperCase();
 export function shortenArrow(origin: Territory, target: Territory, distance: number): { x: number; y: number } {
   const dx = target.x - origin.x;
@@ -140,6 +155,9 @@ export function renderMapScene(context: RenderContext): void {
     const labelFill = neutral ? "#111111" : "#ffffff";
     const labelStroke = neutral ? "#ffffff" : "#111814";
     const size = nodeSize(territory);
+    const bounds = territoryBounds(territory);
+    const boundsHeight = bounds.maxY - bounds.minY;
+    const nameY = bounds.minY + Math.max(1, boundsHeight * 0.12);
     const node = new Konva.Group({ x: territory.x, y: territory.y, name: "territory", id: territory.id });
     const shape: Konva.Shape = territory.points?.length
       ? new Konva.Line({
@@ -216,13 +234,7 @@ export function renderMapScene(context: RenderContext): void {
       node.add(
         new Konva.Text({
           x: emphasized ? -65 : -40,
-          y: emphasized
-            ? settings.showValues || settings.showStrategic
-              ? -23
-              : -16
-            : settings.showValues || settings.showStrategic
-              ? -14
-              : -9,
+          y: nameY,
           width: emphasized ? 130 : 80,
           align: "center",
           text: territory.name,
@@ -242,7 +254,7 @@ export function renderMapScene(context: RenderContext): void {
       node.add(
         new Konva.Text({
           x: -38,
-          y: -8,
+          y: nameY,
           width: 76,
           align: "center",
           text: territory.name,
@@ -473,7 +485,14 @@ export function renderMapScene(context: RenderContext): void {
   // their larger size overlaps a territory name or a custom annotation.
   for (const territory of map.territories) {
     const tags = plan.territoryTags.filter(({ territoryId }) => territoryId === territory.id);
-    tags.forEach((tag, index) => addTerritoryTag(group, territory, tag, index, tags.length, alliances, map.variant === "polygon"));
+    const allianceTags = tags.filter(({ kind }) => kind === "alliance");
+    const refusalTags = tags.filter(({ kind }) => kind === "refusal");
+    allianceTags.forEach((tag, index) =>
+      addTerritoryTag(group, territory, tag, index, allianceTags.length, alliances, map.variant === "polygon"),
+    );
+    refusalTags.forEach((tag, index) =>
+      addTerritoryTag(group, territory, tag, index, refusalTags.length, alliances, map.variant === "polygon"),
+    );
   }
   allianceStartOverlays.forEach((overlay) => group.add(overlay));
 
@@ -574,17 +593,7 @@ function addTerritoryTag(
   if (!text) return;
   const allianceTag = tag.kind === "alliance";
   const color = tag.kind === "refusal" ? "#e85d75" : alliance!.color;
-  const bounds = territory.points?.length
-    ? territory.points.reduce(
-        (result, [x, y]) => ({
-          minX: Math.min(result.minX, x),
-          maxX: Math.max(result.maxX, x),
-          minY: Math.min(result.minY, y),
-          maxY: Math.max(result.maxY, y),
-        }),
-        { minX: 0, maxX: 0, minY: 0, maxY: 0 },
-      )
-    : { minX: -nodeSize(territory), maxX: nodeSize(territory), minY: -nodeSize(territory), maxY: nodeSize(territory) };
+  const bounds = territoryBounds(territory);
   const availableWidth = Math.max(16, bounds.maxX - bounds.minX - 5);
   const width = polygonMap ? (allianceTag ? 62 : Math.min(30, availableWidth)) : allianceTag ? 120 : 68;
   const height = polygonMap
@@ -593,9 +602,10 @@ function addTerritoryTag(
   const fontSize = polygonMap
     ? Math.max(allianceTag ? 7 : 4.5, Math.min(allianceTag ? 12 : 6.5, (width - 5) / Math.max(3, text.length * 0.72)))
     : allianceTag ? 20 : 11;
-  // Place badges in the lower half of the polygon: the bastion number stays
-  // centred, and a short label remains inside even when the map is enlarged.
-  const y = territory.y + Math.max(1, bounds.maxY * 0.12) + index * (height + 1);
+  // Center alliance badges in each cell; keep refusal badges below the cell name.
+  const y = allianceTag
+    ? territory.y + (bounds.minY + bounds.maxY - height) / 2 + (index - (count - 1) / 2) * (height + 1)
+    : territory.y + Math.max(1, bounds.maxY * 0.12) + index * (height + 1);
   const badge = new Konva.Group({ x: territory.x - width / 2, y, listening: false });
   badge.add(
     new Konva.Rect({
