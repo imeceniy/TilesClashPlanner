@@ -178,26 +178,28 @@ export function renderMapScene(context: RenderContext): void {
     node.add(shape);
     const startAlliance = alliances.find(({ id }) => id === plan.baseAssignments[territory.id]);
     if (startAlliance) {
+      const startIconRadius = map.variant === "polygon" ? 10 : 15;
+      const startIconY = Math.min(-startIconRadius - 2, -size * 0.42);
       node.add(
         new Konva.Circle({
           x: 0,
-          y: Math.min(-10, -size * 0.42),
-          radius: map.variant === "polygon" ? 8 : 12,
+          y: startIconY,
+          radius: startIconRadius,
           fill: startAlliance.color,
           stroke: "#ffffff",
-          strokeWidth: 2,
+          strokeWidth: 2.5,
           listening: false,
         }),
       );
       node.add(
         new Konva.Text({
-          x: -18,
-          y: Math.min(-14, -size * 0.42 - 4),
-          width: 36,
+          x: -24,
+          y: startIconY - (map.variant === "polygon" ? 5 : 7),
+          width: 48,
           align: "center",
           text: startAlliance.shortName,
           fill: "#ffffff",
-          fontSize: map.variant === "polygon" ? 6 : 10,
+          fontSize: map.variant === "polygon" ? 8 : 12,
           fontStyle: "bold",
           stroke: "#101713",
           strokeWidth: 2,
@@ -508,7 +510,7 @@ export function renderMapScene(context: RenderContext): void {
     const baseGroup = new Konva.Group({ x: base.x, y: base.y });
     baseGroup.add(
       new Konva.Circle({
-        radius: 29,
+        radius: 38,
         fill: color,
         stroke: context.selectingStart ? "#32d47b" : "#222222",
         strokeWidth: context.selectingStart ? 6 : 2,
@@ -518,13 +520,13 @@ export function renderMapScene(context: RenderContext): void {
     );
     baseGroup.add(
       new Konva.Text({
-        x: -30,
-        y: -8,
-        width: 60,
+        x: -40,
+        y: -10,
+        width: 80,
         align: "center",
         text: alliance?.shortName ?? baseIndex(base),
         fill: "#ffffff",
-        fontSize: 13,
+        fontSize: 16,
         fontStyle: "bold",
         stroke: "#111111",
         strokeWidth: 3,
@@ -566,6 +568,7 @@ function addTerritoryTag(
   const alliance = tag.allianceId ? alliances.find(({ id }) => id === tag.allianceId) : undefined;
   const text = tag.kind === "refusal" ? "ОТКАЗ" : alliance?.shortName;
   if (!text) return;
+  const allianceTag = tag.kind === "alliance";
   const color = tag.kind === "refusal" ? "#e85d75" : alliance!.color;
   const bounds = territory.points?.length
     ? territory.points.reduce(
@@ -579,9 +582,13 @@ function addTerritoryTag(
       )
     : { minX: -nodeSize(territory), maxX: nodeSize(territory), minY: -nodeSize(territory), maxY: nodeSize(territory) };
   const availableWidth = Math.max(16, bounds.maxX - bounds.minX - 5);
-  const width = polygonMap ? Math.min(30, availableWidth) : 68;
-  const height = polygonMap ? Math.max(6, Math.min(10, (bounds.maxY - bounds.minY - 8) / Math.max(1, count))) : 18;
-  const fontSize = polygonMap ? Math.max(4.5, Math.min(6.5, (width - 5) / Math.max(3, text.length * 0.72))) : 11;
+  const width = polygonMap ? Math.min(allianceTag ? 42 : 30, availableWidth) : allianceTag ? 84 : 68;
+  const height = polygonMap
+    ? Math.max(6, Math.min(allianceTag ? 13 : 10, (bounds.maxY - bounds.minY - (allianceTag ? 6 : 8)) / Math.max(1, count)))
+    : allianceTag ? 24 : 18;
+  const fontSize = polygonMap
+    ? Math.max(allianceTag ? 5 : 4.5, Math.min(allianceTag ? 8 : 6.5, (width - 5) / Math.max(3, text.length * 0.72)))
+    : allianceTag ? 14 : 11;
   // Place badges in the lower half of the polygon: the bastion number stays
   // centred, and a short label remains inside even when the map is enlarged.
   const y = territory.y + Math.max(1, bounds.maxY * 0.12) + index * (height + 1);
