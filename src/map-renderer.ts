@@ -126,6 +126,7 @@ export function renderMapScene(context: RenderContext): void {
   const { group, layer, stage, map, plan, alliances, settings, callbacks } = context;
   const getTerritory = (id: string) => map.territories.find((territory) => territory.id === id);
   group.destroyChildren();
+  const allianceStartOverlays: Konva.Group[] = [];
 
   for (const territory of map.territories) {
     const itemState = callbacks.territoryState(territory.id);
@@ -178,35 +179,37 @@ export function renderMapScene(context: RenderContext): void {
     node.add(shape);
     const startAlliance = alliances.find(({ id }) => id === plan.baseAssignments[territory.id]);
     if (startAlliance) {
-      const startIconRadius = map.variant === "polygon" ? 10 : 15;
+      const startIconRadius = map.variant === "polygon" ? 16 : 24;
       const startIconY = Math.min(-startIconRadius - 2, -size * 0.42);
-      node.add(
+      const startIcon = new Konva.Group({ x: territory.x, y: territory.y, listening: false });
+      startIcon.add(
         new Konva.Circle({
           x: 0,
           y: startIconY,
           radius: startIconRadius,
           fill: startAlliance.color,
           stroke: "#ffffff",
-          strokeWidth: 2.5,
+          strokeWidth: 3,
           listening: false,
         }),
       );
-      node.add(
+      startIcon.add(
         new Konva.Text({
-          x: -24,
-          y: startIconY - (map.variant === "polygon" ? 5 : 7),
-          width: 48,
+          x: -36,
+          y: startIconY - (map.variant === "polygon" ? 8 : 10),
+          width: 72,
           align: "center",
           text: startAlliance.shortName,
           fill: "#ffffff",
-          fontSize: map.variant === "polygon" ? 8 : 12,
+          fontSize: map.variant === "polygon" ? 12 : 17,
           fontStyle: "bold",
           stroke: "#101713",
-          strokeWidth: 2,
+          strokeWidth: 3,
           fillAfterStrokeEnabled: true,
           listening: false,
         }),
       );
+      allianceStartOverlays.push(startIcon);
     }
     if (settings.showNames && !territory.bastionLevel) {
       const emphasized = itemState.emphasized === true;
@@ -442,14 +445,6 @@ export function renderMapScene(context: RenderContext): void {
         );
     }
 
-  // Tags are deliberately rendered after territories and routes. A tag may extend
-  // beyond a small polygon; placing it in the territory's own group made it hide
-  // below the neighbouring polygon on a dense map.
-  for (const territory of map.territories) {
-    const tags = plan.territoryTags.filter(({ territoryId }) => territoryId === territory.id);
-    tags.forEach((tag, index) => addTerritoryTag(group, territory, tag, index, tags.length, alliances, map.variant === "polygon"));
-  }
-
   if (settings.showLabels)
     for (const label of plan.labels) {
       const text = new Konva.Text({
@@ -473,6 +468,15 @@ export function renderMapScene(context: RenderContext): void {
       }
       group.add(text);
     }
+
+  // Alliance badges sit above map labels, which makes them readable even when
+  // their larger size overlaps a territory name or a custom annotation.
+  for (const territory of map.territories) {
+    const tags = plan.territoryTags.filter(({ territoryId }) => territoryId === territory.id);
+    tags.forEach((tag, index) => addTerritoryTag(group, territory, tag, index, tags.length, alliances, map.variant === "polygon"));
+  }
+  allianceStartOverlays.forEach((overlay) => group.add(overlay));
+
   if (settings.showMarkers)
     for (const marker of plan.markers) {
       const alliance = alliances.find(({ id }) => id === marker.allianceId);
@@ -510,7 +514,7 @@ export function renderMapScene(context: RenderContext): void {
     const baseGroup = new Konva.Group({ x: base.x, y: base.y });
     baseGroup.add(
       new Konva.Circle({
-        radius: 38,
+        radius: 52,
         fill: color,
         stroke: context.selectingStart ? "#32d47b" : "#222222",
         strokeWidth: context.selectingStart ? 6 : 2,
@@ -520,13 +524,13 @@ export function renderMapScene(context: RenderContext): void {
     );
     baseGroup.add(
       new Konva.Text({
-        x: -40,
-        y: -10,
-        width: 80,
+        x: -58,
+        y: -12,
+        width: 116,
         align: "center",
         text: alliance?.shortName ?? baseIndex(base),
         fill: "#ffffff",
-        fontSize: 16,
+        fontSize: 20,
         fontStyle: "bold",
         stroke: "#111111",
         strokeWidth: 3,
@@ -582,13 +586,13 @@ function addTerritoryTag(
       )
     : { minX: -nodeSize(territory), maxX: nodeSize(territory), minY: -nodeSize(territory), maxY: nodeSize(territory) };
   const availableWidth = Math.max(16, bounds.maxX - bounds.minX - 5);
-  const width = polygonMap ? Math.min(allianceTag ? 42 : 30, availableWidth) : allianceTag ? 84 : 68;
+  const width = polygonMap ? (allianceTag ? 62 : Math.min(30, availableWidth)) : allianceTag ? 120 : 68;
   const height = polygonMap
-    ? Math.max(6, Math.min(allianceTag ? 13 : 10, (bounds.maxY - bounds.minY - (allianceTag ? 6 : 8)) / Math.max(1, count)))
-    : allianceTag ? 24 : 18;
+    ? allianceTag ? 18 : Math.max(6, Math.min(10, (bounds.maxY - bounds.minY - 8) / Math.max(1, count)))
+    : allianceTag ? 36 : 18;
   const fontSize = polygonMap
-    ? Math.max(allianceTag ? 5 : 4.5, Math.min(allianceTag ? 8 : 6.5, (width - 5) / Math.max(3, text.length * 0.72)))
-    : allianceTag ? 14 : 11;
+    ? Math.max(allianceTag ? 7 : 4.5, Math.min(allianceTag ? 12 : 6.5, (width - 5) / Math.max(3, text.length * 0.72)))
+    : allianceTag ? 20 : 11;
   // Place badges in the lower half of the polygon: the bastion number stays
   // centred, and a short label remains inside even when the map is enlarged.
   const y = territory.y + Math.max(1, bounds.maxY * 0.12) + index * (height + 1);
@@ -609,7 +613,7 @@ function addTerritoryTag(
   );
   badge.add(
     new Konva.Text({
-      y: polygonMap ? Math.max(0.5, (height - fontSize) / 2 - 0.5) : 3,
+      y: Math.max(0.5, (height - fontSize) / 2 - 0.5),
       width,
       align: "center",
       text,
