@@ -53,6 +53,7 @@ const clone = <T>(value: T): T => structuredClone(value);
 const today = (): string => new Date().toISOString().slice(0, 10);
 const lowPowerMode = matchMedia("(max-width: 720px), (pointer: coarse)").matches || navigator.maxTouchPoints > 0;
 const MAP_SELECTION_KEY = "tiles-clash-planner:selected-map";
+const WINTER_LABELS_RESTORED_KEY = "tiles-clash-planner:winter-labels-restored";
 
 interface PanState {
   x: number;
@@ -99,6 +100,14 @@ let gestureFrame = 0;
 let suppressMapClickUntil = 0;
 let recommendationTimer: ReturnType<typeof setTimeout> | undefined;
 let collaboration: CollaborationPanel | undefined;
+let activeCloudProjectId: string | null = null;
+let activeCloudRole: string | null = null;
+
+function setSyncLabel(status: string): void {
+  const indicator = document.querySelector<HTMLElement>("#saveState");
+  if (!indicator?.lastChild) return;
+  indicator.lastChild.textContent = activeCloudProjectId ? ` Общий проект · ${activeCloudRole ?? "участник"} · ${status}` : ` ${status}`;
+}
 
 function blankPlan(name = "День 1"): Plan {
   return createBlankPlanData(id(), name, today());
@@ -116,7 +125,7 @@ function defaultState(map = mapData): PlannerState {
       { id: "enemy-xyz", name: "Западный альянс", shortName: "XYZ", color: "#e47b4f", isPlayerAlliance: false },
     ],
     settings: {
-      showNames: map?.variant !== "polygon",
+      showNames: map?.variant !== "polygon" || map?.id === "winter-2026",
       showValues: false,
       showEnemies: true,
       showNeutral: true,
@@ -137,6 +146,20 @@ function mapStorageScope(): string | undefined {
 function loadState(): PlannerState {
   return loadPersistedState(localStorage, defaultState(), mapStorageScope());
 }
+function cloudStorageKey(projectId: string): string {
+  return `tiles-clash-planner:v${STORAGE_VERSION}:cloud:${projectId}`;
+}
+function persistCloudState(): void {
+  if (!activeCloudProjectId) return;
+  const personal = loadState();
+  personal.settings = clone(state.settings);
+  savePersistedState(localStorage, personal, mapStorageScope());
+  localStorage.setItem(cloudStorageKey(activeCloudProjectId), JSON.stringify({ mapId: mapData.id, state }));
+}
+function persistCurrentState(): void {
+  if (activeCloudProjectId) persistCloudState();
+  else savePersistedState(localStorage, state, mapStorageScope());
+}
 function currentPlan(): Plan {
   return findCurrentPlan(state);
 }
@@ -147,17 +170,25 @@ function currentEnemyAlliance(): Alliance | undefined {
   return findCurrentEnemy(state.alliances, activeAllianceId);
 }
 
-function scheduleSave(): void {
+function scheduleSave(syncShared = true): void {
   if (readOnlyMode) return;
   const indicator = $("#saveState");
   indicator.classList.add("saving");
-  if (indicator.lastChild) indicator.lastChild.textContent = " Сохраняем…";
+  setSyncLabel(activeCloudProjectId ? "сохраняем…" : "Сохраняем…");
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
-    savePersistedState(localStorage, state, mapStorageScope());
-    collaboration?.onLocalChange();
-    indicator.classList.remove("saving");
-    if (indicator.lastChild) indicator.lastChild.textContent = " Сохранено";
+    try {
+      persistCurrentState();
+      if (syncShared) collaboration?.onLocalChange();
+      indicator.classList.remove("saving", "save-error");
+      setSyncLabel(activeCloudProjectId ? "сохранено" : "Сохранено");
+      indicator.removeAttribute("title");
+    } catch {
+      indicator.classList.remove("saving");
+      indicator.classList.add("save-error");
+      setSyncLabel("Не сохранено в браузере");
+      indicator.title = "Освободите место в браузере и сделайте Экспорт JSON";
+    }
   }, 450);
 }
 
@@ -225,6 +256,10 @@ function territoryState(territoryId: string): TerritoryState {
 
 function isCopperMap(): boolean {
   return mapData.eventRules === "copper";
+}
+
+function supportsTerritoryTags(): boolean {
+  return isCopperMap() || mapData.id === "winter-2026";
 }
 
 function territoryMetrics(territory: Territory): string {
@@ -394,6 +429,10 @@ function onTerritoryClick(event: Event, territory: Territory): void {
     toggleRefusalTag(territory.id);
     return;
   }
+  if (tool === "marker") {
+    addMarker(territory.x, territory.y);
+    return;
+  }
   if ((["captured", "hold", "priority", "secondary", "noAttack", "neutral", "ignore", "enemy"] as ToolName[]).includes(tool)) {
     const status = tool as TerritoryStatus;
     pushHistory();
@@ -439,7 +478,7 @@ function openTerritoryMenu(event: MouseEvent, territory: Territory): void {
   const menu = $("#contextMenu");
   const item = territoryState(territory.id);
   menu.innerHTML = `<header><strong>${territory.name}</strong><small>${territoryTypeLabel(territory)} ${territory.size === "—" ? "" : territory.size} · ${territoryMetrics(territory)}</small></header>`;
-  if (isCopperMap()) {
+  if (supportsTerritoryTags()) {
     const tags = currentPlan().territoryTags.filter(({ territoryId }) => territoryId === territory.id);
     state.alliances.forEach((alliance) => {
       const assigned = tags.some((tag) => tag.kind === "alliance" && tag.allianceId === alliance.id);
@@ -533,7 +572,7 @@ function hideBasePicker(): void {
 }
 
 function setTool(nextTool: ToolName): void {
-  if (!isCopperMap() && (nextTool === "allianceTag" || nextTool === "refusalTag")) return;
+  if (!supportsTerritoryTags() && (nextTool === "allianceTag" || nextTool === "refusalTag")) return;
   if (nextTool !== "allianceStart") startSelectionAllianceId = null;
   if (nextTool === "enemy" && currentAlliance()?.isPlayerAlliance) {
     const enemy = state.alliances.find((alliance) => !alliance.isPlayerAlliance);
@@ -568,7 +607,7 @@ function updateToolGuidance(): void {
     enemy: `Противник: выбран ${currentEnemyAlliance()?.shortName ?? "союз не выбран"}. Нажмите территории противника.`,
     arrow: "Маршрут: последовательно нажимайте точки, затем завершите маршрут.",
     label: "Текст: нажмите свободное место на карте и введите подпись.",
-    marker: `Маркер: нажмите свободное место, чтобы поставить маркер ${currentAlliance().shortName}.`,
+    marker: `Маркер: нажмите на карту или территорию, чтобы поставить маркер ${currentAlliance().shortName}.`,
     allianceStart: "Старт союза: нажмите стартовую точку на карте.",
     routeTarget: "Автомаршрут: нажмите конечную территорию на карте.",
   };
@@ -577,7 +616,7 @@ function updateToolGuidance(): void {
 }
 
 function toggleAllianceTag(territoryId: string, allianceId: string): void {
-  if (!isCopperMap()) return;
+  if (!supportsTerritoryTags()) return;
   const plan = currentPlan();
   const existing = plan.territoryTags.find(
     (tag) => tag.territoryId === territoryId && tag.kind === "alliance" && tag.allianceId === allianceId,
@@ -593,7 +632,7 @@ function toggleAllianceTag(territoryId: string, allianceId: string): void {
 }
 
 function toggleRefusalTag(territoryId: string): void {
-  if (!isCopperMap()) return;
+  if (!supportsTerritoryTags()) return;
   const plan = currentPlan();
   const existing = plan.territoryTags.find((tag) => tag.territoryId === territoryId && tag.kind === "refusal");
   pushHistory();
@@ -745,8 +784,8 @@ function addMarker(x: number, y: number): void {
   const alliance = currentAlliance();
   pushHistory();
   currentPlan().markers.push({ id: id(), x, y, allianceId: alliance.id });
-  commit(`База ${alliance.shortName} добавлена`);
   setTool("select");
+  commit(`Маркер ${alliance.shortName} добавлен`);
 }
 
 function onMapClick(): void {
@@ -972,7 +1011,7 @@ async function openHelp(): Promise<void> {
   const content = $("#helpContent");
   if (!content.dataset.loaded) {
     try {
-      const response = await fetch("./README.md");
+      const response = await fetch("./docs/USER_GUIDE.md");
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       content.innerHTML = markdownToHtml(await response.text());
       content.dataset.loaded = "true";
@@ -1110,9 +1149,9 @@ function territoryAssignmentOrder(left: Territory, right: Territory): number {
 function renderTerritoryAssignments(): void {
   const section = $("#territoryAssignmentsSection");
   const list = $("#territoryAssignmentsList");
-  section.hidden = !isCopperMap();
+  section.hidden = !supportsTerritoryTags();
   list.replaceChildren();
-  if (!isCopperMap()) return;
+  if (!supportsTerritoryTags()) return;
   const tags = currentPlan().territoryTags;
   const byId = new Map(mapData.territories.map((territory) => [territory.id, territory]));
   const addGroup = (title: string, color: string, groupTags: typeof tags): void => {
@@ -1299,7 +1338,7 @@ function setViewBox(next: ViewBox): void {
   if (state?.settings) state.settings.viewBox = clone(viewBox);
   applyViewBox();
   $("#zoomValue").textContent = `${Math.round((mapData.width / viewBox.width) * 100)}%`;
-  if (state) scheduleSave();
+  if (state) scheduleSave(false);
 }
 
 function constrainViewBox(next: ViewBox): ViewBox {
@@ -1330,7 +1369,7 @@ function finishGestureViewBox(): void {
   pendingGestureViewBox = null;
   if (state?.settings) state.settings.viewBox = clone(viewBox);
   applyViewBox();
-  if (state) scheduleSave();
+  if (state) scheduleSave(false);
 }
 
 function applyViewBox(sceneOnly = false): void {
@@ -1586,7 +1625,7 @@ function bindUi(): void {
     input.addEventListener("change", () => {
       state.settings[key] = input.checked;
       renderMap();
-      scheduleSave();
+      scheduleSave(false);
     });
   }
   document
@@ -1692,8 +1731,8 @@ function bindUi(): void {
 }
 
 function renderAll(): void {
-  document.querySelectorAll<HTMLElement>(".copper-only").forEach((element) => {
-    element.hidden = !isCopperMap();
+  document.querySelectorAll<HTMLElement>(".territory-tag-tool").forEach((element) => {
+    element.hidden = !supportsTerritoryTags();
   });
   renderPlanControls();
   renderAlliances();
@@ -1714,7 +1753,7 @@ function renderMapSelectors(): void {
       option.selected = entry.id === mapData.id;
       select.append(option);
     }
-    select.disabled = publicViewMode;
+    select.disabled = publicViewMode || Boolean(activeCloudProjectId);
   }
 }
 
@@ -1738,17 +1777,31 @@ function resetMapInteraction(): void {
   updateUndoButtons();
 }
 
-async function activateMap(mapId: string, incomingState?: PlannerState): Promise<void> {
+async function activateMap(mapId: string, incomingState?: PlannerState, skipPersist = false): Promise<void> {
   clearTimeout(saveTimer);
-  if (mapData && state && incomingState === undefined && !readOnlyMode) savePersistedState(localStorage, state, mapStorageScope());
+  if (mapData && state && incomingState === undefined && !readOnlyMode && !skipPersist) persistCurrentState();
   await loadMapAssets(mapId);
-  state = incomingState ? parseProject(JSON.stringify(incomingState), defaultState()) : loadState();
+  const localState = loadState();
+  let restoredWinterLabels = false;
+  if (mapData.id === "winter-2026") {
+    try {
+      if (localStorage.getItem(WINTER_LABELS_RESTORED_KEY) !== "true") {
+        localState.settings.showNames = true;
+        localStorage.setItem(WINTER_LABELS_RESTORED_KEY, "true");
+        restoredWinterLabels = true;
+      }
+    } catch {
+      localState.settings.showNames = true;
+    }
+  }
+  state = incomingState ? parseProject(JSON.stringify(incomingState), { ...defaultState(), settings: localState.settings }) : localState;
+  if (restoredWinterLabels && !readOnlyMode && !publicViewMode) persistCurrentState();
   if (!state.plans.some((plan) => plan.id === state.currentPlanId)) state.currentPlanId = state.plans[0]!.id;
   activeAllianceId = state.alliances.find(({ isPlayerAlliance }) => isPlayerAlliance)?.id ?? state.alliances[0]!.id;
   resetMapInteraction();
   staticConnections = renderStaticMapScene(staticMapGroup, mapData);
-  document.querySelectorAll<HTMLElement>(".copper-only").forEach((element) => {
-    element.hidden = !isCopperMap();
+  document.querySelectorAll<HTMLElement>(".territory-tag-tool").forEach((element) => {
+    element.hidden = !supportsTerritoryTags();
   });
   renderMapSelectors();
   applySettings();
@@ -1762,7 +1815,7 @@ async function activateMap(mapId: string, incomingState?: PlannerState): Promise
 }
 
 async function switchMap(mapId: string): Promise<void> {
-  if (mapId === mapData.id || publicViewMode) {
+  if (mapId === mapData.id || publicViewMode || activeCloudProjectId) {
     renderMapSelectors();
     return;
   }
@@ -1824,14 +1877,56 @@ export async function startPlanner(): Promise<void> {
         getState: () => clone(state),
         getMapId: () => mapData.id,
         applyState: async (remoteState, mapId) => {
-          await activateMap(mapId, remoteState);
-          if (!readOnlyMode) savePersistedState(localStorage, state, mapStorageScope());
+          if (activeCloudProjectId) persistCloudState();
+          else if (!readOnlyMode) savePersistedState(localStorage, state, mapStorageScope());
+          activeCloudProjectId = localStorage.getItem("tiles-clash-planner:active-cloud-project");
+          renderMapSelectors();
+          await activateMap(mapId, remoteState, true);
+          persistCloudState();
+          setSyncLabel(`${activeCloudRole ?? "участник"} · сохранено`);
           localStorage.setItem(MAP_SELECTION_KEY, mapId);
+        },
+        applyRemoteState: async (remoteState, mapId) => {
+          if (mapId !== mapData.id) {
+            await activateMap(mapId, remoteState, true);
+            persistCloudState();
+            return;
+          }
+          const incoming = parseProject(JSON.stringify(remoteState), { ...defaultState(), settings: state.settings });
+          const changed =
+            JSON.stringify(state.plans) !== JSON.stringify(incoming.plans) ||
+            JSON.stringify(state.alliances) !== JSON.stringify(incoming.alliances);
+          if (!changed) return;
+          const localPlanId = state.currentPlanId;
+          state.plans = incoming.plans;
+          state.alliances = incoming.alliances;
+          state.currentPlanId = incoming.plans.some(({ id: planId }) => planId === localPlanId)
+            ? localPlanId
+            : incoming.plans.some(({ id: planId }) => planId === incoming.currentPlanId)
+              ? incoming.currentPlanId
+              : incoming.plans[0]!.id;
+          if (!state.alliances.some(({ id: allianceId }) => allianceId === activeAllianceId))
+            activeAllianceId = state.alliances.find(({ isPlayerAlliance }) => isPlayerAlliance)?.id ?? state.alliances[0]!.id;
+          history.clear();
+          updateUndoButtons();
+          renderAll();
+          persistCloudState();
+          showToast("Общие изменения применены. История отмены очищена.");
+        },
+        leaveCloudProject: async () => {
+          const localMapId = mapData.id;
+          persistCloudState();
+          activeCloudProjectId = null;
+          await activateMap(localMapId, loadState(), true);
         },
         setRole: (role) => {
           readOnlyMode = role === "MEMBER";
+          activeCloudRole = role;
+          renderMapSelectors();
+          setSyncLabel(role ? `${role} · сохранено` : "Сохранено");
           applyReadOnlyMode();
         },
+        setSyncStatus: (status) => setSyncLabel(`${activeCloudRole ?? "участник"} · ${status}`),
         notify: showToast,
       });
       await collaboration.init();

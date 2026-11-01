@@ -1,0 +1,14 @@
+[Unit]
+Description=Back up Tiles Clash Planner database
+
+[Service]
+Type=oneshot
+User=tilesclash
+Group=tilesclash
+Environment=PLANNER_DATA_FILE=/var/lib/tiles-clash-planner/database.json
+Environment=PLANNER_BACKUP_DIR=/var/backups/tiles-clash-planner
+ExecStart=/opt/tiles-clash-planner/current/deploy/backup-database.example.sh
+ReadWritePaths=/var/backups/tiles-clash-planner
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true

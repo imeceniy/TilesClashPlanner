@@ -5,10 +5,12 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { chromium } from "playwright";
 import { createPlannerServer } from "../server/server.ts";
+import { readFile } from "node:fs/promises";
 
 const root = new URL("../", import.meta.url).pathname;
+const map = JSON.parse(await readFile(new URL("../data/gene-clash-map.json", import.meta.url), "utf8"));
 const dataDirectory = await mkdtemp(join(tmpdir(), "tiles-clash-e2e-"));
-const { server } = await createPlannerServer({ dataFile: join(dataDirectory, "database.json") });
+const { server } = await createPlannerServer({ dataFile: join(dataDirectory, "database.json"), trustProxy: true });
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const address = server.address();
 assert.ok(address && typeof address === "object");
@@ -48,6 +50,18 @@ async function registerInUi(page, username, displayName) {
   assert.equal(await page.locator("#authError").textContent(), "");
 }
 
+async function clickMapPoint(page, point) {
+  const canvas = await page.locator("#mapCanvas .konvajs-content").boundingBox();
+  const ratio = canvas.width / canvas.height;
+  const mapRatio = map.width / map.height;
+  const box =
+    ratio > mapRatio
+      ? { x: -(map.height * ratio - map.width) / 2, y: 0, width: map.height * ratio, height: map.height }
+      : { x: 0, y: -(map.width / ratio - map.height) / 2, width: map.width, height: map.width / ratio };
+  const scale = Math.min(canvas.width / box.width, canvas.height / box.height);
+  await page.mouse.click(canvas.x + (point.x - box.x) * scale, canvas.y + (point.y - box.y) * scale);
+}
+
 try {
   await waitFor(appOrigin);
   await fetch(`${apiOrigin}/api/auth/register`, {
@@ -73,12 +87,28 @@ try {
   const editor = await editorContext.newPage();
   await editor.goto(appOrigin, { waitUntil: "networkidle" });
   await editor.locator("#mapEmpty").waitFor({ state: "hidden" });
+  await editor.locator('[data-tool="captured"]').click();
+  await clickMapPoint(
+    editor,
+    map.territories.find(({ id }) => id === "lair-M30"),
+  );
+  await editor.waitForFunction(() => document.querySelector("#saveState")?.textContent?.includes("Сохранено"));
+  const personalKey = "tiles-clash-planner:v6";
+  assert.equal(
+    await editor.evaluate((key) => JSON.parse(localStorage.getItem(key)).plans[0].territories["lair-M30"].status, personalKey),
+    "captured",
+  );
   await editor.locator("#collaborationBtn").click();
   await editor.locator("#authUsername").fill("editor");
   await editor.locator("#authPassword").fill("password-123");
   await editor.locator("#authSubmit").click();
   await editor.locator(".cloud-project").filter({ hasText: "War room" }).click();
   await editor.locator(".cloud-project-header").filter({ hasText: "R4" }).waitFor();
+  await editor.reload({ waitUntil: "networkidle" });
+  await editor.locator("#collaborationBtn").click();
+  await editor.locator(".cloud-project-header").filter({ hasText: "War room" }).waitFor();
+  assert.match(await editor.locator(".cloud-project-header").textContent(), /R4/);
+  assert.equal(await editor.evaluate(() => Object.keys(localStorage).some((key) => key.includes(":cloud:"))), true);
 
   await owner.locator("#closeCollaboration").click();
   owner.once("dialog", (dialog) => dialog.accept("Day realtime"));
@@ -92,6 +122,16 @@ try {
   const sharedLocation = new URL(shareUrl);
   assert.equal(sharedLocation.origin, appOrigin);
   assert.match(sharedLocation.pathname, /^\/share\/[A-Za-z0-9_-]+$/);
+
+  await owner.locator('[data-member-role][data-username="editor"]').selectOption("MEMBER");
+  await editor.locator("#readOnlyBadge").waitFor({ state: "visible" });
+  await editor.locator("#logoutBtn").click();
+  await editor.locator("#readOnlyBadge").waitFor({ state: "hidden" });
+  assert.equal(await editor.evaluate(() => localStorage.getItem("tiles-clash-planner:active-cloud-project")), null);
+  assert.equal(
+    await editor.evaluate((key) => JSON.parse(localStorage.getItem(key)).plans[0].territories["lair-M30"].status, personalKey),
+    "captured",
+  );
   const publicContext = await browser.newContext();
   const publicPage = await publicContext.newPage();
   await publicPage.goto(shareUrl, { waitUntil: "networkidle" });

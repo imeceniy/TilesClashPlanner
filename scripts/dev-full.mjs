@@ -1,6 +1,12 @@
 import { spawn } from "node:child_process";
 
-const children = [spawn("npm", ["run", "dev:server"], { stdio: "inherit" }), spawn("npm", ["run", "dev"], { stdio: "inherit" })];
+const children = [
+  spawn("npm", ["run", "dev:server"], {
+    stdio: "inherit",
+    env: { ...process.env, PLANNER_TRUST_PROXY: process.env.PLANNER_TRUST_PROXY ?? "true" },
+  }),
+  spawn("npm", ["run", "dev"], { stdio: "inherit" }),
+];
 const stop = () => children.forEach((child) => child.kill("SIGTERM"));
 process.on("SIGINT", stop);
 process.on("SIGTERM", stop);

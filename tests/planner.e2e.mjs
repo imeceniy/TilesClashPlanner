@@ -6,6 +6,7 @@ import { chromium } from "playwright";
 const root = new URL("../", import.meta.url).pathname;
 const map = JSON.parse(await readFile(new URL("../data/gene-clash-map.json", import.meta.url), "utf8"));
 const newEventMap = JSON.parse(await readFile(new URL("../New event/new-event-map.json", import.meta.url), "utf8"));
+const winterMap = JSON.parse(await readFile(new URL("../data/winter-map.json", import.meta.url), "utf8"));
 const baseUrl = process.env.PLANNER_BASE_URL || "http://127.0.0.1:4180/";
 const server = process.env.PLANNER_BASE_URL ? null : spawn("npm", ["run", "dev", "--", "--port", "4180"], { cwd: root, stdio: "ignore" });
 const browser = await chromium.launch({ headless: true });
@@ -130,7 +131,7 @@ try {
   await page.locator(".alliance").last().locator(".delete-alliance-button").click();
   assert.equal(await page.locator(".alliance").count(), allianceCount);
 
-  assert.equal(await page.locator("#mapSelect option").count(), 2);
+  assert.equal(await page.locator("#mapSelect option").count(), 3);
   assert.equal(await page.locator('#mapSelect option[value="new-event-2026-09"]').textContent(), "Медь");
   await page.locator("#mapSelect").selectOption("new-event-2026-09");
   await page.waitForFunction(() => document.querySelector("#territoryCount")?.textContent?.includes("312"));
@@ -164,6 +165,33 @@ try {
   assert.equal((await page.locator("#theoreticalScore").textContent()).replace(/\s/g, ""), "850");
   assert.equal(await page.locator('[data-tool="allianceTag"]').isHidden(), true);
   assert.equal(await page.locator("#territoryAssignmentsSection").isHidden(), true);
+
+  await page.locator("#mapSelect").selectOption("winter-2026");
+  await page.waitForFunction(() => document.querySelector("#territoryCount")?.textContent?.includes("168"));
+  assert.equal(await page.locator("#showNames").isChecked(), true);
+  assert.equal(await page.locator('[data-tool="allianceTag"]').isVisible(), true);
+  assert.equal(await page.locator('[data-tool="refusalTag"]').isVisible(), true);
+  const winterTerritory = winterMap.territories.find(({ id }) => id === "winter-b5-001");
+  await page.locator('[data-tool="allianceTag"]').click();
+  await clickMapPoint(winterTerritory, {}, winterMap);
+  await page.locator('[data-tool="refusalTag"]').click();
+  await clickMapPoint(winterTerritory, {}, winterMap);
+  await page.locator('[data-tool="marker"]').click();
+  assert.equal(await page.locator('[data-tool="marker"]').getAttribute("aria-pressed"), "true");
+  await clickMapPoint(winterTerritory, {}, winterMap);
+  await page.waitForFunction(() => document.querySelector("#toast")?.textContent?.includes("Маркер UST добавлен"));
+  await page.waitForTimeout(600);
+  const winterSaved = await page.evaluate(() => JSON.parse(localStorage.getItem("tiles-clash-planner:v6:winter-2026")));
+  assert.deepEqual(winterSaved.plans[0].territoryTags.map(({ kind }) => kind).sort(), ["alliance", "refusal"]);
+  assert.equal(winterSaved.plans[0].markers.length, 1);
+  assert.equal(winterSaved.plans[0].markers[0].x, winterTerritory.x);
+  assert.equal(winterSaved.plans[0].markers[0].y, winterTerritory.y);
+  const winterExportPromise = page.waitForEvent("download");
+  await page.locator("#exportPng").click();
+  const winterExport = await winterExportPromise;
+  await winterExport.saveAs("/tmp/tiles-clash-winter-export.png");
+  await page.locator("#mapSelect").selectOption("gene-clash-oil-clash-season-5");
+  await page.waitForFunction(() => document.querySelector("#territoryCount")?.textContent?.includes("165"));
 
   await page.locator("#shareView").click();
   await page.locator("#toast:not([hidden])").waitFor();

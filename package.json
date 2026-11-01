@@ -8,24 +8,25 @@
     "dev:server": "tsx server/index.ts",
     "dev:full": "node scripts/dev-full.mjs",
     "build:client": "vite build",
-    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node18 --outfile=dist-server/index.mjs",
+    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist-server/index.mjs",
     "build": "npm run build:client && npm run build:server",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
-    "parse-map": "python3 scripts/import-konva-map.py",
     "import:konva": "python3 scripts/import-konva-map.py",
     "import:excel": "python3 scripts/parse-map.py",
     "verify:map": "node scripts/verify-canonical-map.mjs",
     "sync:rewards": "node scripts/sync-game-values.mjs",
     "verify:rewards": "node scripts/sync-game-values.mjs --check",
-    "test": "node --test tests/map.test.mjs && node --import tsx --test tests/persistence.test.ts tests/planner-store.test.ts tests/public-share.test.ts tests/routes-and-alliances.test.ts tests/score-summary.test.ts tests/new-event-map.test.ts && node --import tsx --test tests/server.test.ts",
+    "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
     "test:e2e": "node tests/planner.e2e.mjs",
     "test:e2e:collaboration": "node --import tsx tests/collaboration.e2e.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src server vite.config.ts",
-    "format": "prettier --write src server tests scripts README.md DEVELOPMENT.md index.html styles.css package.json tsconfig.json vite.config.ts",
-    "format:check": "prettier --check src server tests scripts README.md DEVELOPMENT.md index.html styles.css package.json tsconfig.json vite.config.ts",
-    "check": "npm run verify:map && npm run verify:rewards && npm run typecheck && npm run lint && npm test && npm run build",
-    "serve": "vite --host 127.0.0.1 --port 4173"
+    "format": "prettier --write src server tests scripts README.md docs/USER_GUIDE.md DEVELOPMENT.md index.html styles.css package.json tsconfig.json vite.config.ts",
+    "format:check": "prettier --check src server tests scripts README.md docs/USER_GUIDE.md DEVELOPMENT.md index.html styles.css package.json tsconfig.json vite.config.ts",
+    "check": "npm run format:check && npm run verify:map && npm run verify:rewards && npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "konva": "^10.3.1",

@@ -2,7 +2,7 @@
 
 ## Локальный запуск
 
-Требуется Node.js 18+ и npm.
+Требуется Node.js 20+ и npm.
 
 ```bash
 npm install
@@ -26,13 +26,17 @@ npm run test:e2e
 npm run build
 ```
 
-Статическая сборка создаётся в `dist`. Для production backend запускается отдельно:
+Сборка создаёт клиент в `dist` и backend-бандл в `dist-server/index.mjs`. Для production:
 
 ```bash
-NODE_ENV=production PLANNER_STATIC_DIR=dist PLANNER_DATA_FILE=/var/lib/tiles-clash/database.json npm run dev:server
+npm ci
+npm run build
+NODE_ENV=production PLANNER_STATIC_DIR=/opt/tiles-clash-planner/current/dist PLANNER_DATA_FILE=/var/lib/tiles-clash-planner/database.json node dist-server/index.mjs
 ```
 
 Перед production-развёртыванием backend следует закрыть reverse proxy с HTTPS. Cookie сессии получает `Secure`, когда `NODE_ENV=production`.
+
+Ежедневную резервную копию базы можно настроить таймером systemd. Установите `deploy/backup-database.example.sh` в каталог с правами пользователя `tilesclash` и задайте `PLANNER_BACKUP_DIR` на отдельный диск или защищённое хранилище.
 
 ## Архитектура
 

@@ -19,13 +19,14 @@ export class JsonStore {
   }
 
   save(): Promise<void> {
-    const snapshot = JSON.stringify(this.data, null, 2);
-    this.writeQueue = this.writeQueue.then(async () => {
+    const snapshot = JSON.stringify(this.data);
+    const write = this.writeQueue.then(async () => {
       await mkdir(dirname(this.filename), { recursive: true });
       const temporary = `${this.filename}.${process.pid}.tmp`;
       await writeFile(temporary, snapshot, { mode: 0o600 });
       await rename(temporary, this.filename);
     });
-    return this.writeQueue;
+    this.writeQueue = write.catch(() => undefined);
+    return write;
   }
 }
