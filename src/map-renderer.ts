@@ -597,11 +597,17 @@ function addTerritoryTag(
   const availableWidth = Math.max(16, bounds.maxX - bounds.minX - 5);
   const width = polygonMap ? (allianceTag ? 62 : Math.min(30, availableWidth)) : allianceTag ? 120 : 68;
   const height = polygonMap
-    ? allianceTag ? 18 : Math.max(6, Math.min(10, (bounds.maxY - bounds.minY - 8) / Math.max(1, count)))
-    : allianceTag ? 36 : 18;
+    ? allianceTag
+      ? 18
+      : Math.max(6, Math.min(10, (bounds.maxY - bounds.minY - 8) / Math.max(1, count)))
+    : allianceTag
+      ? 36
+      : 18;
   const fontSize = polygonMap
     ? Math.max(allianceTag ? 7 : 4.5, Math.min(allianceTag ? 12 : 6.5, (width - 5) / Math.max(3, text.length * 0.72)))
-    : allianceTag ? 20 : 11;
+    : allianceTag
+      ? 20
+      : 11;
   // Center alliance badges in each cell; keep refusal badges below the cell name.
   const y = allianceTag
     ? territory.y + (bounds.minY + bounds.maxY - height) / 2 + (index - (count - 1) / 2) * (height + 1)
